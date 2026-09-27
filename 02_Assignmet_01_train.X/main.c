@@ -9,16 +9,16 @@
 #include <xc.h>
 
 void main(void){
-    TRISB = 0x00;
+    TRISB = 0x00;                           // PORTB all outputs (LEDs)
     PORTB = 0x00;
     
     int i = 0;
     int delay = 0;
-    static unsigned char mask = 0x80;   // start with just the top bit set: 10000000
+    static unsigned char mask = 0x80;       // start with just the top bit set: 10000000
     
     while(1){
         
-        if(delay++ == 20000){
+        if(delay++ == 10000){
             if(i<8){
                 PORTB = (PORTB<<1) | 1;     // turns on from lsb to msb till they fill
             }
