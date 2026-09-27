@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V4.00 build 20260614213421 
-                                                                                               Sun Sep 27 23:52:57 2026
+                                                                                               Sun Sep 27 23:55:05 2026
 
 Microchip MPLAB XC8 C Compiler v4.00 build 20260614213421 Og1 
      1                           	processor	18F4580
@@ -929,7 +929,7 @@ Microchip MPLAB XC8 C Compiler v4.00 build 20260614213421 Og1
    923                           ;main.c: 94:                 PORTB= ~PORTB;
    924   00082A  1E81               	comf	129,f,c	;volatile
    925   00082C  EF0C  F003         	goto	l840
-   926   000830  EFFE  F03F         	goto	start
+   926   000830  EFFE  F017         	goto	start
    927   000834                     __end_of_main:
    928                           	callstack 0
    929                           
@@ -1074,7 +1074,7 @@ DATA                 0      0      10      0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V4.00 build 20260614213421 
-Symbol Table                                                                                   Sun Sep 27 23:52:57 2026
+Symbol Table                                                                                   Sun Sep 27 23:55:05 2026
 
                      l21 0670                       l23 068E                       l40 07F8  
                      l25 06B0                       l35 0792                       u10 0650  
@@ -1100,7 +1100,7 @@ Symbol Table                                                                    
                     u121 07AA                      u105 0756                      u130 07CA  
                     u131 07C6                      u140 07EE                      u141 07EA  
                     u150 0814                      u151 0810                      u160 082A  
-                    u161 0826                     _main 0602                     start 7FFC  
+                    u161 0826                     _main 0602                     start 2FFC  
            ___param_bank 0000                    ?_main 0001                    _PORTB 0F81  
                   _TRISB 0F93                    _TRISC 0F94                    main@i 0009  
                   status 0FD8          __initialization 0834             __end_of_main 0834  

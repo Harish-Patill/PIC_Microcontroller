@@ -1,7 +1,7 @@
 ### HEXMate logfile and output summary ###
 
 ### Command-line arguments ###
- C:\Users\Haris\AppData\Local\Temp\xcAsrzc.0\driver_tmp_3.o
+ C:\Users\Haris\AppData\Local\Temp\xcAsidk.0\driver_tmp_3.o
  -Odist/default/production\03_Assignment_02_Different_patterns_wrt_switches.X.production.hex
  -logfile=dist/default/production\03_Assignment_02_Different_patterns_wrt_switches.X.production.hxl
  -addressing=1
@@ -9,17 +9,17 @@
 
 ### Memory Usage ###
  Input file ranges:
-  0h - 3h		(C:\Users\Haris\AppData\Local\Temp\xcAsrzc.0\driver_tmp_3.o)
-  600h - 839h		(C:\Users\Haris\AppData\Local\Temp\xcAsrzc.0\driver_tmp_3.o)
-  7FFCh - 7FFFh		(C:\Users\Haris\AppData\Local\Temp\xcAsrzc.0\driver_tmp_3.o)
+  0h - 3h		(C:\Users\Haris\AppData\Local\Temp\xcAsidk.0\driver_tmp_3.o)
+  600h - 839h		(C:\Users\Haris\AppData\Local\Temp\xcAsidk.0\driver_tmp_3.o)
+  2FFCh - 2FFFh		(C:\Users\Haris\AppData\Local\Temp\xcAsidk.0\driver_tmp_3.o)
  Unused ranges:
   4h - 5FFh
-  83Ah - 7FFBh
+  83Ah - 2FFBh
 
 ### Hex Memory Map ###
  Legend:
   -- = Unused memory
-  H1 = Input file             (C:\Users\Haris\AppData\Local\Temp\xcAsrzc.0\driver_tmp_3.o)
+  H1 = Input file             (C:\Users\Haris\AppData\Local\Temp\xcAsidk.0\driver_tmp_3.o)
 ----------------------------------------------------------
          | 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
 ----------------------------------------------------------
@@ -62,4 +62,4 @@
 00000820 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00000830 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- -- -- --
 ----------------------------------------------------------
-00007FF0 | -- -- -- -- -- -- -- -- -- -- -- -- H1 H1 H1 H1
+00002FF0 | -- -- -- -- -- -- -- -- -- -- -- -- H1 H1 H1 H1

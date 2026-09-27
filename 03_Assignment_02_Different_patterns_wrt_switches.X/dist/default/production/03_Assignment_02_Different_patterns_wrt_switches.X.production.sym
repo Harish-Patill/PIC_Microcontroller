@@ -2,7 +2,7 @@ _RC0 7C10 0 ABS 0
 _RC1 7C11 0 ABS 0
 _RC2 7C12 0 ABS 0
 _RC3 7C13 0 ABS 0
-__S0 8000 0 ABS 0
+__S0 3000 0 ABS 0
 __S1 B 0 ABS 0
 __S4 0 0 ABS 0
 __S5 0 0 ABS 0
@@ -10,7 +10,7 @@ __Hintentry 0 0 ABS 0
 __Lintentry 0 0 ABS 0
 _main 602 0 CODE 0
 ___sp 0 0 STACK 2
-start 7FFC 0 CODE 0
+start 2FFC 0 CODE 0
 main@flag 7 0 COMRAM 1
 _TRISB F93 0 ABS 0
 _TRISC F94 0 ABS 0
@@ -82,8 +82,8 @@ __Ltemp 0 0 COMRAM 1
 stacklo 0 0 ABS 0
 __Hrbit 0 0 COMRAM 1
 __Lrbit 0 0 COMRAM 1
-__Hinit 8000 0 CODE 0
-__Linit 7FFC 0 CODE 0
+__Hinit 3000 0 CODE 0
+__Linit 2FFC 0 CODE 0
 __Hintcodelo 18 0 CODE 0
 __Lintcodelo 18 0 CODE 0
 __Hrbss 0 0 COMRAM 1
@@ -134,7 +134,7 @@ __Hstack 0 0 STACK 2
 __Lstack 0 0 STACK 2
 __Hparam 0 0 COMRAM 1
 __Lparam 0 0 COMRAM 1
-__Hspace_0 8000 0 ABS 0
+__Hspace_0 3000 0 ABS 0
 __HcstackCOMRAM 0 0 ABS 0
 __Lspace_0 0 0 ABS 0
 __LcstackCOMRAM 0 0 ABS 0
@@ -177,13 +177,13 @@ __initialization 834 0 CODE 0
 __activetblptr 0 0 ABS 0
 %segments
 reset_vec 0 3 CODE 0 0
-init 7FFC 7FFF CODE 7FFC 0
+init 2FFC 2FFF CODE 2FFC 0
 smallconst 600 601 SMALLCONST 600 0
 cstackCOMRAM 1 A COMRAM 1 1
 text0 602 839 CODE 602 0
 %locals
 dist/default/production\03_Assignment_02_Different_patterns_wrt_switches.X.production.o
-C:\Users\Haris\AppData\Local\Temp\xcAsrzc.0\driver_tmp_1.s
+C:\Users\Haris\AppData\Local\Temp\xcAsidk.0\driver_tmp_1.s
 963 834 0 CODE 0
 965 834 0 CODE 0
 968 834 0 CODE 0
