@@ -27,7 +27,7 @@ void main(void) {
         else{
             i=0;
         }
-        for(int delay=60000;delay--;);          // this delay is between each led turning ON or OFF;
+        for(int delay=10000;delay--;);          // this delay is between each led turning ON or OFF;
     }
     return;
 }
