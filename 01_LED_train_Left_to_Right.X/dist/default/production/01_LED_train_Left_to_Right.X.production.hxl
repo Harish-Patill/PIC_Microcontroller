@@ -1,7 +1,7 @@
 ### HEXMate logfile and output summary ###
 
 ### Command-line arguments ###
- C:\Users\Haris\AppData\Local\Temp\xcAsblc.0\driver_tmp_3.o
+ C:\Users\Haris\AppData\Local\Temp\xcAsj38.0\driver_tmp_3.o
  -Odist/default/production\01_LED_train_Left_to_Right.X.production.hex
  -logfile=dist/default/production\01_LED_train_Left_to_Right.X.production.hxl
  -addressing=1
@@ -9,17 +9,17 @@
 
 ### Memory Usage ###
  Input file ranges:
-  0h - 3h		(C:\Users\Haris\AppData\Local\Temp\xcAsblc.0\driver_tmp_3.o)
-  600h - 697h		(C:\Users\Haris\AppData\Local\Temp\xcAsblc.0\driver_tmp_3.o)
-  7FFCh - 7FFFh		(C:\Users\Haris\AppData\Local\Temp\xcAsblc.0\driver_tmp_3.o)
+  0h - 3h		(C:\Users\Haris\AppData\Local\Temp\xcAsj38.0\driver_tmp_3.o)
+  600h - 697h		(C:\Users\Haris\AppData\Local\Temp\xcAsj38.0\driver_tmp_3.o)
+  2FFCh - 2FFFh		(C:\Users\Haris\AppData\Local\Temp\xcAsj38.0\driver_tmp_3.o)
  Unused ranges:
   4h - 5FFh
-  698h - 7FFBh
+  698h - 2FFBh
 
 ### Hex Memory Map ###
  Legend:
   -- = Unused memory
-  H1 = Input file             (C:\Users\Haris\AppData\Local\Temp\xcAsblc.0\driver_tmp_3.o)
+  H1 = Input file             (C:\Users\Haris\AppData\Local\Temp\xcAsj38.0\driver_tmp_3.o)
 ----------------------------------------------------------
          | 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
 ----------------------------------------------------------
@@ -36,4 +36,4 @@
 00000680 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00000690 | H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- -- -- -- -- --
 ----------------------------------------------------------
-00007FF0 | -- -- -- -- -- -- -- -- -- -- -- -- H1 H1 H1 H1
+00002FF0 | -- -- -- -- -- -- -- -- -- -- -- -- H1 H1 H1 H1

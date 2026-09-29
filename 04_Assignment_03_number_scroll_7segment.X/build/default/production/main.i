@@ -18179,7 +18179,7 @@ void display(char *ssd){
     for(int i=0; i<4; i++){
         PORTD = ssd[i];
         PORTA = (PORTA & 0XF0) | 1<<i;
-        for(int delay=1000; delay--;);
+        for(int delay=800; delay--;);
     }
 }
 
@@ -18203,7 +18203,8 @@ void main(void){
         ssd[3]=digit[(i+3)%12];
         display(ssd);
 
-        if(delay++==200){
+
+        if(delay++==100){
             i++;
             if(i==12){
                 i=0;

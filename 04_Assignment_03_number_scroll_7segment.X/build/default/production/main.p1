@@ -1274,10 +1274,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 12:         PORTA = (PORTA & 0XF0) | 1<<i;
 [e = _PORTA -> | & -> _PORTA `i -> 240 `i << -> 1 `i _i `uc ]
 "13
-[; ;main.c: 13:         for(int delay=1000; delay--;);
+[; ;main.c: 13:         for(int delay=800; delay--;);
 {
 [v _delay `i ~T0 @X0 1 a ]
-[e = _delay -> 1000 `i ]
+[e = _delay -> 800 `i ]
 [e $U 1117  ]
 [e :U 1114 ]
 [e :U 1117 ]
@@ -1369,43 +1369,43 @@ Version 4.0 HI-TECH Software Intermediate Code
 "35
 [; ;main.c: 35:         display(ssd);
 [e ( _display (1 &U _ssd ]
-"37
-[; ;main.c: 37:         if(delay++==200){
-[e $ ! == ++ _delay -> 1 `i -> 200 `i 1122  ]
-{
 "38
-[; ;main.c: 38:             i++;
-[e ++ _i -> 1 `i ]
+[; ;main.c: 38:         if(delay++==100){
+[e $ ! == ++ _delay -> 1 `i -> 100 `i 1122  ]
+{
 "39
-[; ;main.c: 39:             if(i==12){
+[; ;main.c: 39:             i++;
+[e ++ _i -> 1 `i ]
+"40
+[; ;main.c: 40:             if(i==12){
 [e $ ! == _i -> 12 `i 1123  ]
 {
-"40
-[; ;main.c: 40:                 i=0;
-[e = _i -> 0 `i ]
 "41
-[; ;main.c: 41:             }
+[; ;main.c: 41:                 i=0;
+[e = _i -> 0 `i ]
+"42
+[; ;main.c: 42:             }
 }
 [e :U 1123 ]
-"42
-[; ;main.c: 42:             delay=0;
-[e = _delay -> 0 `i ]
 "43
-[; ;main.c: 43:         }
+[; ;main.c: 43:             delay=0;
+[e = _delay -> 0 `i ]
+"44
+[; ;main.c: 44:         }
 }
 [e :U 1122 ]
-"44
-[; ;main.c: 44:     }
+"45
+[; ;main.c: 45:     }
 }
 [e :U 1119 ]
 "30
 [; ;main.c: 30:     while(1){
 [e $U 1120  ]
 [e :U 1121 ]
-"45
-[; ;main.c: 45:     return;
-[e $UE 1118  ]
 "46
-[; ;main.c: 46: }
+[; ;main.c: 46:     return;
+[e $UE 1118  ]
+"47
+[; ;main.c: 47: }
 [e :UE 1118 ]
 }

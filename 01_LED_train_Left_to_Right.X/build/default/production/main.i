@@ -18196,7 +18196,7 @@ void main(void) {
         else{
             i=0;
         }
-        for(int delay=10000;delay--;);
+        for(int delay=30000;delay--;);
     }
     return;
 }

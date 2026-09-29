@@ -3,9 +3,9 @@
   <executable name="dist/default/production\01_LED_train_Left_to_Right.X.production.hex">
     <memory name="program">
       <units>bytes</units>
-      <length>32768</length>
+      <length>12289</length>
       <used>160</used>
-      <free>32608</free>
+      <free>12129</free>
     </memory>
     <memory name="data">
       <units>bytes</units>

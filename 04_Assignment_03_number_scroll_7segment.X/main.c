@@ -10,7 +10,7 @@ void display(char *ssd){
     for(int i=0; i<4; i++){
         PORTD = ssd[i];
         PORTA = (PORTA & 0XF0) | 1<<i;
-        for(int delay=1000; delay--;);  // this delay does the work of keeping the digits lit.
+        for(int delay=800; delay--;);  // this delay does the work of keeping the digits lit.
     }
 }
 
@@ -35,7 +35,7 @@ void main(void){
         display(ssd);
         
         // This delay controls how fast the display scrolls
-        if(delay++==200){
+        if(delay++==100){
             i++;
             if(i==12){
                 i=0;

@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V4.00 build 20260614213421 
-                                                                                               Sun Sep 27 23:43:25 2026
+                                                                                               Mon Sep 28 15:29:09 2026
 
 Microchip MPLAB XC8 C Compiler v4.00 build 20260614213421 Og1 
      1                           	processor	18F4580
@@ -630,10 +630,10 @@ Microchip MPLAB XC8 C Compiler v4.00 build 20260614213421 Og1
    624   000666  6E05               	movwf	main@i^0,c
    625   000668                     l11:
    626                           
-   627                           ;main.c: 30:         for(int delay=10000;delay--;);
-   628   000668  0E27               	movlw	39
+   627                           ;main.c: 30:         for(int delay=30000;delay--;);
+   628   000668  0E75               	movlw	117
    629   00066A  6E04               	movwf	(main@delay+1)^0,c
-   630   00066C  0E10               	movlw	16
+   630   00066C  0E30               	movlw	48
    631   00066E  6E03               	movwf	main@delay^0,c
    632   000670                     l821:
    633   000670  0603               	decf	main@delay^0,f,c
@@ -649,7 +649,7 @@ Microchip MPLAB XC8 C Compiler v4.00 build 20260614213421 Og1
    643   000686  EF38  F003         	goto	l821
    644   00068A                     u30:
    645   00068A  EF06  F003         	goto	l811
-   646   00068E  EFFE  F03F         	goto	start
+   646   00068E  EFFE  F017         	goto	start
    647   000692                     __end_of_main:
    648                           	callstack 0
    649                           
@@ -794,14 +794,14 @@ DATA                 0      0       6      0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V4.00 build 20260614213421 
-Symbol Table                                                                                   Sun Sep 27 23:43:25 2026
+Symbol Table                                                                                   Mon Sep 28 15:29:09 2026
 
                      l11 0668                       u10 0634                       u11 0630  
                      u20 0658                       u21 0654                       u30 068A  
                      u31 0686                      l811 060C                      l821 0670  
                     l813 0634                      l805 0602                      l815 063C  
                     l807 0608                      l817 0658                      l809 060A  
-                    l819 0662                     _main 0602                     start 7FFC  
+                    l819 0662                     _main 0602                     start 2FFC  
            ___param_bank 0000                    ?_main 0001                    _PORTB 0F81  
                   _TRISB 0F93                    main@i 0005                    status 0FD8  
         __initialization 0692             __end_of_main 0692                   ??_main 0001  

@@ -1302,10 +1302,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U 1117 ]
 [e :U 1115 ]
 "30
-[; ;main.c: 30:         for(int delay=10000;delay--;);
+[; ;main.c: 30:         for(int delay=30000;delay--;);
 {
 [v _delay `i ~T0 @X0 1 a ]
-[e = _delay -> 10000 `i ]
+[e = _delay -> 30000 `i ]
 [e $U 1121  ]
 [e :U 1118 ]
 [e :U 1121 ]

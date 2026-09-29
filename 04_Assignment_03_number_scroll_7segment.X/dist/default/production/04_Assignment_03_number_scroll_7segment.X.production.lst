@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V4.00 build 20260614213421 
-                                                                                               Mon Sep 28 00:33:35 2026
+                                                                                               Mon Sep 28 15:39:20 2026
 
 Microchip MPLAB XC8 C Compiler v4.00 build 20260614213421 Og1 
      1                           	processor	18F4580
@@ -760,10 +760,10 @@ Microchip MPLAB XC8 C Compiler v4.00 build 20260614213421 Og1
    753   0006A4  6E01               	movwf	display@ssd^0,c
    754   0006A6  ECCE  F003         	call	_display	;wreg free
    755   0006AA                     
-   756                           ;main.c: 37:         if(delay++==200){
+   756                           ;main.c: 38:         if(delay++==100){
    757   0006AA  4A18               	infsnz	main@delay^0,f,c
    758   0006AC  2A19               	incf	(main@delay+1)^0,f,c
-   759   0006AE  0EC9               	movlw	201
+   759   0006AE  0E65               	movlw	101
    760   0006B0  1818               	xorwf	main@delay^0,w,c
    761   0006B2  1019               	iorwf	(main@delay+1)^0,w,c
    762   0006B4  A4D8               	btfss	status,2,c
@@ -773,11 +773,11 @@ Microchip MPLAB XC8 C Compiler v4.00 build 20260614213421 Og1
    766   0006BE  EF18  F003         	goto	l960
    767   0006C2                     u230:
    768   0006C2                     
-   769                           ;main.c: 38:             i++;
+   769                           ;main.c: 39:             i++;
    770   0006C2  4A1A               	infsnz	main@i^0,f,c
    771   0006C4  2A1B               	incf	(main@i+1)^0,f,c
    772   0006C6                     
-   773                           ;main.c: 39:             if(i==12){
+   773                           ;main.c: 40:             if(i==12){
    774   0006C6  0E0C               	movlw	12
    775   0006C8  181A               	xorwf	main@i^0,w,c
    776   0006CA  101B               	iorwf	(main@i+1)^0,w,c
@@ -788,18 +788,18 @@ Microchip MPLAB XC8 C Compiler v4.00 build 20260614213421 Og1
    781   0006D6  EF70  F003         	goto	l25
    782   0006DA                     u240:
    783   0006DA                     
-   784                           ;main.c: 40:                 i=0;
+   784                           ;main.c: 41:                 i=0;
    785   0006DA  6A1B               	clrf	(main@i+1)^0,c
    786   0006DC  0E00               	movlw	0
    787   0006DE  6E1A               	movwf	main@i^0,c
    788   0006E0                     l25:
    789                           
-   790                           ;main.c: 42:             delay=0;
+   790                           ;main.c: 43:             delay=0;
    791   0006E0  6A19               	clrf	(main@delay+1)^0,c
    792   0006E2  0E00               	movlw	0
    793   0006E4  6E18               	movwf	main@delay^0,c
    794   0006E6  EF18  F003         	goto	l960
-   795   0006EA  EFFE  F03F         	goto	start
+   795   0006EA  EFFE  F017         	goto	start
    796   0006EE                     __end_of_main:
    797                           	callstack 0
    798                           
@@ -871,10 +871,10 @@ Microchip MPLAB XC8 C Compiler v4.00 build 20260614213421 Og1
    864   0007CA  1003               	iorwf	(??_display+1)^0,w,c
    865   0007CC  6E80               	movwf	128,c	;volatile
    866   0007CE                     
-   867                           ;main.c: 13:         for(int delay=1000; delay--;);
+   867                           ;main.c: 13:         for(int delay=800; delay--;);
    868   0007CE  0E03               	movlw	3
    869   0007D0  6E05               	movwf	(display@delay+1)^0,c
-   870   0007D2  0EE8               	movlw	232
+   870   0007D2  0E20               	movlw	32
    871   0007D4  6E04               	movwf	display@delay^0,c
    872   0007D6                     l908:
    873   0007D6  0604               	decf	display@delay^0,f,c
@@ -1186,7 +1186,7 @@ DATA                 0      0      39      0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V4.00 build 20260614213421 
-Symbol Table                                                                                   Mon Sep 28 00:33:35 2026
+Symbol Table                                                                                   Mon Sep 28 15:39:20 2026
 
                      l16 0810                       l25 06E0                      l385 079A  
                     l910 07F0                      l902 07A2                      l920 0706  
@@ -1211,7 +1211,7 @@ Symbol Table                                                                    
                     u180 0732                      u181 072E                      u190 0750  
                     u191 074C             ___awmod@sign 0006                      wreg 0FE8  
                    _main 0602                     fsr2h 0FDA                     indf2 0FDF  
-                   fsr1l 0FE1                     fsr2l 0FD9                     start 7FFC  
+                   fsr1l 0FE1                     fsr2l 0FD9                     start 2FFC  
            ___param_bank 0000                    ?_main 0001          __end_of___awmod 079C  
                   _PORTA 0F80                    _PORTD 0F83                    _TRISA 0F92  
                   _TRISD 0F95             display@delay 0004          __end_of_display 0812  

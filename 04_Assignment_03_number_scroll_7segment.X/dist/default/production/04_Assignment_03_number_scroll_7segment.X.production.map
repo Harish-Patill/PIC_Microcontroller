@@ -7,17 +7,17 @@ Linker command line:
   -cn \
   -h+dist/default/production\04_Assignment_03_number_scroll_7segment.X.production.sym \
   --cmf=dist/default/production\04_Assignment_03_number_scroll_7segment.X.production.cmf \
-  -z -Q18F4580 -oC:\Users\Haris\AppData\Local\Temp\xcAsonc.0\driver_tmp_3.o \
+  -z -Q18F4580 -oC:\Users\Haris\AppData\Local\Temp\xcAs3e0.0\driver_tmp_3.o \
   --defsym=__MPLAB_BUILD=1 --fixupoverflow=error \
   -Mdist/default/production/04_Assignment_03_number_scroll_7segment.X.production.map \
-  --md=C:\Users\Haris\AppData\Local\Temp\xcAsonc.0\driver_tmp_0.dat -E1 \
-  -ver=XC8 Compiler -ACODE=00h-07FFFh -ACONST=00h-07FFFh \
-  -ASMALLCONST=0600h-06FFhx122 -AMEDIUMCONST=0600h-07FFFh -ACOMRAM=01h-05Fh \
-  -AABS1=00h-05FFh -ABIGRAM=01h-05FFh -ARAM=060h-0FFh,0100h-01FFhx5 \
-  -ABANK0=060h-0FFh -ABANK1=0100h-01FFh -ABANK2=0200h-02FFh \
-  -ABANK3=0300h-03FFh -ABANK4=0400h-04FFh -ABANK5=0500h-05FFh \
-  -ASFR=0D00h-0DFFhx2,0F00h-0F5Fh,0F60h-0FFFh -ABIGSFR=0D00h-0FFFh \
-  -ACONFIG=0300000h-030000Dh -AIDLOC=0200000h-0200007h \
+  --md=C:\Users\Haris\AppData\Local\Temp\xcAs3e0.0\driver_tmp_0.dat -E1 \
+  -ver=XC8 Compiler -ACODE=00h-03000h -ACONST=00h-03000h \
+  -ASMALLCONST=0600h-06FFhx42,03000h-03000h -AMEDIUMCONST=0600h-03000h \
+  -ACOMRAM=01h-05Fh -AABS1=00h-05FFh -ABIGRAM=01h-05FFh \
+  -ARAM=060h-0FFh,0100h-01FFhx5 -ABANK0=060h-0FFh -ABANK1=0100h-01FFh \
+  -ABANK2=0200h-02FFh -ABANK3=0300h-03FFh -ABANK4=0400h-04FFh \
+  -ABANK5=0500h-05FFh -ASFR=0D00h-0DFFhx2,0F00h-0F5Fh,0F60h-0FFFh \
+  -ABIGSFR=0D00h-0FFFh -ACONFIG=0300000h-030000Dh -AIDLOC=0200000h-0200007h \
   -AEEDATA=0F00000h-0F000FFh -peeprom_data=EEDATA \
   -preset_vec=00h,intcode=8h,intcodelo=18h,sivt_lo,sivt_hi=CODE \
   -ppowerup=CODE,init -pramtop=0600h -psmallconst=SMALLCONST \
@@ -26,7 +26,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\Haris\AppData\Local\Temp\xcAsonc.0\driver_tmp_7.o \
+  C:\Users\Haris\AppData\Local\Temp\xcAs3e0.0\driver_tmp_7.o \
   dist/default/production\04_Assignment_03_number_scroll_7segment.X.production.o 
 
 Object code version is 3.11
@@ -36,8 +36,8 @@ Machine type is 18F4580
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Haris\AppData\Local\Temp\xcAsonc.0\driver_tmp_7.o
-                init                               7FFC     7FFC        4     3FFE       0
+C:\Users\Haris\AppData\Local\Temp\xcAs3e0.0\driver_tmp_7.o
+                init                               2FFC     2FFC        4     17FE       0
                 reset_vec                             0        0        4        0       0
 dist/default/production\04_Assignment_03_number_scroll_7segment.X.production.o
                 smallconst                          600      600        2      300       0
@@ -51,7 +51,7 @@ dist/default/production\04_Assignment_03_number_scroll_7segment.X.production.o
 
 TOTAL           Name                               Link     Load   Length     Space
         CLASS   CODE           
-                init                               7FFC     7FFC        4         0
+                init                               2FFC     2FFC        4         0
                 reset_vec                             0        0        4         0
                 text2                               6EE      6EE       AE         0
                 text1                               79C      79C       76         0
@@ -112,7 +112,7 @@ SEGMENTS        Name                           Load    Length   Top    Selector 
                 cstackCOMRAM                   000001  000027  000028         1       1  COMRAM  
                 smallconst                     000600  000002  000602       300       0  SMALLCON
                 text0                          000602  000242  000844       301       0  CODE    
-                init                           007FFC  000004  008000      3FFE       0  CODE    
+                init                           002FFC  000004  003000      17FE       0  CODE    
 
 
 UNUSED ADDRESS RANGES
@@ -127,17 +127,21 @@ UNUSED ADDRESS RANGES
         BIGRAM           0028-05FF            5D8
         BIGSFR           0D00-0FFF            300
         CODE             0004-05FF            5FC
-                         0844-7FFB           77B8
+                         0844-2FFB           27B8
+                         3000-3000              1
         COMRAM           0028-005F             38
         CONFIG           300000-30000D              E
         CONST            0004-05FF            5FC
-                         0844-7FFB           77B8
+                         0844-2FFB           27B8
+                         3000-3000              1
         EEDATA           F00000-F000FF            100
         IDLOC            200000-200007              8
-        MEDIUMCONST      0844-7FFB           77B8
+        MEDIUMCONST      0844-2FFB           27B8
+                         3000-3000              1
         RAM              0060-05FF            100
         SFR              0D00-0FFF            100
-        SMALLCONST       0844-7FFB            100
+        SMALLCONST       0844-2FFB            100
+                         3000-3000              1
 
                                   Symbol Table
 
@@ -177,7 +181,7 @@ __Hidata                 idata        0000
 __HidataCOMRAM           idataCOMRAM  0000
 __Hidloc                 idloc        0000
 __Hifardata              ifardata     0000
-__Hinit                  init         8000
+__Hinit                  init         3000
 __Hintcode               intcode      0008
 __Hintcode_body          intcode_body 0000
 __Hintcodelo             intcodelo    0018
@@ -202,7 +206,7 @@ __Hsfr                   sfr          0000
 __Hsivt_hi               sivt_hi      0000
 __Hsivt_lo               sivt_lo      0018
 __Hsmallconst            smallconst   0602
-__Hspace_0               (abs)        8000
+__Hspace_0               (abs)        3000
 __Hspace_1               (abs)        0028
 __Hspace_2               (abs)        0000
 __Hspace_4               (abs)        0000
@@ -244,7 +248,7 @@ __Lidata                 idata        0000
 __LidataCOMRAM           idataCOMRAM  0000
 __Lidloc                 idloc        0000
 __Lifardata              ifardata     0000
-__Linit                  init         7FFC
+__Linit                  init         2FFC
 __Lintcode               intcode      0008
 __Lintcode_body          intcode_body 0000
 __Lintcodelo             intcodelo    0018
@@ -280,7 +284,7 @@ __Ltext                  text         0000
 __Ltext0                 text0        0000
 __Ltext1                 text1        0000
 __Ltext2                 text2        0000
-__S0                     (abs)        8000
+__S0                     (abs)        3000
 __S1                     (abs)        0028
 __S4                     (abs)        0000
 __S5                     (abs)        0000
@@ -339,7 +343,7 @@ main@i                   cstackCOMRAM 001A
 main@ssd                 cstackCOMRAM 0014
 stackhi                  (abs)        0000
 stacklo                  (abs)        0000
-start                    init         7FFC
+start                    init         2FFC
 start_initialization     cinit        0812
 
 

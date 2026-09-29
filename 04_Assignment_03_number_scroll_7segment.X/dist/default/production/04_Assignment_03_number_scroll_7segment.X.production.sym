@@ -1,4 +1,4 @@
-__S0 8000 0 ABS 0
+__S0 3000 0 ABS 0
 __S1 28 0 ABS 0
 __S4 0 0 ABS 0
 __S5 0 0 ABS 0
@@ -7,7 +7,7 @@ __Lintentry 0 0 ABS 0
 display@i 6 0 COMRAM 1
 _main 602 0 CODE 0
 ___sp 0 0 STACK 2
-start 7FFC 0 CODE 0
+start 2FFC 0 CODE 0
 _TRISA F92 0 ABS 0
 _PORTA F80 0 ABS 0
 _TRISD F95 0 ABS 0
@@ -84,8 +84,8 @@ __Ltemp 0 0 COMRAM 1
 stacklo 0 0 ABS 0
 __Hrbit 0 0 COMRAM 1
 __Lrbit 0 0 COMRAM 1
-__Hinit 8000 0 CODE 0
-__Linit 7FFC 0 CODE 0
+__Hinit 3000 0 CODE 0
+__Linit 2FFC 0 CODE 0
 __Hintcodelo 18 0 CODE 0
 __Lintcodelo 18 0 CODE 0
 __Hrbss 0 0 COMRAM 1
@@ -146,7 +146,7 @@ __Lstack 0 0 STACK 2
 ___awmod 6EE 0 CODE 0
 __Hparam 0 0 COMRAM 1
 __Lparam 0 0 COMRAM 1
-__Hspace_0 8000 0 ABS 0
+__Hspace_0 3000 0 ABS 0
 __HcstackCOMRAM 0 0 ABS 0
 __Lspace_0 0 0 ABS 0
 __LcstackCOMRAM 0 0 ABS 0
@@ -200,13 +200,13 @@ ___awmod@counter 5 0 COMRAM 1
 display@delay 4 0 COMRAM 1
 %segments
 reset_vec 0 3 CODE 0 0
-init 7FFC 7FFF CODE 7FFC 0
+init 2FFC 2FFF CODE 2FFC 0
 smallconst 600 601 SMALLCONST 600 0
 cstackCOMRAM 1 27 COMRAM 1 1
 text0 602 843 CODE 602 0
 %locals
 dist/default/production\04_Assignment_03_number_scroll_7segment.X.production.o
-C:\Users\Haris\AppData\Local\Temp\xcAsonc.0\driver_tmp_1.s
+C:\Users\Haris\AppData\Local\Temp\xcAs3e0.0\driver_tmp_1.s
 979 812 0 CODE 0
 981 812 0 CODE 0
 984 812 0 CODE 0
@@ -241,12 +241,12 @@ main.c
 33 65E 0 CODE 0
 34 680 0 CODE 0
 35 6A2 0 CODE 0
-37 6AA 0 CODE 0
-38 6C2 0 CODE 0
-39 6C6 0 CODE 0
-40 6DA 0 CODE 0
-41 6E0 0 CODE 0
+38 6AA 0 CODE 0
+39 6C2 0 CODE 0
+40 6C6 0 CODE 0
+41 6DA 0 CODE 0
 42 6E0 0 CODE 0
+43 6E0 0 CODE 0
 main.c
 9 79C 0 CODE 0
 10 79C 0 CODE 0

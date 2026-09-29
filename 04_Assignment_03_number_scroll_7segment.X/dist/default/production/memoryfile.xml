@@ -3,9 +3,9 @@
   <executable name="dist/default/production\04_Assignment_03_number_scroll_7segment.X.production.hex">
     <memory name="program">
       <units>bytes</units>
-      <length>32768</length>
+      <length>12289</length>
       <used>588</used>
-      <free>32180</free>
+      <free>11701</free>
     </memory>
     <memory name="data">
       <units>bytes</units>

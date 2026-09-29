@@ -18187,7 +18187,7 @@ void main(void){
 
     while(1){
 
-        if(delay++ == 10000){
+        if(delay++ == 30000){
             if(i<8){
                 PORTB = (PORTB<<1) | 1;
             }
