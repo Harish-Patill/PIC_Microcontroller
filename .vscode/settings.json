@@ -1,0 +1,6 @@
+{
+    "mplab.mplab-importer.ignorePatterns": [
+        "03_Assignment_02_Different_patterns_wrt_switches.X/nbproject/configurations.xml"
+    ],
+    "mplab.project.workspace.addNewSourceFiles": "Never"
+}

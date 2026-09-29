@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project>
+  <executable name="dist/default/production\06_Assignment_05_keypress_counter_with_persistence.X.production.hex">
+    <memory name="program">
+      <units>bytes</units>
+      <length>12289</length>
+      <used>930</used>
+      <free>11359</free>
+    </memory>
+    <memory name="data">
+      <units>bytes</units>
+      <length>1536</length>
+      <used>48</used>
+      <free>1488</free>
+    </memory>
+  </executable>
+</project>
