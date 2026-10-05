@@ -92,6 +92,8 @@ events:
         - "C:\\Users\\Haris\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\MinGW\\bin"
         - "C:\\Users\\Haris\\AppData\\Local\\Programs\\Ollama"
+        - "C:\\Program Files\\Microchip\\xc8\\v4.00\\bin"
+        - "C:\\Program Files\\Microchip\\xc8\\v4.00\\bin"
   -
     kind: "find-v1"
     backtrace:
@@ -149,6 +151,8 @@ events:
         - "C:\\Users\\Haris\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\MinGW\\bin"
         - "C:\\Users\\Haris\\AppData\\Local\\Programs\\Ollama"
+        - "C:\\Program Files\\Microchip\\xc8\\v4.00\\bin"
+        - "C:\\Program Files\\Microchip\\xc8\\v4.00\\bin"
   -
     kind: "message-v1"
     backtrace:
@@ -224,6 +228,8 @@ events:
         - "C:\\Users\\Haris\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\MinGW\\bin"
         - "C:\\Users\\Haris\\AppData\\Local\\Programs\\Ollama"
+        - "C:\\Program Files\\Microchip\\xc8\\v4.00\\bin"
+        - "C:\\Program Files\\Microchip\\xc8\\v4.00\\bin"
   -
     kind: "message-v1"
     backtrace:
@@ -299,6 +305,8 @@ events:
         - "C:\\Users\\Haris\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\MinGW\\bin"
         - "C:\\Users\\Haris\\AppData\\Local\\Programs\\Ollama"
+        - "C:\\Program Files\\Microchip\\xc8\\v4.00\\bin"
+        - "C:\\Program Files\\Microchip\\xc8\\v4.00\\bin"
   -
     kind: "message-v1"
     backtrace:
@@ -374,6 +382,8 @@ events:
         - "C:\\Users\\Haris\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\MinGW\\bin"
         - "C:\\Users\\Haris\\AppData\\Local\\Programs\\Ollama"
+        - "C:\\Program Files\\Microchip\\xc8\\v4.00\\bin"
+        - "C:\\Program Files\\Microchip\\xc8\\v4.00\\bin"
   -
     kind: "message-v1"
     backtrace:
@@ -449,6 +459,8 @@ events:
         - "C:\\Users\\Haris\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\MinGW\\bin"
         - "C:\\Users\\Haris\\AppData\\Local\\Programs\\Ollama"
+        - "C:\\Program Files\\Microchip\\xc8\\v4.00\\bin"
+        - "C:\\Program Files\\Microchip\\xc8\\v4.00\\bin"
   -
     kind: "message-v1"
     backtrace:
@@ -524,6 +536,8 @@ events:
         - "C:\\Users\\Haris\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\MinGW\\bin"
         - "C:\\Users\\Haris\\AppData\\Local\\Programs\\Ollama"
+        - "C:\\Program Files\\Microchip\\xc8\\v4.00\\bin"
+        - "C:\\Program Files\\Microchip\\xc8\\v4.00\\bin"
   -
     kind: "message-v1"
     backtrace:
@@ -599,6 +613,8 @@ events:
         - "C:\\Users\\Haris\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\MinGW\\bin"
         - "C:\\Users\\Haris\\AppData\\Local\\Programs\\Ollama"
+        - "C:\\Program Files\\Microchip\\xc8\\v4.00\\bin"
+        - "C:\\Program Files\\Microchip\\xc8\\v4.00\\bin"
   -
     kind: "message-v1"
     backtrace:
@@ -674,6 +690,8 @@ events:
         - "C:\\Users\\Haris\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\MinGW\\bin"
         - "C:\\Users\\Haris\\AppData\\Local\\Programs\\Ollama"
+        - "C:\\Program Files\\Microchip\\xc8\\v4.00\\bin"
+        - "C:\\Program Files\\Microchip\\xc8\\v4.00\\bin"
   -
     kind: "message-v1"
     backtrace:
@@ -749,6 +767,8 @@ events:
         - "C:\\Users\\Haris\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\MinGW\\bin"
         - "C:\\Users\\Haris\\AppData\\Local\\Programs\\Ollama"
+        - "C:\\Program Files\\Microchip\\xc8\\v4.00\\bin"
+        - "C:\\Program Files\\Microchip\\xc8\\v4.00\\bin"
   -
     kind: "message-v1"
     backtrace:
@@ -824,6 +844,8 @@ events:
         - "C:\\Users\\Haris\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\MinGW\\bin"
         - "C:\\Users\\Haris\\AppData\\Local\\Programs\\Ollama"
+        - "C:\\Program Files\\Microchip\\xc8\\v4.00\\bin"
+        - "C:\\Program Files\\Microchip\\xc8\\v4.00\\bin"
   -
     kind: "message-v1"
     backtrace:
@@ -899,6 +921,8 @@ events:
         - "C:\\Users\\Haris\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\MinGW\\bin"
         - "C:\\Users\\Haris\\AppData\\Local\\Programs\\Ollama"
+        - "C:\\Program Files\\Microchip\\xc8\\v4.00\\bin"
+        - "C:\\Program Files\\Microchip\\xc8\\v4.00\\bin"
   -
     kind: "message-v1"
     backtrace:
@@ -974,6 +998,8 @@ events:
         - "C:\\Users\\Haris\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\MinGW\\bin"
         - "C:\\Users\\Haris\\AppData\\Local\\Programs\\Ollama"
+        - "C:\\Program Files\\Microchip\\xc8\\v4.00\\bin"
+        - "C:\\Program Files\\Microchip\\xc8\\v4.00\\bin"
   -
     kind: "message-v1"
     backtrace:
@@ -1161,6 +1187,8 @@ events:
         - "C:\\Users\\Haris\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\MinGW\\bin"
         - "C:\\Users\\Haris\\AppData\\Local\\Programs\\Ollama"
+        - "C:\\Program Files\\Microchip\\xc8\\v4.00\\bin"
+        - "C:\\Program Files\\Microchip\\xc8\\v4.00\\bin"
   -
     kind: "find-v1"
     backtrace:
@@ -1310,6 +1338,8 @@ events:
         - "C:\\Users\\Haris\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\MinGW\\bin"
         - "C:\\Users\\Haris\\AppData\\Local\\Programs\\Ollama"
+        - "C:\\Program Files\\Microchip\\xc8\\v4.00\\bin"
+        - "C:\\Program Files\\Microchip\\xc8\\v4.00\\bin"
   -
     kind: "find-v1"
     backtrace:
@@ -1459,6 +1489,8 @@ events:
         - "C:\\Users\\Haris\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\MinGW\\bin"
         - "C:\\Users\\Haris\\AppData\\Local\\Programs\\Ollama"
+        - "C:\\Program Files\\Microchip\\xc8\\v4.00\\bin"
+        - "C:\\Program Files\\Microchip\\xc8\\v4.00\\bin"
   -
     kind: "find-v1"
     backtrace:
@@ -1608,6 +1640,8 @@ events:
         - "C:\\Users\\Haris\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\MinGW\\bin"
         - "C:\\Users\\Haris\\AppData\\Local\\Programs\\Ollama"
+        - "C:\\Program Files\\Microchip\\xc8\\v4.00\\bin"
+        - "C:\\Program Files\\Microchip\\xc8\\v4.00\\bin"
   -
     kind: "find-v1"
     backtrace:
@@ -1757,6 +1791,8 @@ events:
         - "C:\\Users\\Haris\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\MinGW\\bin"
         - "C:\\Users\\Haris\\AppData\\Local\\Programs\\Ollama"
+        - "C:\\Program Files\\Microchip\\xc8\\v4.00\\bin"
+        - "C:\\Program Files\\Microchip\\xc8\\v4.00\\bin"
   -
     kind: "find-v1"
     backtrace:
@@ -1906,6 +1942,8 @@ events:
         - "C:\\Users\\Haris\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\MinGW\\bin"
         - "C:\\Users\\Haris\\AppData\\Local\\Programs\\Ollama"
+        - "C:\\Program Files\\Microchip\\xc8\\v4.00\\bin"
+        - "C:\\Program Files\\Microchip\\xc8\\v4.00\\bin"
   -
     kind: "find-v1"
     backtrace:
@@ -2055,6 +2093,8 @@ events:
         - "C:\\Users\\Haris\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\MinGW\\bin"
         - "C:\\Users\\Haris\\AppData\\Local\\Programs\\Ollama"
+        - "C:\\Program Files\\Microchip\\xc8\\v4.00\\bin"
+        - "C:\\Program Files\\Microchip\\xc8\\v4.00\\bin"
   -
     kind: "find-v1"
     backtrace:
@@ -2204,6 +2244,8 @@ events:
         - "C:\\Users\\Haris\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\MinGW\\bin"
         - "C:\\Users\\Haris\\AppData\\Local\\Programs\\Ollama"
+        - "C:\\Program Files\\Microchip\\xc8\\v4.00\\bin"
+        - "C:\\Program Files\\Microchip\\xc8\\v4.00\\bin"
   -
     kind: "find-v1"
     backtrace:
@@ -2358,6 +2400,8 @@ events:
         - "C:\\Users\\Haris\\AppData\\Local\\Programs\\Microsoft VS Code\\bin"
         - "C:\\MinGW\\bin"
         - "C:\\Users\\Haris\\AppData\\Local\\Programs\\Ollama"
+        - "C:\\Program Files\\Microchip\\xc8\\v4.00\\bin"
+        - "C:\\Program Files\\Microchip\\xc8\\v4.00\\bin"
   -
     kind: "message-v1"
     backtrace:
