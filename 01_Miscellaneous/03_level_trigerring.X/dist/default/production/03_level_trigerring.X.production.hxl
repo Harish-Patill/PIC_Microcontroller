@@ -1,0 +1,33 @@
+### HEXMate logfile and output summary ###
+
+### Command-line arguments ###
+ C:\Users\Haris\AppData\Local\Temp\xcAsihs.0\driver_tmp_3.o
+ -Odist/default/production\03_level_trigerring.X.production.hex
+ -logfile=dist/default/production\03_level_trigerring.X.production.hxl
+ -addressing=1
+ -break=300000
+
+### Memory Usage ###
+ Input file ranges:
+  0h - 3h		(C:\Users\Haris\AppData\Local\Temp\xcAsihs.0\driver_tmp_3.o)
+  600h - 63Fh		(C:\Users\Haris\AppData\Local\Temp\xcAsihs.0\driver_tmp_3.o)
+  2FFCh - 2FFFh		(C:\Users\Haris\AppData\Local\Temp\xcAsihs.0\driver_tmp_3.o)
+ Unused ranges:
+  4h - 5FFh
+  640h - 2FFBh
+
+### Hex Memory Map ###
+ Legend:
+  -- = Unused memory
+  H1 = Input file             (C:\Users\Haris\AppData\Local\Temp\xcAsihs.0\driver_tmp_3.o)
+----------------------------------------------------------
+         | 00 01 02 03 04 05 06 07 08 09 0A 0B 0C 0D 0E 0F
+----------------------------------------------------------
+00000000 | H1 H1 H1 H1 -- -- -- -- -- -- -- -- -- -- -- --
+----------------------------------------------------------
+00000600 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00000610 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00000620 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+00000630 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+----------------------------------------------------------
+00002FF0 | -- -- -- -- -- -- -- -- -- -- -- -- H1 H1 H1 H1
