@@ -1,0 +1,8 @@
+[
+{
+  "directory": "D:/Emertxe/PIC_Microcontroller/Assignments/03_number_scroll_7segment.X/_build/03_number_scroll_7segment/default",
+  "command": "\"c:\\Program Files\\Microchip\\xc8\\v4.00\\bin\\xc8-cc.exe\" -DXPRJ_default=default -D__18F4580__ -D__DEBUG=1 -ID:\\Emertxe\\PIC_Microcontroller\\Assignments\\03_number_scroll_7segment.X\\cmake\\03_number_scroll_7segment\\default\\..\\..\\.. -c -mcpu=18F4580 -mdfp=C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8 -fno-short-double -fno-short-float -memi=wordwrite -mrom=0-3000 -O0 -fasmfile -maddrqual=ignore -mwarn=-3 -Wa,-a -msummary=-psect,-class,+mem,-hex,-file -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto -o CMakeFiles\\A_03_number_scroll_7segment_default_default_XC8_compile.dir\\111e087a9b184e4ec673546cf266c533\\main.c.p1 -c D:\\Emertxe\\PIC_Microcontroller\\Assignments\\03_number_scroll_7segment.X\\main.c",
+  "file": "D:/Emertxe/PIC_Microcontroller/Assignments/03_number_scroll_7segment.X/main.c",
+  "output": "D:/Emertxe/PIC_Microcontroller/Assignments/03_number_scroll_7segment.X/_build/03_number_scroll_7segment/default/CMakeFiles/A_03_number_scroll_7segment_default_default_XC8_compile.dir/111e087a9b184e4ec673546cf266c533/main.c.p1"
+}
+]

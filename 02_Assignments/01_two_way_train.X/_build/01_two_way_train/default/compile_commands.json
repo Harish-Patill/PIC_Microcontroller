@@ -1,0 +1,8 @@
+[
+{
+  "directory": "D:/Emertxe/PIC_Microcontroller/Assignments/01_two_way_train.X/_build/01_two_way_train/default",
+  "command": "\"c:\\Program Files\\Microchip\\xc8\\v4.00\\bin\\xc8-cc.exe\" -DXPRJ_default=default -D__18F4580__ -D__DEBUG=1 -ID:\\Emertxe\\PIC_Microcontroller\\Assignments\\01_two_way_train.X\\cmake\\01_two_way_train\\default\\..\\..\\.. -c -mcpu=18F4580 -mdfp=C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8 -fno-short-double -fno-short-float -memi=wordwrite -mrom=0-3000 -O0 -fasmfile -maddrqual=ignore -mwarn=-3 -Wa,-a -msummary=-psect,-class,+mem,-hex,-file -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mno-default-config-bits -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto -o CMakeFiles\\A_01_two_way_train_default_default_XC8_compile.dir\\D_\\Emertxe\\PIC_Microcontroller\\Assignments\\01_two_way_train.X\\main.c.p1 -c D:\\Emertxe\\PIC_Microcontroller\\Assignments\\01_two_way_train.X\\main.c",
+  "file": "D:/Emertxe/PIC_Microcontroller/Assignments/01_two_way_train.X/main.c",
+  "output": "D:/Emertxe/PIC_Microcontroller/Assignments/01_two_way_train.X/_build/01_two_way_train/default/CMakeFiles/A_01_two_way_train_default_default_XC8_compile.dir/D_/Emertxe/PIC_Microcontroller/Assignments/01_two_way_train.X/main.c.p1"
+}
+]

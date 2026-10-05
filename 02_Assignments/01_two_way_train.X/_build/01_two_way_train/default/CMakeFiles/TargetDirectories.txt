@@ -1,0 +1,4 @@
+D:/Emertxe/PIC_Microcontroller/Assignments/01_two_way_train.X/_build/01_two_way_train/default/CMakeFiles/A_01_two_way_train_default_default_XC8_compile.dir
+D:/Emertxe/PIC_Microcontroller/Assignments/01_two_way_train.X/_build/01_two_way_train/default/CMakeFiles/01_two_way_train_default_image_FQGeEySi.dir
+D:/Emertxe/PIC_Microcontroller/Assignments/01_two_way_train.X/_build/01_two_way_train/default/CMakeFiles/edit_cache.dir
+D:/Emertxe/PIC_Microcontroller/Assignments/01_two_way_train.X/_build/01_two_way_train/default/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,4 @@
+D:/Emertxe/PIC_Microcontroller/Assignments/03_number_scroll_7segment.X/_build/03_number_scroll_7segment/default/CMakeFiles/A_03_number_scroll_7segment_default_default_XC8_compile.dir
+D:/Emertxe/PIC_Microcontroller/Assignments/03_number_scroll_7segment.X/_build/03_number_scroll_7segment/default/CMakeFiles/03_number_scroll_7segment_default_image_dzSoCsxY.dir
+D:/Emertxe/PIC_Microcontroller/Assignments/03_number_scroll_7segment.X/_build/03_number_scroll_7segment/default/CMakeFiles/edit_cache.dir
+D:/Emertxe/PIC_Microcontroller/Assignments/03_number_scroll_7segment.X/_build/03_number_scroll_7segment/default/CMakeFiles/rebuild_cache.dir
