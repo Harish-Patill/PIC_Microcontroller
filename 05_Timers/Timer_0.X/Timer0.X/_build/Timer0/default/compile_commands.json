@@ -1,0 +1,20 @@
+[
+{
+  "directory": "D:/Emertxe/PIC_Microcontroller/05_Timers/Timer_0.X/Timer0.X/_build/Timer0/default",
+  "command": "\"c:\\Program Files\\Microchip\\xc8\\v4.00\\bin\\xc8-cc.exe\" -DXPRJ_default=default -D__18F4580__ -D__DEBUG=1 -ID:\\Emertxe\\PIC_Microcontroller\\05_Timers\\Timer_0.X\\Timer0.X\\cmake\\Timer0\\default\\..\\..\\.. -c -mcpu=18F4580 -mdfp=C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8 -fno-short-double -fno-short-float -memi=wordwrite -mrom=0-3000 -O0 -fasmfile -maddrqual=ignore -mwarn=-3 -Wa,-a -msummary=-psect,-class,+mem,-hex,-file -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto -o CMakeFiles\\Timer0_default_default_XC8_compile.dir\\D_\\Emertxe\\PIC_Microcontroller\\05_Timers\\Timer_0.X\\Timer0.X\\isr.c.p1 -c D:\\Emertxe\\PIC_Microcontroller\\05_Timers\\Timer_0.X\\Timer0.X\\isr.c",
+  "file": "D:/Emertxe/PIC_Microcontroller/05_Timers/Timer_0.X/Timer0.X/isr.c",
+  "output": "D:/Emertxe/PIC_Microcontroller/05_Timers/Timer_0.X/Timer0.X/_build/Timer0/default/CMakeFiles/Timer0_default_default_XC8_compile.dir/D_/Emertxe/PIC_Microcontroller/05_Timers/Timer_0.X/Timer0.X/isr.c.p1"
+},
+{
+  "directory": "D:/Emertxe/PIC_Microcontroller/05_Timers/Timer_0.X/Timer0.X/_build/Timer0/default",
+  "command": "\"c:\\Program Files\\Microchip\\xc8\\v4.00\\bin\\xc8-cc.exe\" -DXPRJ_default=default -D__18F4580__ -D__DEBUG=1 -ID:\\Emertxe\\PIC_Microcontroller\\05_Timers\\Timer_0.X\\Timer0.X\\cmake\\Timer0\\default\\..\\..\\.. -c -mcpu=18F4580 -mdfp=C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8 -fno-short-double -fno-short-float -memi=wordwrite -mrom=0-3000 -O0 -fasmfile -maddrqual=ignore -mwarn=-3 -Wa,-a -msummary=-psect,-class,+mem,-hex,-file -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto -o CMakeFiles\\Timer0_default_default_XC8_compile.dir\\D_\\Emertxe\\PIC_Microcontroller\\05_Timers\\Timer_0.X\\Timer0.X\\main.c.p1 -c D:\\Emertxe\\PIC_Microcontroller\\05_Timers\\Timer_0.X\\Timer0.X\\main.c",
+  "file": "D:/Emertxe/PIC_Microcontroller/05_Timers/Timer_0.X/Timer0.X/main.c",
+  "output": "D:/Emertxe/PIC_Microcontroller/05_Timers/Timer_0.X/Timer0.X/_build/Timer0/default/CMakeFiles/Timer0_default_default_XC8_compile.dir/D_/Emertxe/PIC_Microcontroller/05_Timers/Timer_0.X/Timer0.X/main.c.p1"
+},
+{
+  "directory": "D:/Emertxe/PIC_Microcontroller/05_Timers/Timer_0.X/Timer0.X/_build/Timer0/default",
+  "command": "\"c:\\Program Files\\Microchip\\xc8\\v4.00\\bin\\xc8-cc.exe\" -DXPRJ_default=default -D__18F4580__ -D__DEBUG=1 -ID:\\Emertxe\\PIC_Microcontroller\\05_Timers\\Timer_0.X\\Timer0.X\\cmake\\Timer0\\default\\..\\..\\.. -c -mcpu=18F4580 -mdfp=C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8 -fno-short-double -fno-short-float -memi=wordwrite -mrom=0-3000 -O0 -fasmfile -maddrqual=ignore -mwarn=-3 -Wa,-a -msummary=-psect,-class,+mem,-hex,-file -ginhx32 -Wl,--data-init -mno-keep-startup -mno-download -mdefault-config-bits -std=c99 -gdwarf-3 -mstack=compiled:auto:auto:auto -o CMakeFiles\\Timer0_default_default_XC8_compile.dir\\D_\\Emertxe\\PIC_Microcontroller\\05_Timers\\Timer_0.X\\Timer0.X\\timer0.c.p1 -c D:\\Emertxe\\PIC_Microcontroller\\05_Timers\\Timer_0.X\\Timer0.X\\timer0.c",
+  "file": "D:/Emertxe/PIC_Microcontroller/05_Timers/Timer_0.X/Timer0.X/timer0.c",
+  "output": "D:/Emertxe/PIC_Microcontroller/05_Timers/Timer_0.X/Timer0.X/_build/Timer0/default/CMakeFiles/Timer0_default_default_XC8_compile.dir/D_/Emertxe/PIC_Microcontroller/05_Timers/Timer_0.X/Timer0.X/timer0.c.p1"
+}
+]

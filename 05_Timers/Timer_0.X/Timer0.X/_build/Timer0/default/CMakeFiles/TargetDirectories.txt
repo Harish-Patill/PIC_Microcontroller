@@ -1,0 +1,4 @@
+D:/Emertxe/PIC_Microcontroller/05_Timers/Timer_0.X/Timer0.X/_build/Timer0/default/CMakeFiles/Timer0_default_default_XC8_compile.dir
+D:/Emertxe/PIC_Microcontroller/05_Timers/Timer_0.X/Timer0.X/_build/Timer0/default/CMakeFiles/Timer0_default_image_Kd5SFhnv.dir
+D:/Emertxe/PIC_Microcontroller/05_Timers/Timer_0.X/Timer0.X/_build/Timer0/default/CMakeFiles/edit_cache.dir
+D:/Emertxe/PIC_Microcontroller/05_Timers/Timer_0.X/Timer0.X/_build/Timer0/default/CMakeFiles/rebuild_cache.dir
