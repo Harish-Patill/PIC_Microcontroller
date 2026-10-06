@@ -1,12 +1,35 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"27043 C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h
-[; ;C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h: 27043: extern volatile unsigned char TRISB __attribute__((address(0xF93)));
-[v _TRISB `Vuc ~T0 @X0 0 e@3987 ]
-"25698
-[; ;C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h: 25698: extern volatile unsigned char PORTB __attribute__((address(0xF81)));
-[v _PORTB `Vuc ~T0 @X0 0 e@3969 ]
-"11 ./timer0.h
-[; ;./timer0.h: 11: void init_timer0(void);
+"25489 C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h
+[; ;C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h: 25489: extern volatile unsigned char PORTA __attribute__((address(0xF80)));
+[v _PORTA `Vuc ~T0 @X0 0 e@3968 ]
+"26042
+[; ;C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h: 26042: extern volatile unsigned char PORTD __attribute__((address(0xF83)));
+[v _PORTD `Vuc ~T0 @X0 0 e@3971 ]
+"39338
+[; ;C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h: 39338: extern volatile __bit TRISB0 __attribute__((address(0x7C98)));
+[v _TRISB0 `Vb ~T0 @X0 0 e@31896 ]
+"35735
+[; ;C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h: 35735: extern volatile __bit INT0IE __attribute__((address(0x7F94)));
+[v _INT0IE `Vb ~T0 @X0 0 e@32660 ]
+"35738
+[; ;C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h: 35738: extern volatile __bit INT0IF __attribute__((address(0x7F91)));
+[v _INT0IF `Vb ~T0 @X0 0 e@32657 ]
+"26821
+[; ;C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h: 26821: extern volatile unsigned char TRISA __attribute__((address(0xF92)));
+[v _TRISA `Vuc ~T0 @X0 0 e@3986 ]
+"27487
+[; ;C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h: 27487: extern volatile unsigned char TRISD __attribute__((address(0xF95)));
+[v _TRISD `Vuc ~T0 @X0 0 e@3989 ]
+"39341
+[; ;C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h: 39341: extern volatile __bit TRISB1 __attribute__((address(0x7C99)));
+[v _TRISB1 `Vb ~T0 @X0 0 e@31897 ]
+[t ~ __deprecated__ ]
+[t T1 __deprecated__ ]
+"36359
+[; ;C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h: 36359: extern volatile __bit __attribute__((__deprecated__)) RB1 __attribute__((address(0x7C09)));
+[v _RB1 `Vb ~T1 @X0 0 e@31753 ]
+"12 ./timer0.h
+[; ;./timer0.h: 12: void init_timer0(void);
 [v _init_timer0 `(v ~T0 @X0 0 ef ]
 "35651 C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h
 [; ;C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h: 35651: extern volatile __bit GIE __attribute__((address(0x7F97)));
@@ -14,19 +37,13 @@ Version 4.0 HI-TECH Software Intermediate Code
 "36245
 [; ;C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h: 36245: extern volatile __bit PEIE __attribute__((address(0x7F96)));
 [v _PEIE `Vb ~T0 @X0 0 e@32662 ]
-"26042
-[; ;C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h: 26042: extern volatile unsigned char PORTD __attribute__((address(0xF83)));
-[v _PORTD `Vuc ~T0 @X0 0 e@3971 ]
-"25489
-[; ;C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h: 25489: extern volatile unsigned char PORTA __attribute__((address(0xF80)));
-[v _PORTA `Vuc ~T0 @X0 0 e@3968 ]
 [p mainexit ]
-"27487
-[; ;C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h: 27487: extern volatile unsigned char TRISD __attribute__((address(0xF95)));
-[v _TRISD `Vuc ~T0 @X0 0 e@3989 ]
-"26821
-[; ;C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h: 26821: extern volatile unsigned char TRISA __attribute__((address(0xF92)));
-[v _TRISA `Vuc ~T0 @X0 0 e@3986 ]
+"39257
+[; ;C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h: 39257: extern volatile __bit TMR0IE __attribute__((address(0x7F95)));
+[v _TMR0IE `Vb ~T0 @X0 0 e@32661 ]
+"39260
+[; ;C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h: 39260: extern volatile __bit TMR0IF __attribute__((address(0x7F92)));
+[v _TMR0IF `Vb ~T0 @X0 0 e@32658 ]
 "38 C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h
 [; ;C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h: 38: __asm("RXF6SIDH equ 0D60h");
 [; <" RXF6SIDH equ 0D60h ;# ">
@@ -1267,105 +1284,127 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h: 32448: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
 "12 main.c
-[; ;main.c: 12: void init_config(){
-[v _init_config `(v ~T0 @X0 1 ef ]
-{
-[e :U _init_config ]
-[f ]
+[; ;main.c: 12: volatile unsigned char sec_count = 0;
+[v _sec_count `Vuc ~T0 @X0 1 e ]
+[i _sec_count
+-> -> 0 `i `uc
+]
 "14
-[; ;main.c: 14:     TRISB = 0x00;
-[e = _TRISB -> -> 0 `i `uc ]
-"15
-[; ;main.c: 15:     PORTB = 0x00;
-[e = _PORTB -> -> 0 `i `uc ]
-"16
-[; ;main.c: 16:     init_timer0();
-[e ( _init_timer0 ..  ]
-"17
-[; ;main.c: 17:     GIE = 1;
-[e = _GIE -> -> 1 `i `b ]
-"18
-[; ;main.c: 18:     PEIE = 1;
-[e = _PEIE -> -> 1 `i `b ]
-"19
-[; ;main.c: 19: }
-[e :UE 1110 ]
-}
-"21
-[; ;main.c: 21: void display(char *ssd){
+[; ;main.c: 14: void display(char *ssd){
 [v _display `(v ~T0 @X0 1 ef1`*uc ]
 {
 [e :U _display ]
 [v _ssd `*uc ~T0 @X0 1 r1 ]
 [f ]
-"22
-[; ;main.c: 22:     for(int i=0; i<4; i++){
+"15
+[; ;main.c: 15:      for(int i=0; i<4; i++){
 {
 [v _i `i ~T0 @X0 1 a ]
 [e = _i -> 0 `i ]
-[e $ < _i -> 4 `i 1112  ]
-[e $U 1113  ]
-[e :U 1112 ]
+[e $ < _i -> 4 `i 1111  ]
+[e $U 1112  ]
+[e :U 1111 ]
 {
-"23
-[; ;main.c: 23:         PORTD = ssd[i];
+"17
+[; ;main.c: 17:         PORTA = PORTA & 0XF0;
+[e = _PORTA -> & -> _PORTA `i -> 240 `i `uc ]
+"19
+[; ;main.c: 19:         PORTD = ssd[i];
 [e = _PORTD -> *U + _ssd * -> _i `x -> -> # *U _ssd `i `x `uc ]
-"24
-[; ;main.c: 24:         PORTA = (PORTA & 0XF0) | 1<<i;
+"21
+[; ;main.c: 21:         PORTA = (PORTA & 0XF0) | 1<<i;
 [e = _PORTA -> | & -> _PORTA `i -> 240 `i << -> 1 `i _i `uc ]
-"25
-[; ;main.c: 25:         for(int delay=800; delay--;);
+"22
+[; ;main.c: 22:         for(int delay=200; delay--;);
 {
 [v _delay `i ~T0 @X0 1 a ]
-[e = _delay -> 800 `i ]
-[e $U 1118  ]
+[e = _delay -> 200 `i ]
+[e $U 1117  ]
+[e :U 1114 ]
+[e :U 1117 ]
+[e $ != -- _delay -> 1 `i -> 0 `i 1114  ]
 [e :U 1115 ]
-[e :U 1118 ]
-[e $ != -- _delay -> 1 `i -> 0 `i 1115  ]
-[e :U 1116 ]
 }
-"26
-[; ;main.c: 26:     }
+"23
+[; ;main.c: 23:     }
 }
-"22
-[; ;main.c: 22:     for(int i=0; i<4; i++){
+"15
+[; ;main.c: 15:      for(int i=0; i<4; i++){
 [e ++ _i -> 1 `i ]
-[e $ < _i -> 4 `i 1112  ]
-[e :U 1113 ]
-"26
-[; ;main.c: 26:     }
+[e $ < _i -> 4 `i 1111  ]
+[e :U 1112 ]
+"23
+[; ;main.c: 23:     }
 }
+"24
+[; ;main.c: 24: }
+[e :UE 1110 ]
+}
+"26
+[; ;main.c: 26: void init_int0(void){
+[v _init_int0 `(v ~T0 @X0 1 ef ]
+{
+[e :U _init_int0 ]
+[f ]
 "27
-[; ;main.c: 27: }
-[e :UE 1111 ]
+[; ;main.c: 27:     TRISB0 = 1;
+[e = _TRISB0 -> -> 1 `i `b ]
+"29
+[; ;main.c: 29:     INT0IE = 1;
+[e = _INT0IE -> -> 1 `i `b ]
+"30
+[; ;main.c: 30:     INT0IF = 0;
+[e = _INT0IF -> -> 0 `i `b ]
+"31
+[; ;main.c: 31: }
+[e :UE 1118 ]
+}
+"35
+[; ;main.c: 35: void init_config(){
+[v _init_config `(v ~T0 @X0 1 ef ]
+{
+[e :U _init_config ]
+[f ]
+"36
+[; ;main.c: 36:     TRISA = 0X00;
+[e = _TRISA -> -> 0 `i `uc ]
+"37
+[; ;main.c: 37:     TRISD = 0X00;
+[e = _TRISD -> -> 0 `i `uc ]
+"39
+[; ;main.c: 39:     TRISB1 = 0;
+[e = _TRISB1 -> -> 0 `i `b ]
+"40
+[; ;main.c: 40:     RB1 = 0;
+[e = _RB1 -> -> 0 `i `b ]
+"42
+[; ;main.c: 42:     init_timer0();
+[e ( _init_timer0 ..  ]
+"43
+[; ;main.c: 43:     init_int0();
+[e ( _init_int0 ..  ]
+"44
+[; ;main.c: 44:     GIE = 1;
+[e = _GIE -> -> 1 `i `b ]
+"45
+[; ;main.c: 45:     PEIE = 1;
+[e = _PEIE -> -> 1 `i `b ]
+"46
+[; ;main.c: 46: }
+[e :UE 1119 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"29
-[; ;main.c: 29: void main(void) {
+"48
+[; ;main.c: 48: void main(void){
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"32
-[; ;main.c: 32:     PORTD = 0x00;
-[e = _PORTD -> -> 0 `i `uc ]
-"33
-[; ;main.c: 33:     TRISD = 0x00;
-[e = _TRISD -> -> 0 `i `uc ]
-"35
-[; ;main.c: 35:     TRISA = TRISA & 0xF0;
-[e = _TRISA -> & -> _TRISA `i -> 240 `i `uc ]
-"36
-[; ;main.c: 36:     PORTA = PORTA & 0xF0;
-[e = _PORTA -> & -> _PORTA `i -> 240 `i `uc ]
-"38
-[; ;main.c: 38:     char ssd[4];
-[v _ssd `uc ~T0 @X0 -> 4 `i a ]
-[v F10611 `uc ~T0 @X0 -> 4 `i s ]
-[i F10611
+[v F10613 `uc ~T0 @X0 -> 4 `i s ]
+[i F10613
 :U ..
-"39
-[; ;main.c: 39:     unsigned char digit[]={0X21,0XCB,0X6B,0X2D};
+"49
+[; ;main.c: 49:  unsigned char digit[] = {0X21,0XCB,0X6B,0X2D};
 -> -> 33 `i `uc
 -> -> 203 `i `uc
 -> -> 107 `i `uc
@@ -1373,75 +1412,64 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _digit `uc ~T0 @X0 -> 4 `i a ]
-[e = _digit F10611 ]
-"41
-[; ;main.c: 41:     for(int i=0;i<5;i++){
-{
-[v _i `i ~T0 @X0 1 a ]
-[e = _i -> 0 `i ]
-[e $ < _i -> 5 `i 1120  ]
-[e $U 1121  ]
-[e :U 1120 ]
-{
-"42
-[; ;main.c: 42:         ssd[i]=digit[i];
-[e = *U + &U _ssd * -> -> _i `ui `ux -> -> # *U &U _ssd `ui `ux -> *U + &U _digit * -> -> _i `ui `ux -> -> # *U &U _digit `ui `ux `uc ]
-"43
-[; ;main.c: 43:     }
-}
-"41
-[; ;main.c: 41:     for(int i=0;i<5;i++){
-[e ++ _i -> 1 `i ]
-[e $ < _i -> 5 `i 1120  ]
-[e :U 1121 ]
-"43
-[; ;main.c: 43:     }
-}
-"44
-[; ;main.c: 44:     init_config();
+[e = _digit F10613 ]
+"50
+[; ;main.c: 50:     char ssd[4];
+[v _ssd `uc ~T0 @X0 -> 4 `i a ]
+"52
+[; ;main.c: 52:     init_config();
 [e ( _init_config ..  ]
-"46
-[; ;main.c: 46:     while(1){
-[e :U 1124 ]
-{
-"47
-[; ;main.c: 47:         for(unsigned int t=0;t<500;t++){
-{
-[v _t `ui ~T0 @X0 1 a ]
-[e = _t -> -> 0 `i `ui ]
-[e $ < _t -> -> 500 `i `ui 1126  ]
-[e $U 1127  ]
-[e :U 1126 ]
-{
-"48
-[; ;main.c: 48:             display(ssd);
-[e ( _display (1 &U _ssd ]
-"49
-[; ;main.c: 49:         }
-}
-"47
-[; ;main.c: 47:         for(unsigned int t=0;t<500;t++){
-[e ++ _t -> -> 1 `i `ui ]
-[e $ < _t -> -> 500 `i `ui 1126  ]
-[e :U 1127 ]
-"49
-[; ;main.c: 49:         }
-}
-"51
-[; ;main.c: 51:         __asm(" sleep");
-[; <"  sleep ;# ">
 "53
-[; ;main.c: 53:     }
-}
-[e :U 1123 ]
-"46
-[; ;main.c: 46:     while(1){
-[e $U 1124  ]
-[e :U 1125 ]
+[; ;main.c: 53:  while(1){
+[e :U 1122 ]
+{
 "54
-[; ;main.c: 54:     return;
-[e $UE 1119  ]
+[; ;main.c: 54:   ssd[0] = digit[0];
+[e = *U + &U _ssd * -> -> -> 0 `i `ui `ux -> -> # *U &U _ssd `ui `ux -> *U + &U _digit * -> -> -> 0 `i `ui `ux -> -> # *U &U _digit `ui `ux `uc ]
 "55
-[; ;main.c: 55: }
-[e :UE 1119 ]
+[; ;main.c: 55:   ssd[1] = digit[1];
+[e = *U + &U _ssd * -> -> -> 1 `i `ui `ux -> -> # *U &U _ssd `ui `ux -> *U + &U _digit * -> -> -> 1 `i `ui `ux -> -> # *U &U _digit `ui `ux `uc ]
+"56
+[; ;main.c: 56:   ssd[2] = digit[2];
+[e = *U + &U _ssd * -> -> -> 2 `i `ui `ux -> -> # *U &U _ssd `ui `ux -> *U + &U _digit * -> -> -> 2 `i `ui `ux -> -> # *U &U _digit `ui `ux `uc ]
+"57
+[; ;main.c: 57:   ssd[3] = digit[3];
+[e = *U + &U _ssd * -> -> -> 3 `i `ui `ux -> -> # *U &U _ssd `ui `ux -> *U + &U _digit * -> -> -> 3 `i `ui `ux -> -> # *U &U _digit `ui `ux `uc ]
+"59
+[; ;main.c: 59:   display(ssd);
+[e ( _display (1 &U _ssd ]
+"61
+[; ;main.c: 61:         if(sec_count >=5){
+[e $ ! >= -> _sec_count `i -> 5 `i 1124  ]
+{
+"63
+[; ;main.c: 63:             TMR0IE = 0;
+[e = _TMR0IE -> -> 0 `i `b ]
+"64
+[; ;main.c: 64:             __asm(" sleep");
+[; <"  sleep ;# ">
+"66
+[; ;main.c: 66:             TMR0IF = 0;
+[e = _TMR0IF -> -> 0 `i `b ]
+"67
+[; ;main.c: 67:             TMR0IE = 1;
+[e = _TMR0IE -> -> 1 `i `b ]
+"68
+[; ;main.c: 68:             sec_count = 0;
+[e = _sec_count -> -> 0 `i `uc ]
+"69
+[; ;main.c: 69:         }
+}
+[e :U 1124 ]
+"71
+[; ;main.c: 71:  }
+}
+[e :U 1121 ]
+"53
+[; ;main.c: 53:  while(1){
+[e $U 1122  ]
+[e :U 1123 ]
+"72
+[; ;main.c: 72: }
+[e :UE 1120 ]
 }

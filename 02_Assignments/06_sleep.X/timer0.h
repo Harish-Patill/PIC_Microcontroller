@@ -1,13 +1,15 @@
 /* 
  * File:   timer0.h
- * Author: Haris
+ * Author: Harish
  *
  * Created on 5 October, 2026, 4:06 PM
  */
 
-#ifndef TIMER0_H
-#define	TIMER0_H
+#ifndef SLEEP_H
+#define	SLEEP_H
+
 
 void init_timer0(void);
+void init_int0(void);
 
-#endif	/* TIMER0_H */
+#endif	/* SLEEP_H */

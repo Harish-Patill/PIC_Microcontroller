@@ -18177,51 +18177,69 @@ unsigned char __t3rd16on(void);
 # 34 "C:\\Program Files\\Microchip\\xc8\\v4.00\\pic\\include/xc.h" 2 3
 # 10 "main.c" 2
 # 1 "./timer0.h" 1
-# 11 "./timer0.h"
+# 12 "./timer0.h"
 void init_timer0(void);
+void init_int0(void);
 # 11 "main.c" 2
 
-void init_config(){
+volatile unsigned char sec_count = 0;
 
-    TRISB = 0x00;
-    PORTB = 0x00;
+void display(char *ssd){
+     for(int i=0; i<4; i++){
+
+        PORTA = PORTA & 0XF0;
+
+        PORTD = ssd[i];
+
+        PORTA = (PORTA & 0XF0) | 1<<i;
+        for(int delay=200; delay--;);
+    }
+}
+
+void init_int0(void){
+    TRISB0 = 1;
+
+    INT0IE = 1;
+    INT0IF = 0;
+}
+
+
+
+void init_config(){
+    TRISA = 0X00;
+    TRISD = 0X00;
+
+    TRISB1 = 0;
+    RB1 = 0;
+
     init_timer0();
+    init_int0();
     GIE = 1;
     PEIE = 1;
 }
 
-void display(char *ssd){
-    for(int i=0; i<4; i++){
-        PORTD = ssd[i];
-        PORTA = (PORTA & 0XF0) | 1<<i;
-        for(int delay=800; delay--;);
-    }
-}
-
-void main(void) {
-
-
-    PORTD = 0x00;
-    TRISD = 0x00;
-
-    TRISA = TRISA & 0xF0;
-    PORTA = PORTA & 0xF0;
-
+void main(void){
+ unsigned char digit[] = {0X21,0XCB,0X6B,0X2D};
     char ssd[4];
-    unsigned char digit[]={0X21,0XCB,0X6B,0X2D};
 
-    for(int i=0;i<5;i++){
-        ssd[i]=digit[i];
-    }
     init_config();
+ while(1){
+  ssd[0] = digit[0];
+  ssd[1] = digit[1];
+  ssd[2] = digit[2];
+  ssd[3] = digit[3];
 
-    while(1){
-        for(unsigned int t=0;t<500;t++){
-            display(ssd);
+  display(ssd);
+
+        if(sec_count >=5){
+
+            TMR0IE = 0;
+            __asm(" sleep");
+
+            TMR0IF = 0;
+            TMR0IE = 1;
+            sec_count = 0;
         }
 
-        __asm(" sleep");
-
-    }
-    return;
+ }
 }

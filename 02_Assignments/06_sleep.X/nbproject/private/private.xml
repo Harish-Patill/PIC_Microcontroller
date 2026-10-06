@@ -3,10 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/Emertxe/PIC_Microcontroller/Assignments/06_sleep.X/main.c</file>
-            <file>file:/D:/Emertxe/PIC_Microcontroller/Assignments/06_sleep.X/isr.c</file>
-            <file>file:/D:/Emertxe/PIC_Microcontroller/Assignments/06_sleep.X/timer0.c</file>
-            <file>file:/D:/Emertxe/PIC_Microcontroller/Assignments/06_sleep.X/timer0.h</file>
+            <file>file:/D:/Emertxe/PIC_Microcontroller/02_Assignments/06_sleep.X/timer0.c</file>
+            <file>file:/D:/Emertxe/PIC_Microcontroller/02_Assignments/06_sleep.X/main.c</file>
+            <file>file:/D:/Emertxe/PIC_Microcontroller/02_Assignments/06_sleep.X/timer0.h</file>
+            <file>file:/D:/Emertxe/PIC_Microcontroller/02_Assignments/06_sleep.X/isr.c</file>
         </group>
     </open-files>
 </project-private>

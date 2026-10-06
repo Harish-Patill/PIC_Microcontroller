@@ -7,9 +7,14 @@ Version 4.0 HI-TECH Software Intermediate Code
 "31696
 [; ;C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h: 31696: extern volatile unsigned short TMR0 __attribute__((address(0xFD6)));
 [v _TMR0 `Vus ~T0 @X0 0 e@4054 ]
-"25698
-[; ;C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h: 25698: extern volatile unsigned char PORTB __attribute__((address(0xF81)));
-[v _PORTB `Vuc ~T0 @X0 0 e@3969 ]
+[t ~ __deprecated__ ]
+[t T1 __deprecated__ ]
+"36359
+[; ;C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h: 36359: extern volatile __bit __attribute__((__deprecated__)) RB1 __attribute__((address(0x7C09)));
+[v _RB1 `Vb ~T1 @X0 0 e@31753 ]
+"35738
+[; ;C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h: 35738: extern volatile __bit INT0IF __attribute__((address(0x7F91)));
+[v _INT0IF `Vb ~T0 @X0 0 e@32657 ]
 "38 C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h
 [; ;C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h: 38: __asm("RXF6SIDH equ 0D60h");
 [; <" RXF6SIDH equ 0D60h ;# ">
@@ -1249,45 +1254,76 @@ Version 4.0 HI-TECH Software Intermediate Code
 "32448
 [; ;C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h: 32448: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
+"12 isr.c
+[; ;isr.c: 12: extern volatile unsigned char sec_count = 0;
+[v _sec_count `Vuc ~T0 @X0 1 e ]
+[i _sec_count
+-> -> 0 `i `uc
+]
 [v $root$_isr `(v ~T0 @X0 0 e ]
-"11 isr.c
-[; ;isr.c: 11: void __attribute__((picinterrupt(("")))) isr(){
+"14
+[; ;isr.c: 14: void __attribute__((picinterrupt(("")))) isr(){
 [v _isr `(v ~T46 @X0 1 ef ]
 {
 [e :U _isr ]
 [f ]
-"12
-[; ;isr.c: 12:     static unsigned int count;
-[v F10605 `ui ~T0 @X0 1 s count ]
-"14
-[; ;isr.c: 14:     if(TMR0IF){
+"17
+[; ;isr.c: 17:     static unsigned int count;
+[v F10607 `ui ~T0 @X0 1 s count ]
+"18
+[; ;isr.c: 18:     if(TMR0IF){
 [e $ ! _TMR0IF 1111  ]
 {
-"15
-[; ;isr.c: 15:         TMR0 = TMR0 + 8;
-[e = _TMR0 -> + -> _TMR0 `ui -> -> 8 `i `ui `us ]
-"17
-[; ;isr.c: 17:         if(count++ == 5000){
-[e $ ! == ++ F10605 -> -> 1 `i `ui -> -> 5000 `i `ui 1112  ]
-{
-"18
-[; ;isr.c: 18:             PORTB = ~PORTB;
-[e = _PORTB -> ~ -> _PORTB `i `uc ]
 "19
-[; ;isr.c: 19:             count = 0;
-[e = F10605 -> -> 0 `i `ui ]
+[; ;isr.c: 19:         TMR0 = TMR0 + 8;
+[e = _TMR0 -> + -> _TMR0 `ui -> -> 8 `i `ui `us ]
 "20
-[; ;isr.c: 20:         }
+[; ;isr.c: 20:         if(count++ == 5000){
+[e $ ! == ++ F10607 -> -> 1 `i `ui -> -> 5000 `i `ui 1112  ]
+{
+"21
+[; ;isr.c: 21:             RB1 = !RB1;
+[e = _RB1 ! _RB1 ]
+"22
+[; ;isr.c: 22:             count = 0;
+[e = F10607 -> -> 0 `i `ui ]
+"24
+[; ;isr.c: 24:             if(sec_count++ >=5){
+[e $ ! >= -> ++ _sec_count -> -> 1 `i `Vuc `i -> 5 `i 1113  ]
+{
+"25
+[; ;isr.c: 25:                 sec_count = 0;
+[e = _sec_count -> -> 0 `i `uc ]
+"27
+[; ;isr.c: 27:             }
+}
+[e :U 1113 ]
+"28
+[; ;isr.c: 28:         }
 }
 [e :U 1112 ]
-"21
-[; ;isr.c: 21:         TMR0IF = 0;
+"29
+[; ;isr.c: 29:         TMR0IF = 0;
 [e = _TMR0IF -> -> 0 `i `b ]
-"22
-[; ;isr.c: 22:     }
+"30
+[; ;isr.c: 30:     }
 }
 [e :U 1111 ]
-"23
-[; ;isr.c: 23: }
+"32
+[; ;isr.c: 32:     if(INT0IF){
+[e $ ! _INT0IF 1114  ]
+{
+"33
+[; ;isr.c: 33:         INT0IF = 0;
+[e = _INT0IF -> -> 0 `i `b ]
+"34
+[; ;isr.c: 34:         sec_count = 0;
+[e = _sec_count -> -> 0 `i `uc ]
+"36
+[; ;isr.c: 36:     }
+}
+[e :U 1114 ]
+"37
+[; ;isr.c: 37: }
 [e :UE 1110 ]
 }

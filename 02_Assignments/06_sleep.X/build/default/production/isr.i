@@ -15,10 +15,6 @@
 
 
 
-# 1 "./timer0.h" 1
-# 11 "./timer0.h"
-void init_timer0(void);
-# 10 "isr.c" 2
 # 1 "C:\\Program Files\\Microchip\\xc8\\v4.00\\pic\\include/xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v4.00\\pic\\include/xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -18179,17 +18175,36 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:\\Program Files\\Microchip\\xc8\\v4.00\\pic\\include/xc.h" 2 3
+# 10 "isr.c" 2
+# 1 "./timer0.h" 1
+# 12 "./timer0.h"
+void init_timer0(void);
+void init_int0(void);
 # 11 "isr.c" 2
-void __attribute__((picinterrupt(("")))) isr(){
-    static unsigned int count;
 
+extern volatile unsigned char sec_count = 0;
+
+void __attribute__((picinterrupt(("")))) isr(){
+
+
+    static unsigned int count;
     if(TMR0IF){
         TMR0 = TMR0 + 8;
-
         if(count++ == 5000){
-            PORTB = ~PORTB;
+            RB1 = !RB1;
             count = 0;
+
+            if(sec_count++ >=5){
+                sec_count = 0;
+
+            }
         }
         TMR0IF = 0;
+    }
+
+    if(INT0IF){
+        INT0IF = 0;
+        sec_count = 0;
+
     }
 }

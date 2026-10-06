@@ -18177,8 +18177,9 @@ unsigned char __t3rd16on(void);
 # 34 "C:\\Program Files\\Microchip\\xc8\\v4.00\\pic\\include/xc.h" 2 3
 # 10 "timer0.c" 2
 # 1 "./timer0.h" 1
-# 11 "./timer0.h"
+# 12 "./timer0.h"
 void init_timer0(void);
+void init_int0(void);
 # 11 "timer0.c" 2
 
 void init_timer0(){
@@ -18189,6 +18190,7 @@ void init_timer0(){
     T0PS2 = 0;
     T0PS1 = 0;
     T0PS0 = 1;
+
     TMR0 = 6;
     TMR0IF = 0;
     TMR0IE = 1;

@@ -3,15 +3,15 @@
   <executable name="dist/default/production\06_sleep.X.production.hex">
     <memory name="program">
       <units>bytes</units>
-      <length>32768</length>
-      <used>434</used>
-      <free>32334</free>
+      <length>12289</length>
+      <used>448</used>
+      <free>11841</free>
     </memory>
     <memory name="data">
       <units>bytes</units>
       <length>1536</length>
-      <used>26</used>
-      <free>1510</free>
+      <used>24</used>
+      <free>1512</free>
     </memory>
   </executable>
 </project>

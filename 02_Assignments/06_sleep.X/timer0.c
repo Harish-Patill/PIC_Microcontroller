@@ -17,6 +17,7 @@ void init_timer0(){
     T0PS2 = 0;
     T0PS1 = 0;
     T0PS0 = 1;  //1:4 prescale
+    
     TMR0 = 6;
     TMR0IF = 0;
     TMR0IE = 1;
