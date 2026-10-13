@@ -1,0 +1,6 @@
+01. Implement train movement using the LED's. The LED's should move from LEFT to RIGHT
+02. Implement the edge triggering. The LED should turn on when the button is pressed.
+03. Implement Level triggering. The LED should keep blinking as long as the button is being pressed.
+04. Implement both Level and edge triggering.
+05.
+06. Implement numbers incrementation starting from 0. Do this for the Character Liquid Crystal Display.
