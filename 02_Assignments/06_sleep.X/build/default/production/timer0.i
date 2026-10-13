@@ -18186,7 +18186,7 @@ void init_timer0(){
 
 
     T0CS = 0;
-    PSA = 0;
+    PSA = 1;
     T0PS2 = 0;
     T0PS1 = 0;
     T0PS0 = 1;

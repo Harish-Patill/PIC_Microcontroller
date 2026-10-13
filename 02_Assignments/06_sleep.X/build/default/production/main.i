@@ -18231,9 +18231,13 @@ void main(void){
 
   display(ssd);
 
-        if(sec_count >=5){
+        if(sec_count >=10){
 
             TMR0IE = 0;
+
+            PORTA = PORTA & 0xF0;
+            PORTD = 0x00;
+
             __asm(" sleep");
 
             TMR0IF = 0;

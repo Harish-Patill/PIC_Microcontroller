@@ -1439,37 +1439,43 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 59:   display(ssd);
 [e ( _display (1 &U _ssd ]
 "61
-[; ;main.c: 61:         if(sec_count >=5){
-[e $ ! >= -> _sec_count `i -> 5 `i 1124  ]
+[; ;main.c: 61:         if(sec_count >=10){
+[e $ ! >= -> _sec_count `i -> 10 `i 1124  ]
 {
 "63
 [; ;main.c: 63:             TMR0IE = 0;
 [e = _TMR0IE -> -> 0 `i `b ]
-"64
-[; ;main.c: 64:             __asm(" sleep");
-[; <"  sleep ;# ">
+"65
+[; ;main.c: 65:             PORTA = PORTA & 0xF0;
+[e = _PORTA -> & -> _PORTA `i -> 240 `i `uc ]
 "66
-[; ;main.c: 66:             TMR0IF = 0;
-[e = _TMR0IF -> -> 0 `i `b ]
-"67
-[; ;main.c: 67:             TMR0IE = 1;
-[e = _TMR0IE -> -> 1 `i `b ]
+[; ;main.c: 66:             PORTD = 0x00;
+[e = _PORTD -> -> 0 `i `uc ]
 "68
-[; ;main.c: 68:             sec_count = 0;
+[; ;main.c: 68:             __asm(" sleep");
+[; <"  sleep ;# ">
+"70
+[; ;main.c: 70:             TMR0IF = 0;
+[e = _TMR0IF -> -> 0 `i `b ]
+"71
+[; ;main.c: 71:             TMR0IE = 1;
+[e = _TMR0IE -> -> 1 `i `b ]
+"72
+[; ;main.c: 72:             sec_count = 0;
 [e = _sec_count -> -> 0 `i `uc ]
-"69
-[; ;main.c: 69:         }
+"73
+[; ;main.c: 73:         }
 }
 [e :U 1124 ]
-"71
-[; ;main.c: 71:  }
+"75
+[; ;main.c: 75:  }
 }
 [e :U 1121 ]
 "53
 [; ;main.c: 53:  while(1){
 [e $U 1122  ]
 [e :U 1123 ]
-"72
-[; ;main.c: 72: }
+"76
+[; ;main.c: 76: }
 [e :UE 1120 ]
 }

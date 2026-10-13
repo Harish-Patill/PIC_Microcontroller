@@ -1272,8 +1272,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;timer0.c: 15:     T0CS = 0;
 [e = _T0CS -> -> 0 `i `b ]
 "16
-[; ;timer0.c: 16:     PSA = 0;
-[e = _PSA -> -> 0 `i `b ]
+[; ;timer0.c: 16:     PSA = 1;
+[e = _PSA -> -> 1 `i `b ]
 "17
 [; ;timer0.c: 17:     T0PS2 = 0;
 [e = _T0PS2 -> -> 0 `i `b ]

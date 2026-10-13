@@ -9,7 +9,7 @@
 #include <xc.h>
 #include "timer0.h"
 
-extern volatile unsigned char sec_count = 0;
+extern volatile unsigned char sec_count;
 
 void __interrupt() isr(){
     
@@ -17,14 +17,11 @@ void __interrupt() isr(){
     static unsigned int count;
     if(TMR0IF){
         TMR0 = TMR0 + 8;
-        if(count++ == 5000){
+        if(count++ == 20000){
             RB1 = !RB1;
             count = 0;
             
-            if(sec_count++ >=5){
-                sec_count = 0;
-                
-            }
+            sec_count++;
         }
         TMR0IF = 0;
     }

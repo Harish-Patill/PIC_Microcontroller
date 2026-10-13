@@ -13,7 +13,7 @@ void init_timer0(){
     
     //configura the timer0
     T0CS = 0;   //internal clock source
-    PSA = 0;    //assigning prescaler
+    PSA = 1;    //assigning prescaler
     T0PS2 = 0;
     T0PS1 = 0;
     T0PS0 = 1;  //1:4 prescale

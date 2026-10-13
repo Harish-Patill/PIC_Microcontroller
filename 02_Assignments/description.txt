@@ -1,0 +1,19 @@
+01. Implement two way train. The train should start from Left and move to Right, and come back from Right to Left.
+02. Each switches have different patterns. Therefore 4 different patterns.
+        SW1-2way train
+        SW2-train
+        SW3-alternate blinking of each leds
+        SW4-blink nibble wise
+03. Numbers should scroll in the 7segment display
+04. Key press
+        when key is pressed, the number should increment in the 7segment
+        when the same key is long pressed, the count should be reset to 0.
+05. Key press counter with persistence
+        when key is pressed, the number should increment in the 7segment
+        when the same key is long pressed, the count should be reset to 0.
+
+        when the second switch is pressed, the current value in the display should be stored in the EEPROM
+        when the board is reset or restarted, the count should start from the value which was stored in the EEPROM
+06. Implement SLEEP for the board
+07. Implement leds blinking using timer0, timer1 and timer2. Try to make them blink for 1 second at the same timer0
+08. Implement the clock using a timer. The user can either start the timer from 00:00 or set his/her own time from where the timer can be started.

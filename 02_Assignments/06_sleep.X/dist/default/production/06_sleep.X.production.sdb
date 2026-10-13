@@ -113,17 +113,17 @@
 [v _TRISB0 TRISB0 `VEb  1 e 0 @31896 ]
 "39341
 [v _TRISB1 TRISB1 `VEb  1 e 0 @31897 ]
-"12 D:\Emertxe\PIC_Microcontroller\02_Assignments\06_sleep.X\isr.c
+"12 D:\Emertxe\PIC_Microcontroller\02_Assignments\06_sleep.X\main.c
 [v _sec_count sec_count `VEuc  1 e 1 0 ]
-"48 D:\Emertxe\PIC_Microcontroller\02_Assignments\06_sleep.X\main.c
+"48
 [v _main main `(v  1 e 1 0 ]
 {
 [v main@F10613 F10613 `[4]uc  1 s 4 F10613 ]
 "49
-[v main@digit digit `[4]uc  1 a 4 8 ]
+[v main@digit digit `[4]uc  1 a 4 7 ]
 "50
-[v main@ssd ssd `[4]uc  1 a 4 12 ]
-"72
+[v main@ssd ssd `[4]uc  1 a 4 11 ]
+"76
 } 0
 "35
 [v _init_config init_config `(v  1 e 1 0 ]
@@ -143,13 +143,13 @@
 "14
 [v _display display `(v  1 e 1 0 ]
 {
-[v display@ssd ssd `*.30uc  1 p 1 1 ]
+[v display@ssd ssd `*.30uc  1 p 1 0 ]
 "15
 {
-[v display@i i `i  1 a 2 6 ]
+[v display@i i `i  1 a 2 5 ]
 "22
 {
-[v display@delay delay `i  1 a 2 4 ]
+[v display@delay delay `i  1 a 2 3 ]
 }
 "23
 }
@@ -160,5 +160,5 @@
 {
 "17
 [v isr@count count `ui  1 s 2 count ]
-"37
+"34
 } 0
