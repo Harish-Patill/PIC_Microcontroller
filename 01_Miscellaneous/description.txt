@@ -4,3 +4,11 @@
 04. Implement both Level and edge triggering.
 05.
 06. Implement numbers incrementation starting from 0. Do this for the Character Liquid Crystal Display.
+07. Analog to digital converstion. Displaying the ADC value in the CLCD and simultaneously turning on and off the LED. 
+        if (ADC_value>512){
+            LED=ON;
+        }
+        else{
+            LED=OFF;
+        }
+08. 
