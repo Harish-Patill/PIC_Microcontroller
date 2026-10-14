@@ -18178,22 +18178,24 @@ unsigned char __t3rd16on(void);
 # 10 "timer0.c" 2
 # 1 "./header.h" 1
 # 11 "./header.h"
+void init_config(void);
 void init_timer0(void);
 void init_timer1(void);
 void init_timer2(void);
 # 11 "timer0.c" 2
 
-void init_timer0(){
+void init_timer0(void){
 
 
+    T08BIT = 1;
     T0CS = 0;
     PSA = 1;
-    T0PS2 = 0;
-    T0PS1 = 0;
-    T0PS0 = 1;
 
     TMR0 = 6;
-    TMR0IF = 0;
-   TMR0IE = 1;
 
+
+    TMR0IF = 0;
+    TMR0IE = 1;
+
+    TMR0ON = 1;
 }

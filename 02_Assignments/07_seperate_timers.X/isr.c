@@ -1,6 +1,6 @@
 /*
  * File:   isr.c
- * Author: Haris
+ * Author: Harish
  *
  * Created on 6 October, 2026, 4:38 PM
  */
@@ -16,7 +16,7 @@ void __interrupt() isr(){
 
     if(TMR0IF){
         TMR0 = TMR0+8;
-        if(count0++ == 20000){
+        if(++count0 == 20000){
             RB0 = !RB0;
             count0 = 0;
         }
@@ -25,7 +25,7 @@ void __interrupt() isr(){
     
     if(TMR1IF){
         TMR1 = TMR1+3038;
-        if(count1++ == 80){
+        if(++count1 == 80){
             RB1 = !RB1;
             count1 = 0;
         }
@@ -33,8 +33,8 @@ void __interrupt() isr(){
     }
     
     if(TMR2IF){
-        TMR2 = TMR2+3038;
-        if(count2++ == 80){
+     // TMR2 = TMR2+3038;
+        if(++count2 == 1000){
             RB2 = !RB2;
             count2 = 0;
         }

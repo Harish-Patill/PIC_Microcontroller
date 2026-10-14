@@ -18178,6 +18178,7 @@ unsigned char __t3rd16on(void);
 # 10 "isr.c" 2
 # 1 "./header.h" 1
 # 11 "./header.h"
+void init_config(void);
 void init_timer0(void);
 void init_timer1(void);
 void init_timer2(void);
@@ -18190,7 +18191,7 @@ void __attribute__((picinterrupt(("")))) isr(){
 
     if(TMR0IF){
         TMR0 = TMR0+8;
-        if(count0++ == 20000){
+        if(++count0 == 20000){
             RB0 = !RB0;
             count0 = 0;
         }
@@ -18199,7 +18200,7 @@ void __attribute__((picinterrupt(("")))) isr(){
 
     if(TMR1IF){
         TMR1 = TMR1+3038;
-        if(count1++ == 80){
+        if(++count1 == 80){
             RB1 = !RB1;
             count1 = 0;
         }
@@ -18207,8 +18208,8 @@ void __attribute__((picinterrupt(("")))) isr(){
     }
 
     if(TMR2IF){
-        TMR2 = TMR2+3038;
-        if(count2++ == 80){
+
+        if(++count2 == 1000){
             RB2 = !RB2;
             count2 = 0;
         }

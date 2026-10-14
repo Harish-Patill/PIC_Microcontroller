@@ -25,9 +25,6 @@ Version 4.0 HI-TECH Software Intermediate Code
 "39287
 [; ;C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h: 39287: extern volatile __bit TMR2IF __attribute__((address(0x7CF1)));
 [v _TMR2IF `Vb ~T0 @X0 0 e@31985 ]
-"30972
-[; ;C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h: 30972: extern volatile unsigned char TMR2 __attribute__((address(0xFCC)));
-[v _TMR2 `Vuc ~T0 @X0 0 e@4044 ]
 [t T1 __deprecated__ ]
 "36362
 [; ;C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h: 36362: extern volatile __bit __attribute__((__deprecated__)) RB2 __attribute__((address(0x7C0A)));
@@ -1280,20 +1277,20 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "13
 [; ;isr.c: 13:     static unsigned int count0=0;
-[v F10607 `ui ~T0 @X0 1 s count0 ]
-[i F10607
+[v F10608 `ui ~T0 @X0 1 s count0 ]
+[i F10608
 -> -> 0 `i `ui
 ]
 "14
 [; ;isr.c: 14:     static unsigned int count1=0;
-[v F10608 `ui ~T0 @X0 1 s count1 ]
-[i F10608
+[v F10609 `ui ~T0 @X0 1 s count1 ]
+[i F10609
 -> -> 0 `i `ui
 ]
 "15
 [; ;isr.c: 15:     static unsigned int count2=0;
-[v F10609 `ui ~T0 @X0 1 s count2 ]
-[i F10609
+[v F10610 `ui ~T0 @X0 1 s count2 ]
+[i F10610
 -> -> 0 `i `ui
 ]
 "17
@@ -1304,15 +1301,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;isr.c: 18:         TMR0 = TMR0+8;
 [e = _TMR0 -> + -> _TMR0 `ui -> -> 8 `i `ui `us ]
 "19
-[; ;isr.c: 19:         if(count0++ == 20000){
-[e $ ! == ++ F10607 -> -> 1 `i `ui -> -> 20000 `i `ui 1112  ]
+[; ;isr.c: 19:         if(++count0 == 20000){
+[e $ ! == =+ F10608 -> -> 1 `i `ui -> -> 20000 `i `ui 1112  ]
 {
 "20
 [; ;isr.c: 20:             RB0 = !RB0;
 [e = _RB0 ! _RB0 ]
 "21
 [; ;isr.c: 21:             count0 = 0;
-[e = F10607 -> -> 0 `i `ui ]
+[e = F10608 -> -> 0 `i `ui ]
 "22
 [; ;isr.c: 22:         }
 }
@@ -1332,15 +1329,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;isr.c: 27:         TMR1 = TMR1+3038;
 [e = _TMR1 -> + -> _TMR1 `ui -> -> 3038 `i `ui `us ]
 "28
-[; ;isr.c: 28:         if(count1++ == 80){
-[e $ ! == ++ F10608 -> -> 1 `i `ui -> -> 80 `i `ui 1114  ]
+[; ;isr.c: 28:         if(++count1 == 80){
+[e $ ! == =+ F10609 -> -> 1 `i `ui -> -> 80 `i `ui 1114  ]
 {
 "29
 [; ;isr.c: 29:             RB1 = !RB1;
 [e = _RB1 ! _RB1 ]
 "30
 [; ;isr.c: 30:             count1 = 0;
-[e = F10608 -> -> 0 `i `ui ]
+[e = F10609 -> -> 0 `i `ui ]
 "31
 [; ;isr.c: 31:         }
 }
@@ -1356,19 +1353,16 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;isr.c: 35:     if(TMR2IF){
 [e $ ! _TMR2IF 1115  ]
 {
-"36
-[; ;isr.c: 36:         TMR2 = TMR2+3038;
-[e = _TMR2 -> + -> _TMR2 `i -> 3038 `i `uc ]
 "37
-[; ;isr.c: 37:         if(count2++ == 80){
-[e $ ! == ++ F10609 -> -> 1 `i `ui -> -> 80 `i `ui 1116  ]
+[; ;isr.c: 37:         if(++count2 == 1000){
+[e $ ! == =+ F10610 -> -> 1 `i `ui -> -> 1000 `i `ui 1116  ]
 {
 "38
 [; ;isr.c: 38:             RB2 = !RB2;
 [e = _RB2 ! _RB2 ]
 "39
 [; ;isr.c: 39:             count2 = 0;
-[e = F10609 -> -> 0 `i `ui ]
+[e = F10610 -> -> 0 `i `ui ]
 "40
 [; ;isr.c: 40:         }
 }

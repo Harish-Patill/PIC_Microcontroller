@@ -1,19 +1,13 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"39134 C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h
+"39128 C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h
+[; ;C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h: 39128: extern volatile __bit T08BIT __attribute__((address(0x7EAE)));
+[v _T08BIT `Vb ~T0 @X0 0 e@32430 ]
+"39134
 [; ;C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h: 39134: extern volatile __bit T0CS __attribute__((address(0x7EAD)));
 [v _T0CS `Vb ~T0 @X0 0 e@32429 ]
 "36281
 [; ;C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h: 36281: extern volatile __bit PSA __attribute__((address(0x7EAB)));
 [v _PSA `Vb ~T0 @X0 0 e@32427 ]
-"39152
-[; ;C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h: 39152: extern volatile __bit T0PS2 __attribute__((address(0x7EAA)));
-[v _T0PS2 `Vb ~T0 @X0 0 e@32426 ]
-"39149
-[; ;C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h: 39149: extern volatile __bit T0PS1 __attribute__((address(0x7EA9)));
-[v _T0PS1 `Vb ~T0 @X0 0 e@32425 ]
-"39146
-[; ;C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h: 39146: extern volatile __bit T0PS0 __attribute__((address(0x7EA8)));
-[v _T0PS0 `Vb ~T0 @X0 0 e@32424 ]
 "31696
 [; ;C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h: 31696: extern volatile unsigned short TMR0 __attribute__((address(0xFD6)));
 [v _TMR0 `Vus ~T0 @X0 0 e@4054 ]
@@ -23,6 +17,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "39257
 [; ;C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h: 39257: extern volatile __bit TMR0IE __attribute__((address(0x7F95)));
 [v _TMR0IE `Vb ~T0 @X0 0 e@32661 ]
+"39266
+[; ;C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h: 39266: extern volatile __bit TMR0ON __attribute__((address(0x7EAF)));
+[v _TMR0ON `Vb ~T0 @X0 0 e@32431 ]
 "38 C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h
 [; ;C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h: 38: __asm("RXF6SIDH equ 0D60h");
 [; <" RXF6SIDH equ 0D60h ;# ">
@@ -1263,36 +1260,33 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h: 32448: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
 "12 timer0.c
-[; ;timer0.c: 12: void init_timer0(){
+[; ;timer0.c: 12: void init_timer0(void){
 [v _init_timer0 `(v ~T0 @X0 1 ef ]
 {
 [e :U _init_timer0 ]
 [f ]
 "15
-[; ;timer0.c: 15:     T0CS = 0;
-[e = _T0CS -> -> 0 `i `b ]
+[; ;timer0.c: 15:     T08BIT = 1;
+[e = _T08BIT -> -> 1 `i `b ]
 "16
-[; ;timer0.c: 16:     PSA = 1;
-[e = _PSA -> -> 1 `i `b ]
+[; ;timer0.c: 16:     T0CS = 0;
+[e = _T0CS -> -> 0 `i `b ]
 "17
-[; ;timer0.c: 17:     T0PS2 = 0;
-[e = _T0PS2 -> -> 0 `i `b ]
-"18
-[; ;timer0.c: 18:     T0PS1 = 0;
-[e = _T0PS1 -> -> 0 `i `b ]
+[; ;timer0.c: 17:     PSA = 1;
+[e = _PSA -> -> 1 `i `b ]
 "19
-[; ;timer0.c: 19:     T0PS0 = 1;
-[e = _T0PS0 -> -> 1 `i `b ]
-"21
-[; ;timer0.c: 21:     TMR0 = 6;
+[; ;timer0.c: 19:     TMR0 = 6;
 [e = _TMR0 -> -> 6 `i `us ]
 "22
 [; ;timer0.c: 22:     TMR0IF = 0;
 [e = _TMR0IF -> -> 0 `i `b ]
 "23
-[; ;timer0.c: 23:    TMR0IE = 1;
+[; ;timer0.c: 23:     TMR0IE = 1;
 [e = _TMR0IE -> -> 1 `i `b ]
 "25
-[; ;timer0.c: 25: }
+[; ;timer0.c: 25:     TMR0ON = 1;
+[e = _TMR0ON -> -> 1 `i `b ]
+"26
+[; ;timer0.c: 26: }
 [e :UE 1110 ]
 }

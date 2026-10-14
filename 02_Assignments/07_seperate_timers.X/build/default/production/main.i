@@ -18178,6 +18178,7 @@ unsigned char __t3rd16on(void);
 # 10 "main.c" 2
 # 1 "./header.h" 1
 # 11 "./header.h"
+void init_config(void);
 void init_timer0(void);
 void init_timer1(void);
 void init_timer2(void);

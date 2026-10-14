@@ -18178,18 +18178,26 @@ unsigned char __t3rd16on(void);
 # 10 "timer2.c" 2
 # 1 "./header.h" 1
 # 11 "./header.h"
+void init_config(void);
 void init_timer0(void);
 void init_timer1(void);
 void init_timer2(void);
 # 11 "timer2.c" 2
 
-void init_timer2(){
-    T2OUTPS3 = 0;
-    T2OUTPS2 = 0;
-    T2OUTPS1 = 0;
-    T2OUTPS0 = 0;
+void init_timer2(void){
 
-    TMR2ON = 1;
-    T2CKPS1 = 0;
-    T2CKPS0 = 0;
+
+
+
+
+
+    T2CON = 0x21;
+
+    PR2 = 249;
+    TMR2 = 0;
+
+    TMR2IF = 0;
+    TMR2IE = 1;
+
+    T2CONbits.TMR2ON = 1;
 }
