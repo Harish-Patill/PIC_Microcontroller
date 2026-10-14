@@ -1,6 +1,6 @@
 /* 
  * File:   dynamic_header.h
- * Author: Haris
+ * Author: Harish
  *
  * Created on 9 October, 2026, 4:08 PM
  */
@@ -12,6 +12,7 @@
 #define EDGE  0
 
 void display(char *ssd);
+void init_timer0(void);
 void init_config(void);
 
 

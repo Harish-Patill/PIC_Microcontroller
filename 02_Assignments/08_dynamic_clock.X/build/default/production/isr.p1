@@ -1258,8 +1258,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [f ]
 "15
 [; ;isr.c: 15:     static unsigned int count0 = 0;
-[v F10608 `ui ~T0 @X0 1 s count0 ]
-[i F10608
+[v F10609 `ui ~T0 @X0 1 s count0 ]
+[i F10609
 -> -> 0 `i `ui
 ]
 "17
@@ -1270,15 +1270,15 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;isr.c: 18:         TMR0 = TMR0+8;
 [e = _TMR0 -> + -> _TMR0 `ui -> -> 8 `i `ui `us ]
 "19
-[; ;isr.c: 19:         if(count0++ == 20000){
-[e $ ! == ++ F10608 -> -> 1 `i `ui -> -> 20000 `i `ui 1112  ]
+[; ;isr.c: 19:         if(++count0 == 20000){
+[e $ ! == =+ F10609 -> -> 1 `i `ui -> -> 20000 `i `ui 1112  ]
 {
 "20
 [; ;isr.c: 20:             sec++;
 [e ++ _sec -> -> 1 `i `Vuc ]
 "21
 [; ;isr.c: 21:             count0 = 0;
-[e = F10608 -> -> 0 `i `ui ]
+[e = F10609 -> -> 0 `i `ui ]
 "22
 [; ;isr.c: 22:         }
 }

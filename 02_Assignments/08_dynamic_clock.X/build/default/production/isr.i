@@ -18179,6 +18179,7 @@ unsigned char __t3rd16on(void);
 # 1 "./dynamic_header.h" 1
 # 14 "./dynamic_header.h"
 void display(char *ssd);
+void init_timer0(void);
 void init_config(void);
 # 11 "isr.c" 2
 
@@ -18189,7 +18190,7 @@ void __attribute__((picinterrupt(("")))) isr(){
 
     if(TMR0IF){
         TMR0 = TMR0+8;
-        if(count0++ == 20000){
+        if(++count0 == 20000){
             sec++;
             count0 = 0;
         }

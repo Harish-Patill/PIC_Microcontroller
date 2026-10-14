@@ -1,11 +1,5 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"39280 C:/Program Files/Microchip/MPLABX/v6.35/packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8\pic\include\proc/pic18f4580.h
-[; ;C:/Program Files/Microchip/MPLABX/v6.35/packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8\pic\include\proc/pic18f4580.h: 39280: extern volatile __bit TMR0ON __attribute__((address(0x7EAF)));
-[v _TMR0ON `Vb ~T0 @X0 0 e@32431 ]
-"39142
-[; ;C:/Program Files/Microchip/MPLABX/v6.35/packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8\pic\include\proc/pic18f4580.h: 39142: extern volatile __bit T08BIT __attribute__((address(0x7EAE)));
-[v _T08BIT `Vb ~T0 @X0 0 e@32430 ]
-"39148
+"39148 C:/Program Files/Microchip/MPLABX/v6.35/packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8\pic\include\proc/pic18f4580.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.35/packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8\pic\include\proc/pic18f4580.h: 39148: extern volatile __bit T0CS __attribute__((address(0x7EAD)));
 [v _T0CS `Vb ~T0 @X0 0 e@32429 ]
 "36295
@@ -20,6 +14,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 "39271
 [; ;C:/Program Files/Microchip/MPLABX/v6.35/packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8\pic\include\proc/pic18f4580.h: 39271: extern volatile __bit TMR0IE __attribute__((address(0x7F95)));
 [v _TMR0IE `Vb ~T0 @X0 0 e@32661 ]
+"39280
+[; ;C:/Program Files/Microchip/MPLABX/v6.35/packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8\pic\include\proc/pic18f4580.h: 39280: extern volatile __bit TMR0ON __attribute__((address(0x7EAF)));
+[v _TMR0ON `Vb ~T0 @X0 0 e@32431 ]
 "52 C:/Program Files/Microchip/MPLABX/v6.35/packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8\pic\include\proc/pic18f4580.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.35/packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8\pic\include\proc/pic18f4580.h: 52: __asm("RXF6SIDH equ 0D60h");
 [; <" RXF6SIDH equ 0D60h ;# ">
@@ -1265,27 +1262,24 @@ Version 4.0 HI-TECH Software Intermediate Code
 {
 [e :U _init_timer0 ]
 [f ]
-"14
-[; ;timer0.c: 14:     TMR0ON = 1;
-[e = _TMR0ON -> -> 1 `i `b ]
 "15
-[; ;timer0.c: 15:     T08BIT = 1;
-[e = _T08BIT -> -> 1 `i `b ]
-"16
-[; ;timer0.c: 16:     T0CS = 0;
+[; ;timer0.c: 15:     T0CS = 0;
 [e = _T0CS -> -> 0 `i `b ]
-"17
-[; ;timer0.c: 17:     PSA = 1;
+"16
+[; ;timer0.c: 16:     PSA = 1;
 [e = _PSA -> -> 1 `i `b ]
-"18
-[; ;timer0.c: 18:     TMR0 = 6;
+"17
+[; ;timer0.c: 17:     TMR0 = 6;
 [e = _TMR0 -> -> 6 `i `us ]
-"19
-[; ;timer0.c: 19:     TMR0IF = 0;
+"18
+[; ;timer0.c: 18:     TMR0IF = 0;
 [e = _TMR0IF -> -> 0 `i `b ]
-"20
-[; ;timer0.c: 20:     TMR0IE = 1;
+"19
+[; ;timer0.c: 19:     TMR0IE = 1;
 [e = _TMR0IE -> -> 1 `i `b ]
+"20
+[; ;timer0.c: 20:     TMR0ON = 1;
+[e = _TMR0ON -> -> 1 `i `b ]
 "21
 [; ;timer0.c: 21: }
 [e :UE 1110 ]

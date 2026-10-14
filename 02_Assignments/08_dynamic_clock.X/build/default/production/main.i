@@ -18172,12 +18172,14 @@ unsigned char __t3rd16on(void);
 # 1 "./dynamic_header.h" 1
 # 14 "./dynamic_header.h"
 void display(char *ssd);
+void init_timer0(void);
 void init_config(void);
 # 117 "main.c" 2
 
 volatile unsigned char hour = 0;
 volatile unsigned char minute = 0;
 volatile unsigned char sec=0;
+unsigned int count=0;
 void init_config()
 {
     PORTD=0X00;
@@ -18255,6 +18257,19 @@ void main(void)
                 {
                     minute = (minute == 0) ? 59 : minute - 1;
                 }
+
+                ssd[0]= digit[(hour/10)%10];
+                ssd[1]= digit[hour%10];
+                ssd[2]= digit[(minute/10)%10];
+                ssd[3]= digit[minute%10];
+
+
+                if(count < 10000)
+                {
+                    ssd[2]=0x00;
+                    ssd[3]=0x00;
+                }
+
             }
             else if(field == 1)
             {
@@ -18266,6 +18281,19 @@ void main(void)
                 {
                     hour = (hour == 0) ? 23 : hour - 1;
                 }
+
+                ssd[0]= digit[(hour/10)%10];
+                ssd[1]= digit[hour%10];
+                ssd[2]= digit[(minute/10)%10];
+                ssd[3]= digit[minute%10];
+
+
+                if(count < 10000)
+                {
+                    ssd[0]=0x00;
+                    ssd[1]=0x00;
+                }
+
             }
 
         }
@@ -18286,13 +18314,22 @@ void main(void)
                 sec=0;
             }
 
-        }
-        ssd[0]= digit[(hour/10)%10];
-        ssd[1]= digit[hour%10];
-        ssd[2]= digit[(minute/10)%10];
-        ssd[3]= digit[minute%10];
+            ssd[0]= digit[(hour/10)%10];
+            ssd[1]= digit[hour%10];
+            ssd[2]= digit[(minute/10)%10];
+            ssd[3]= digit[minute%10];
 
-        display(ssd);
+
+            if(count < 10000)
+            {
+                ssd[1]=ssd[1]|(1<<4);
+            }
+
+
+        }
+         display(ssd);
+
+
     }
     return;
 }
