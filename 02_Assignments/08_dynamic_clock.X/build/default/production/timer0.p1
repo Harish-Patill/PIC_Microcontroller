@@ -1,5 +1,8 @@
 Version 4.0 HI-TECH Software Intermediate Code
-"39148 C:/Program Files/Microchip/MPLABX/v6.35/packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8\pic\include\proc/pic18f4580.h
+"39142 C:/Program Files/Microchip/MPLABX/v6.35/packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8\pic\include\proc/pic18f4580.h
+[; ;C:/Program Files/Microchip/MPLABX/v6.35/packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8\pic\include\proc/pic18f4580.h: 39142: extern volatile __bit T08BIT __attribute__((address(0x7EAE)));
+[v _T08BIT `Vb ~T0 @X0 0 e@32430 ]
+"39148
 [; ;C:/Program Files/Microchip/MPLABX/v6.35/packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8\pic\include\proc/pic18f4580.h: 39148: extern volatile __bit T0CS __attribute__((address(0x7EAD)));
 [v _T0CS `Vb ~T0 @X0 0 e@32429 ]
 "36295
@@ -1256,31 +1259,34 @@ Version 4.0 HI-TECH Software Intermediate Code
 "32462
 [; ;C:/Program Files/Microchip/MPLABX/v6.35/packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8\pic\include\proc/pic18f4580.h: 32462: __asm("TOSU equ 0FFFh");
 [; <" TOSU equ 0FFFh ;# ">
-"13 timer0.c
-[; ;timer0.c: 13: void init_timer0(){
+"12 timer0.c
+[; ;timer0.c: 12: void init_timer0(void){
 [v _init_timer0 `(v ~T0 @X0 1 ef ]
 {
 [e :U _init_timer0 ]
 [f ]
 "15
-[; ;timer0.c: 15:     T0CS = 0;
-[e = _T0CS -> -> 0 `i `b ]
+[; ;timer0.c: 15:     T08BIT = 1;
+[e = _T08BIT -> -> 1 `i `b ]
 "16
-[; ;timer0.c: 16:     PSA = 1;
-[e = _PSA -> -> 1 `i `b ]
+[; ;timer0.c: 16:     T0CS = 0;
+[e = _T0CS -> -> 0 `i `b ]
 "17
-[; ;timer0.c: 17:     TMR0 = 6;
-[e = _TMR0 -> -> 6 `i `us ]
-"18
-[; ;timer0.c: 18:     TMR0IF = 0;
-[e = _TMR0IF -> -> 0 `i `b ]
+[; ;timer0.c: 17:     PSA = 1;
+[e = _PSA -> -> 1 `i `b ]
 "19
-[; ;timer0.c: 19:     TMR0IE = 1;
+[; ;timer0.c: 19:     TMR0 = 6;
+[e = _TMR0 -> -> 6 `i `us ]
+"22
+[; ;timer0.c: 22:     TMR0IF = 0;
+[e = _TMR0IF -> -> 0 `i `b ]
+"23
+[; ;timer0.c: 23:     TMR0IE = 1;
 [e = _TMR0IE -> -> 1 `i `b ]
-"20
-[; ;timer0.c: 20:     TMR0ON = 1;
+"25
+[; ;timer0.c: 25:     TMR0ON = 1;
 [e = _TMR0ON -> -> 1 `i `b ]
-"21
-[; ;timer0.c: 21: }
+"26
+[; ;timer0.c: 26: }
 [e :UE 1110 ]
 }

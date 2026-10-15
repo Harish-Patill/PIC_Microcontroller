@@ -7,7 +7,14 @@
 # 1 "C:\\Program Files\\Microchip\\xc8\\v4.00\\pic\\include/language_support.h" 1 3
 # 2 "<built-in>" 2
 # 1 "main.c" 2
-# 115 "main.c"
+
+
+
+
+
+
+
+
 # 1 "C:\\Program Files\\Microchip\\xc8\\v4.00\\pic\\include/xc.h" 1 3
 # 18 "C:\\Program Files\\Microchip\\xc8\\v4.00\\pic\\include/xc.h" 3
 extern const char __xc8_OPTIM_SPEED;
@@ -18168,20 +18175,50 @@ __attribute__((__unsupported__("The " "Write_b_eep" " routine is no longer suppo
 unsigned char __t1rd16on(void);
 unsigned char __t3rd16on(void);
 # 34 "C:\\Program Files\\Microchip\\xc8\\v4.00\\pic\\include/xc.h" 2 3
-# 116 "main.c" 2
+# 10 "main.c" 2
 # 1 "./dynamic_header.h" 1
-# 14 "./dynamic_header.h"
-void display(char *ssd);
+# 31 "./dynamic_header.h"
+extern volatile unsigned char sec;
+extern volatile unsigned char minute;
+extern volatile unsigned char hour;
+extern volatile unsigned int count;
+
+void display(char ssd[]);
 void init_timer0(void);
 void init_config(void);
-# 117 "main.c" 2
+# 11 "main.c" 2
 
 volatile unsigned char hour = 0;
 volatile unsigned char minute = 0;
 volatile unsigned char sec=0;
-unsigned int count=0;
-void init_config()
-{
+volatile unsigned int count=0;
+
+void display(char ssd[]){
+    for(int i=0;i<4;i++){
+        PORTD = ssd[i];
+        PORTA = (PORTA & 0XF0)|1<<i ;
+        for(int dealy = 1000;dealy--;);
+    }
+}
+
+unsigned char read_dkp(unsigned char trigger){
+    static unsigned char once = 1;
+
+    if (trigger == 0){
+        if((PORTC & 0x0F) != 0x0F && once == 1){
+            once = 0;
+            return PORTC & 0x0F;
+        }
+        else if((PORTC & 0x0F) == 0x0F){
+            once = 1;
+        }
+    }
+
+    return 0x0F;
+}
+
+
+void init_config(){
     PORTD=0X00;
     TRISD=0X00;
 
@@ -18195,141 +18232,114 @@ void init_config()
     PEIE=1;
 }
 
-unsigned char read_dkp(unsigned char trigger)
-{
-    static unsigned char once = 1;
+void main(void) {
 
-    if (trigger == 0)
-    {
-        if ((PORTC & 0x0F) != 0X0F && once == 1)
-        {
-            once = 0;
-            return PORTC & 0x0F;
-        }
-        else if ((PORTC & 0x0F) == 0X0F)
-        {
-            once = 1;
-        }
-    }
-
-    return 0X0F;
-}
-void display(char *ssd)
-{
-    for(int i=0;i<4;i++)
-    {
-        PORTD = ssd[i];
-        PORTA = (PORTA & 0XF0)|1<<i ;
-        for(int dealy = 1000;dealy--;);
-    }
-}
-void main(void)
-{
-
-    unsigned char digit[]={0XE7,0X21,0XCB,0X6B,0X2D,0X6E,0XEE,0X23,0XEF,0X6F};
     unsigned char ssd[4];
+    unsigned char digit[]={0XE7,0X21,0XCB,0X6B,0X2D,0X6E,0XEE,0X23,0XEF,0X6F};
 
-    unsigned char field=0;
     unsigned char mode=0;
+    unsigned char field=0;
 
     init_config();
-    while(1)
-    {
+    while(1){
         unsigned char key = read_dkp(0);
 
-        if(key == 0X07)
-        {
+        if(key == 0x07){
             mode = !mode;
         }
-        if(mode==0)
-        {
-            if(key == 0X0B)
-            {
+
+
+        if(mode == 0){
+            if(key == 0x0B){
                 field = !field;
             }
-            if(field == 0)
-            {
-                if (key == 0x0E)
-                {
-                    minute = (minute + 1) % 60;
+
+
+            if(field == 0){
+                if(key == 0x0E){
+                    if(minute == 59){
+                        minute = 0;
+                    }
+                    else if(minute < 59){
+                        minute++;
+                    }
                 }
-                else if (key == 0x0D)
-                {
-                    minute = (minute == 0) ? 59 : minute - 1;
+                else if(key == 0x0D){
+                    if(minute == 0){
+                        minute = 59;
+                    }
+                    else if(minute > 0){
+                        minute--;
+                    }
                 }
-
-                ssd[0]= digit[(hour/10)%10];
-                ssd[1]= digit[hour%10];
-                ssd[2]= digit[(minute/10)%10];
-                ssd[3]= digit[minute%10];
-
-
-                if(count < 10000)
-                {
-                    ssd[2]=0x00;
-                    ssd[3]=0x00;
-                }
-
-            }
-            else if(field == 1)
-            {
-                if(key == 0x0E)
-                {
-                    hour = (hour + 1) % 24;
-                }
-                else if (key == 0x0D)
-                {
-                    hour = (hour == 0) ? 23 : hour - 1;
-                }
-
-                ssd[0]= digit[(hour/10)%10];
-                ssd[1]= digit[hour%10];
-                ssd[2]= digit[(minute/10)%10];
-                ssd[3]= digit[minute%10];
-
-
-                if(count < 10000)
-                {
-                    ssd[0]=0x00;
-                    ssd[1]=0x00;
-                }
-
             }
 
+
+            else if(field == 1){
+                if(key == 0x0E){
+                    if(hour == 23){
+                        hour = 0;
+                    }
+                    else{
+                        hour++;
+                    }
+                }
+                else if(key == 0x0D){
+                    if(hour == 0){
+                        hour = 23;
+                    }
+                    else{
+                        hour--;
+                    }
+                }
+            }
+
+            ssd[0]= digit[(hour/10)];
+            ssd[1]= digit[hour%10];
+            ssd[2]= digit[(minute/10)];
+            ssd[3]= digit[minute%10];
+
+
+            if(count <= 10000){
+                if (field == 0){
+                    ssd[2] = 0x00;
+                    ssd[3] = 0x00;
+                }
+                else if(field == 1){
+                    ssd[0] = 0x00;
+                    ssd[1] = 0x00;
+                }
+            }
         }
-        else if(mode == 1)
-        {
-            if(sec == 60)
-            {
+
+
+        else if(mode == 1){
+            if(sec == 60){
                 minute++;
-                if(minute==60)
-                {
+                if(minute == 60){
                     hour++;
-                    if(hour==24)
-                    {
+                    if(hour==24){
                         hour=0;
                     }
                     minute=0;
                 }
                 sec=0;
             }
+            ssd[0] = digit[hour/10];
+            ssd[1] = digit[hour%10];
+            ssd[2] = digit[minute/10];
+            ssd[3] = digit[minute%10];
 
-            ssd[0]= digit[(hour/10)%10];
-            ssd[1]= digit[hour%10];
-            ssd[2]= digit[(minute/10)%10];
-            ssd[3]= digit[minute%10];
 
+            if(count < 10000){
 
-            if(count < 10000)
-            {
-                ssd[1]=ssd[1]|(1<<4);
+                ssd[1] |= 0x10;
             }
-
-
+            else{
+                ssd[1] &= ~0x10;
+            }
         }
-         display(ssd);
-
-
+        display(ssd);
     }
     return;
 }

@@ -18177,19 +18177,29 @@ unsigned char __t3rd16on(void);
 # 34 "C:\\Program Files\\Microchip\\xc8\\v4.00\\pic\\include/xc.h" 2 3
 # 10 "timer0.c" 2
 # 1 "./dynamic_header.h" 1
-# 14 "./dynamic_header.h"
-void display(char *ssd);
+# 31 "./dynamic_header.h"
+extern volatile unsigned char sec;
+extern volatile unsigned char minute;
+extern volatile unsigned char hour;
+extern volatile unsigned int count;
+
+void display(char ssd[]);
 void init_timer0(void);
 void init_config(void);
 # 11 "timer0.c" 2
 
+void init_timer0(void){
 
-void init_timer0(){
 
+    T08BIT = 1;
     T0CS = 0;
     PSA = 1;
+
     TMR0 = 6;
+
+
     TMR0IF = 0;
     TMR0IE = 1;
+
     TMR0ON = 1;
 }

@@ -63,17 +63,17 @@
 [v ___lmul __lmul `(ul  1 e 4 0 ]
 "91 C:\Program Files\Microchip\xc8\v4.00\pic\sources\c99\common\Umul64.c
 [v ___omul __omul `(uo  1 e 8 0 ]
-"14 D:\Emertxe\PIC_Microcontroller\02_Assignments\08_dynamic_clock.X\isr.c
+"15 D:\Emertxe\PIC_Microcontroller\02_Assignments\08_dynamic_clock.X\isr.c
 [v _isr isr `IIH(v  1 e 1 0 ]
-"122 D:\Emertxe\PIC_Microcontroller\02_Assignments\08_dynamic_clock.X\main.c
-[v _init_config init_config `(v  1 e 1 0 ]
-"137
-[v _read_dkp read_dkp `(uc  1 e 1 0 ]
-"156
+"17 D:\Emertxe\PIC_Microcontroller\02_Assignments\08_dynamic_clock.X\main.c
 [v _display display `(v  1 e 1 0 ]
-"165
+"25
+[v _read_dkp read_dkp `(uc  1 e 1 0 ]
+"42
+[v _init_config init_config `(v  1 e 1 0 ]
+"56
 [v _main main `(v  1 e 1 0 ]
-"13 D:\Emertxe\PIC_Microcontroller\02_Assignments\08_dynamic_clock.X\timer0.c
+"12 D:\Emertxe\PIC_Microcontroller\02_Assignments\08_dynamic_clock.X\timer0.c
 [v _init_timer0 init_timer0 `(v  1 e 1 0 ]
 "25503 C:/Program Files/Microchip/MPLABX/v6.35/packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8\pic\include\proc/pic18f4580.h
 [v _PORTA PORTA `VEuc  1 e 1 @3968 ]
@@ -95,6 +95,8 @@
 [v _PEIE PEIE `VEb  1 e 0 @32662 ]
 "36295
 [v _PSA PSA `VEb  1 e 0 @32427 ]
+"39142
+[v _T08BIT T08BIT `VEb  1 e 0 @32430 ]
 "39148
 [v _T0CS T0CS `VEb  1 e 0 @32429 ]
 "39271
@@ -103,76 +105,80 @@
 [v _TMR0IF TMR0IF `VEb  1 e 0 @32658 ]
 "39280
 [v _TMR0ON TMR0ON `VEb  1 e 0 @32431 ]
-"118 D:\Emertxe\PIC_Microcontroller\02_Assignments\08_dynamic_clock.X\main.c
+"13 D:\Emertxe\PIC_Microcontroller\02_Assignments\08_dynamic_clock.X\isr.c
+[v _count count `VEui  1 e 2 0 ]
+"12 D:\Emertxe\PIC_Microcontroller\02_Assignments\08_dynamic_clock.X\main.c
 [v _hour hour `VEuc  1 e 1 0 ]
-"119
+"13
 [v _minute minute `VEuc  1 e 1 0 ]
-"120
+"14
 [v _sec sec `VEuc  1 e 1 0 ]
-"165
+"56
 [v _main main `(v  1 e 1 0 ]
 {
-"166
-[v main@F10620 F10620 `[10]uc  1 s 10 F10620 ]
-"168
-[v main@digit digit `[10]uc  1 a 10 14 ]
-"169
-[v main@ssd ssd `[4]uc  1 a 4 30 ]
-"171
-[v main@field field `uc  1 a 1 28 ]
-"172
-[v main@mode mode `uc  1 a 1 29 ]
-"176
+"58
+[v main@F10625 F10625 `[10]uc  1 s 10 F10625 ]
+[v main@ssd ssd `[4]uc  1 a 4 19 ]
+"59
+[v main@digit digit `[10]uc  1 a 10 8 ]
+"61
+[v main@mode mode `uc  1 a 1 18 ]
+"62
+[v main@field field `uc  1 a 1 23 ]
+"65
 {
-"177
-[v main@key key `uc  1 a 1 34 ]
-"272
+"66
+[v main@key key `uc  1 a 1 24 ]
+"164
 }
-"274
+"166
 } 0
-"137
+"25
 [v _read_dkp read_dkp `(uc  1 e 1 0 ]
 {
 [v read_dkp@trigger trigger `uc  1 p 1 wreg ]
-"139
+"26
 [v read_dkp@once once `uc  1 s 1 once ]
-"141
+"28
+{
 [v read_dkp@trigger trigger `uc  1 p 1 0 ]
-"155
+"36
+}
+"39
 } 1
-"122
+"42
 [v _init_config init_config `(v  1 e 1 0 ]
 {
-"135
+"54
 } 0
-"13 D:\Emertxe\PIC_Microcontroller\02_Assignments\08_dynamic_clock.X\timer0.c
+"12 D:\Emertxe\PIC_Microcontroller\02_Assignments\08_dynamic_clock.X\timer0.c
 [v _init_timer0 init_timer0 `(v  1 e 1 0 ]
 {
-"21
+"26
 } 0
-"156 D:\Emertxe\PIC_Microcontroller\02_Assignments\08_dynamic_clock.X\main.c
+"17 D:\Emertxe\PIC_Microcontroller\02_Assignments\08_dynamic_clock.X\main.c
 [v _display display `(v  1 e 1 0 ]
 {
 [v display@ssd ssd `*.30uc  1 p 1 0 ]
-"158
+"18
 {
 [v display@i i `i  1 a 2 5 ]
-"162
+"21
 {
 [v display@dealy dealy `i  1 a 2 3 ]
 }
-"163
+"22
 }
-"164
+"23
 } 0
 "7 C:\Program Files\Microchip\xc8\v4.00\pic\sources\c99\common\awmod.c
 [v ___awmod __awmod `(i  1 e 2 0 ]
 {
-[v ___awmod@dividend dividend `i  1 p 2 8 ]
-[v ___awmod@divisor divisor `i  1 p 2 10 ]
+[v ___awmod@dividend dividend `i  1 p 2 0 ]
+[v ___awmod@divisor divisor `i  1 p 2 2 ]
 "10
-[v ___awmod@counter counter `uc  1 a 1 12 ]
-[v ___awmod@sign sign `uc  1 a 1 13 ]
+[v ___awmod@counter counter `uc  1 a 1 4 ]
+[v ___awmod@sign sign `uc  1 a 1 5 ]
 "34
 } 0
 "7 C:\Program Files\Microchip\xc8\v4.00\pic\sources\c99\common\awdiv.c
@@ -187,10 +193,8 @@
 [v ___awdiv@sign sign `uc  1 a 1 5 ]
 "41
 } 0
-"14 D:\Emertxe\PIC_Microcontroller\02_Assignments\08_dynamic_clock.X\isr.c
+"15 D:\Emertxe\PIC_Microcontroller\02_Assignments\08_dynamic_clock.X\isr.c
 [v _isr isr `IIH(v  1 e 1 0 ]
 {
-"15
-[v isr@count0 count0 `ui  1 s 2 count0 ]
 "25
 } 0

@@ -18177,22 +18177,27 @@ unsigned char __t3rd16on(void);
 # 34 "C:\\Program Files\\Microchip\\xc8\\v4.00\\pic\\include/xc.h" 2 3
 # 10 "isr.c" 2
 # 1 "./dynamic_header.h" 1
-# 14 "./dynamic_header.h"
-void display(char *ssd);
+# 31 "./dynamic_header.h"
+extern volatile unsigned char sec;
+extern volatile unsigned char minute;
+extern volatile unsigned char hour;
+extern volatile unsigned int count;
+
+void display(char ssd[]);
 void init_timer0(void);
 void init_config(void);
 # 11 "isr.c" 2
 
 extern volatile unsigned char sec;
+extern volatile unsigned int count = 0;
 
 void __attribute__((picinterrupt(("")))) isr(){
-    static unsigned int count0 = 0;
 
     if(TMR0IF){
         TMR0 = TMR0+8;
-        if(++count0 == 20000){
+        if(++count == 20000){
             sec++;
-            count0 = 0;
+            count = 0;
         }
         TMR0IF=0;
     }

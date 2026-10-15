@@ -23,7 +23,9 @@ void display(char ssd[]){
 }
 
 unsigned char read_dkp(unsigned char trigger){
-    static unsigned char once = 1;                                      // Retains state between function calls
+//  Retains state between function calls
+    static unsigned char once = 1;                  // For EDGE mode
+    static unsigned char repeat_count = 0;          // For LEVEL mode repeat delay
 
     if (trigger == EDGE){                                               // Check for edge-triggered mode
         if((PORTC & 0x0F) != ALL_RELEASED && once == 1){                // Detect the key pressd
@@ -35,9 +37,24 @@ unsigned char read_dkp(unsigned char trigger){
         }
     }
 
-    return ALL_RELEASED;  // No new key press
+    else if(trigger == LEVEL){                     // Level-triggered mode
+        if((PORTC & 0x0F) != ALL_RELEASED){        // Is a key pressed?
+            
+            // start
+            repeat_count++;
+            if(repeat_count >= 50){              // Every 50 loop iterations
+                repeat_count = 0;
+                return PORTC & 0x0F;             // Return key, return it (every call!)
+            }
+        }
+        else{
+            repeat_count = 0;                    // Reset when released
+        }
+            // end
+    }
+    
+    return ALL_RELEASED;  // No key pressed
 }
-
 
 void init_config(){
     PORTD=0X00;                         // 7segment uses PORTD & PORTA, thus config them
@@ -55,63 +72,89 @@ void init_config(){
 
 void main(void) {
     
-    unsigned char digit[]={0XE7,0X21,0XCB,0X6B,0X2D,0X6E,0XEE,0X23,0XEF,0X6F};
     unsigned char ssd[4];
+    unsigned char digit[]={0XE7,0X21,0XCB,0X6B,0X2D,0X6E,0XEE,0X23,0XEF,0X6F};
     
-    unsigned char field=0;
     unsigned char mode=0;
+    unsigned char field=0;
     
     init_config();
     while(1){
         unsigned char key = read_dkp(EDGE);
         
-        if(key == 0X07){        //switching  mode to mode
+        if(key == SW4){         //switching  mode if its switch4
             mode = !mode;
         }
-        if(mode==0){    //edit mode
-            if(key == 0X0B){
+        
+        //edit mode
+        if(mode == EDIT_MODE){          
+            if(key == SW3){             // switch the fields when its sw3
                 field = !field;
             }
-            if(field == 0){       //minute field
-                if (key == 0x0E){
-                    minute = (minute + 1) % 60;
+            
+            //minute field
+            if(field == MINUTES_FIELD){             
+                if(key == SW1){         // increment
+                    if(minute == 59){
+                        minute = 0;
+                    }
+                    else if(minute < 59){
+                        minute++;
+                    }
                 }
-                else if (key == 0x0D){
-                    minute = (minute == 0) ? 59 : minute - 1;
+                else if(key == SW2){    //decrement
+                    if(minute == 0){
+                        minute = 59;
+                    }
+                    else if(minute > 0){
+                        minute--;
+                    }
                 }                
             }
-            else if(field == 1){     //hours field
-                if(key == 0x0E){
-                    hour = (hour + 1) % 24;
+            
+            //hours field
+            else if(field == HOURS_FIELD){     
+                if(key == SW1){
+                    if(hour == 23){
+                        hour = 0;
+                    }
+                    else{
+                        hour++;
+                    }
                 }
-                else if (key == 0x0D){
-                    hour = (hour == 0) ? 23 : hour - 1;
+                else if(key == SW2){
+                    if(hour == 0){
+                        hour = 23;
+                    }
+                    else{
+                        hour--;
+                    }
                 }
-                
-                ssd[0]= digit[(hour/10)%10];
-                ssd[1]= digit[hour%10];
-                ssd[2]= digit[(minute/10)%10];
-                ssd[3]= digit[minute%10];
-                
             }     
+            
+            ssd[0]= digit[(hour/10)];
+            ssd[1]= digit[hour%10];
+            ssd[2]= digit[(minute/10)];
+            ssd[3]= digit[minute%10];
+            
+            // logic for field blinking, to visualize what field user is on
             if(count <= 10000){
-                if (field == 0){
+                if (field == MINUTES_FIELD){
                     ssd[2] = 0x00;
                     ssd[3] = 0x00;
                 }
-                else{
+                else if(field == HOURS_FIELD){
                     ssd[0] = 0x00;
                     ssd[1] = 0x00;
                 }
-            }
-                
-            
-            
+            }   
         }
-        else if(mode == 1){  //RUN mode
+        
+        //run mode
+        else if(mode == RUN_MODE){  
             if(sec == 60){
                 minute++;
-                if(minute==60){
+                if(minute == 60){
                     hour++;
                     if(hour==24){
                         hour=0;
@@ -120,23 +163,21 @@ void main(void) {
                 }
                 sec=0;
             }
-            
-            ssd[0] = digit[hour / 10];
-            ssd[1] = digit[hour % 10];
-            ssd[2] = digit[minute / 10];
-            ssd[3] = digit[minute % 10];
+            ssd[0] = digit[hour/10];
+            ssd[1] = digit[hour%10];
+            ssd[2] = digit[minute/10];
+            ssd[3] = digit[minute%10];
             
              
-            if(count < 10000){
-//                ssd[1]=ssd[1]|(1<<4);
-                ssd[1] |= 0x10;
+            if(count < 10000){   
+             // this is for dp
+                ssd[1] |= 0x10;      //the pos of dp is XXX1 XXXX, thus we do the 0x10
             }
-            
-            
-        }
-         display(ssd);
-            
-       
+            else{
+                ssd[1] &= ~0x10;    // Decimal OFF (500ms)
+            }
+        }    
+        display(ssd);
     }
     return;
 }
