@@ -26,9 +26,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h: 39287: extern volatile __bit TMR2IF __attribute__((address(0x7CF1)));
 [v _TMR2IF `Vb ~T0 @X0 0 e@31985 ]
 [t T1 __deprecated__ ]
-"36362
-[; ;C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h: 36362: extern volatile __bit __attribute__((__deprecated__)) RB2 __attribute__((address(0x7C0A)));
-[v _RB2 `Vb ~T1 @X0 0 e@31754 ]
+"36365
+[; ;C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h: 36365: extern volatile __bit __attribute__((__deprecated__)) RB3 __attribute__((address(0x7C0B)));
+[v _RB3 `Vb ~T1 @X0 0 e@31755 ]
 "38 C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h
 [; ;C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h: 38: __asm("RXF6SIDH equ 0D60h");
 [; <" RXF6SIDH equ 0D60h ;# ">
@@ -1358,8 +1358,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! == =+ F10610 -> -> 1 `i `ui -> -> 1000 `i `ui 1116  ]
 {
 "38
-[; ;isr.c: 38:             RB2 = !RB2;
-[e = _RB2 ! _RB2 ]
+[; ;isr.c: 38:             RB3 = !RB3;
+[e = _RB3 ! _RB3 ]
 "39
 [; ;isr.c: 39:             count2 = 0;
 [e = F10610 -> -> 0 `i `ui ]

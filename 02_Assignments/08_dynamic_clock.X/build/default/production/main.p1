@@ -17,8 +17,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 "27279
 [; ;C:/Program Files/Microchip/MPLABX/v6.35/packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8\pic\include\proc/pic18f4580.h: 27279: extern volatile unsigned char TRISC __attribute__((address(0xF94)));
 [v _TRISC `Vuc ~T0 @X0 0 e@3988 ]
-"37 ./dynamic_header.h
-[; ;./dynamic_header.h: 37: void init_timer0(void);
+"39 ./dynamic_header.h
+[; ;./dynamic_header.h: 39: void init_timer0(void);
 [v _init_timer0 `(v ~T0 @X0 0 ef ]
 "35665 C:/Program Files/Microchip/MPLABX/v6.35/packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8\pic\include\proc/pic18f4580.h
 [; ;C:/Program Files/Microchip/MPLABX/v6.35/packs/Microchip/PIC18Fxxxx_DFP/1.7.171/xc8\pic\include\proc/pic18f4580.h: 35665: extern volatile __bit GIE __attribute__((address(0x7F97)));
@@ -1345,105 +1345,158 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :U _read_dkp ]
 [v _trigger `uc ~T0 @X0 1 r1 ]
 [f ]
-"26
-[; ;main.c: 26:     static unsigned char once = 1;
+"27
+[; ;main.c: 27:     static unsigned char once = 1;
 [v F10621 `uc ~T0 @X0 1 s once ]
 [i F10621
 -> -> 1 `i `uc
 ]
 "28
-[; ;main.c: 28:     if (trigger == 0){
+[; ;main.c: 28:     static unsigned char repeat_count = 0;
+[v F10622 `uc ~T0 @X0 1 s repeat_count ]
+[i F10622
+-> -> 0 `i `uc
+]
+"30
+[; ;main.c: 30:     if (trigger == 0){
 [e $ ! == -> _trigger `i -> 0 `i 1119  ]
 {
-"29
-[; ;main.c: 29:         if((PORTC & 0x0F) != 0x0F && once == 1){
+"31
+[; ;main.c: 31:         if((PORTC & 0x0F) != 0x0F && once == 1){
 [e $ ! && != & -> _PORTC `i -> 15 `i -> 15 `i == -> F10621 `i -> 1 `i 1120  ]
 {
-"30
-[; ;main.c: 30:             once = 0;
+"32
+[; ;main.c: 32:             once = 0;
 [e = F10621 -> -> 0 `i `uc ]
-"31
-[; ;main.c: 31:             return PORTC & 0x0F;
+"33
+[; ;main.c: 33:             return PORTC & 0x0F;
 [e ) -> & -> _PORTC `i -> 15 `i `uc ]
 [e $UE 1118  ]
-"32
-[; ;main.c: 32:         }
+"34
+[; ;main.c: 34:         }
 }
 [e $U 1121  ]
-"33
-[; ;main.c: 33:         else if((PORTC & 0x0F) == 0x0F){
+"35
+[; ;main.c: 35:         else if((PORTC & 0x0F) == 0x0F){
 [e :U 1120 ]
 [e $ ! == & -> _PORTC `i -> 15 `i -> 15 `i 1122  ]
 {
-"34
-[; ;main.c: 34:             once = 1;
+"36
+[; ;main.c: 36:             once = 1;
 [e = F10621 -> -> 1 `i `uc ]
-"35
-[; ;main.c: 35:         }
+"37
+[; ;main.c: 37:         }
 }
 [e :U 1122 ]
 [e :U 1121 ]
-"36
-[; ;main.c: 36:     }
-}
-[e :U 1119 ]
 "38
-[; ;main.c: 38:     return 0x0F;
+[; ;main.c: 38:     }
+}
+[e $U 1123  ]
+"40
+[; ;main.c: 40:     else if(trigger == 0){
+[e :U 1119 ]
+[e $ ! == -> _trigger `i -> 0 `i 1124  ]
+{
+"41
+[; ;main.c: 41:         if((PORTC & 0x0F) != 0x0F){
+[e $ ! != & -> _PORTC `i -> 15 `i -> 15 `i 1125  ]
+{
+"44
+[; ;main.c: 44:             repeat_count++;
+[e ++ F10622 -> -> 1 `i `uc ]
+"45
+[; ;main.c: 45:             if(repeat_count >= 50){
+[e $ ! >= -> F10622 `i -> 50 `i 1126  ]
+{
+"46
+[; ;main.c: 46:                 repeat_count = 0;
+[e = F10622 -> -> 0 `i `uc ]
+"47
+[; ;main.c: 47:                 return PORTC & 0x0F;
+[e ) -> & -> _PORTC `i -> 15 `i `uc ]
+[e $UE 1118  ]
+"48
+[; ;main.c: 48:             }
+}
+[e :U 1126 ]
+"49
+[; ;main.c: 49:         }
+}
+[e $U 1127  ]
+"50
+[; ;main.c: 50:         else{
+[e :U 1125 ]
+{
+"51
+[; ;main.c: 51:             repeat_count = 0;
+[e = F10622 -> -> 0 `i `uc ]
+"52
+[; ;main.c: 52:         }
+}
+[e :U 1127 ]
+"54
+[; ;main.c: 54:     }
+}
+[e :U 1124 ]
+[e :U 1123 ]
+"56
+[; ;main.c: 56:     return 0x0F;
 [e ) -> -> 15 `i `uc ]
 [e $UE 1118  ]
-"39
-[; ;main.c: 39: }
+"57
+[; ;main.c: 57: }
 [e :UE 1118 ]
 }
-"42
-[; ;main.c: 42: void init_config(){
+"59
+[; ;main.c: 59: void init_config(){
 [v _init_config `(v ~T0 @X0 1 ef ]
 {
 [e :U _init_config ]
 [f ]
-"43
-[; ;main.c: 43:     PORTD=0X00;
+"60
+[; ;main.c: 60:     PORTD=0X00;
 [e = _PORTD -> -> 0 `i `uc ]
-"44
-[; ;main.c: 44:     TRISD=0X00;
+"61
+[; ;main.c: 61:     TRISD=0X00;
 [e = _TRISD -> -> 0 `i `uc ]
-"46
-[; ;main.c: 46:     PORTA=PORTA & 0XF0;
+"63
+[; ;main.c: 63:     PORTA=PORTA & 0XF0;
 [e = _PORTA -> & -> _PORTA `i -> 240 `i `uc ]
-"47
-[; ;main.c: 47:     TRISA=TRISA & 0XF0;
+"64
+[; ;main.c: 64:     TRISA=TRISA & 0XF0;
 [e = _TRISA -> & -> _TRISA `i -> 240 `i `uc ]
-"49
-[; ;main.c: 49:     TRISC=TRISC | 0X0F;
+"66
+[; ;main.c: 66:     TRISC=TRISC | 0X0F;
 [e = _TRISC -> | -> _TRISC `i -> 15 `i `uc ]
-"50
-[; ;main.c: 50:     init_timer0();
+"67
+[; ;main.c: 67:     init_timer0();
 [e ( _init_timer0 ..  ]
-"52
-[; ;main.c: 52:     GIE=1;
+"69
+[; ;main.c: 69:     GIE=1;
 [e = _GIE -> -> 1 `i `b ]
-"53
-[; ;main.c: 53:     PEIE=1;
+"70
+[; ;main.c: 70:     PEIE=1;
 [e = _PEIE -> -> 1 `i `b ]
-"54
-[; ;main.c: 54: }
-[e :UE 1123 ]
+"71
+[; ;main.c: 71: }
+[e :UE 1128 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"56
-[; ;main.c: 56: void main(void) {
+"73
+[; ;main.c: 73: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"58
-[; ;main.c: 58:     unsigned char ssd[4];
+"75
+[; ;main.c: 75:     unsigned char ssd[4];
 [v _ssd `uc ~T0 @X0 -> 4 `i a ]
-[v F10625 `uc ~T0 @X0 -> 10 `i s ]
-[i F10625
+[v F10626 `uc ~T0 @X0 -> 10 `i s ]
+[i F10626
 :U ..
-"59
-[; ;main.c: 59:     unsigned char digit[]={0XE7,0X21,0XCB,0X6B,0X2D,0X6E,0XEE,0X23,0XEF,0X6F};
+"76
+[; ;main.c: 76:     unsigned char digit[]={0XE7,0X21,0XCB,0X6B,0X2D,0X6E,0XEE,0X23,0XEF,0X6F};
 -> -> 231 `i `uc
 -> -> 33 `i `uc
 -> -> 203 `i `uc
@@ -1457,350 +1510,350 @@ Version 4.0 HI-TECH Software Intermediate Code
 ..
 ]
 [v _digit `uc ~T0 @X0 -> 10 `i a ]
-[e = _digit F10625 ]
-"61
-[; ;main.c: 61:     unsigned char mode=0;
+[e = _digit F10626 ]
+"78
+[; ;main.c: 78:     unsigned char mode=0;
 [v _mode `uc ~T0 @X0 1 a ]
 [e = _mode -> -> 0 `i `uc ]
-"62
-[; ;main.c: 62:     unsigned char field=0;
+"79
+[; ;main.c: 79:     unsigned char field=0;
 [v _field `uc ~T0 @X0 1 a ]
 [e = _field -> -> 0 `i `uc ]
-"64
-[; ;main.c: 64:     init_config();
+"81
+[; ;main.c: 81:     init_config();
 [e ( _init_config ..  ]
-"65
-[; ;main.c: 65:     while(1){
-[e :U 1126 ]
+"82
+[; ;main.c: 82:     while(1){
+[e :U 1131 ]
 {
-"66
-[; ;main.c: 66:         unsigned char key = read_dkp(0);
+"83
+[; ;main.c: 83:         unsigned char key = read_dkp(0);
 [v _key `uc ~T0 @X0 1 a ]
 [e = _key ( _read_dkp (1 -> -> 0 `i `uc ]
-"68
-[; ;main.c: 68:         if(key == 0x07){
-[e $ ! == -> _key `i -> 7 `i 1128  ]
-{
-"69
-[; ;main.c: 69:             mode = !mode;
-[e = _mode -> -> ! != -> _mode `i -> 0 `i `i `uc ]
-"70
-[; ;main.c: 70:         }
-}
-[e :U 1128 ]
-"73
-[; ;main.c: 73:         if(mode == 0){
-[e $ ! == -> _mode `i -> 0 `i 1129  ]
-{
-"74
-[; ;main.c: 74:             if(key == 0x0B){
-[e $ ! == -> _key `i -> 11 `i 1130  ]
-{
-"75
-[; ;main.c: 75:                 field = !field;
-[e = _field -> -> ! != -> _field `i -> 0 `i `i `uc ]
-"76
-[; ;main.c: 76:             }
-}
-[e :U 1130 ]
-"79
-[; ;main.c: 79:             if(field == 0){
-[e $ ! == -> _field `i -> 0 `i 1131  ]
-{
-"80
-[; ;main.c: 80:                 if(key == 0x0E){
-[e $ ! == -> _key `i -> 14 `i 1132  ]
-{
-"81
-[; ;main.c: 81:                     if(minute == 59){
-[e $ ! == -> _minute `i -> 59 `i 1133  ]
-{
-"82
-[; ;main.c: 82:                         minute = 0;
-[e = _minute -> -> 0 `i `uc ]
-"83
-[; ;main.c: 83:                     }
-}
-[e $U 1134  ]
-"84
-[; ;main.c: 84:                     else if(minute < 59){
-[e :U 1133 ]
-[e $ ! < -> _minute `i -> 59 `i 1135  ]
-{
 "85
-[; ;main.c: 85:                         minute++;
-[e ++ _minute -> -> 1 `i `Vuc ]
+[; ;main.c: 85:         if(key == 0x07){
+[e $ ! == -> _key `i -> 7 `i 1133  ]
+{
 "86
-[; ;main.c: 86:                     }
+[; ;main.c: 86:             mode = !mode;
+[e = _mode -> -> ! != -> _mode `i -> 0 `i `i `uc ]
+"87
+[; ;main.c: 87:         }
+}
+[e :U 1133 ]
+"90
+[; ;main.c: 90:         if(mode == 0){
+[e $ ! == -> _mode `i -> 0 `i 1134  ]
+{
+"91
+[; ;main.c: 91:             if(key == 0x0B){
+[e $ ! == -> _key `i -> 11 `i 1135  ]
+{
+"92
+[; ;main.c: 92:                 field = !field;
+[e = _field -> -> ! != -> _field `i -> 0 `i `i `uc ]
+"93
+[; ;main.c: 93:             }
 }
 [e :U 1135 ]
-[e :U 1134 ]
-"87
-[; ;main.c: 87:                 }
-}
-[e $U 1136  ]
-"88
-[; ;main.c: 88:                 else if(key == 0x0D){
-[e :U 1132 ]
-[e $ ! == -> _key `i -> 13 `i 1137  ]
+"96
+[; ;main.c: 96:             if(field == 0){
+[e $ ! == -> _field `i -> 0 `i 1136  ]
 {
-"89
-[; ;main.c: 89:                     if(minute == 0){
-[e $ ! == -> _minute `i -> 0 `i 1138  ]
+"97
+[; ;main.c: 97:                 if(key == 0x0E){
+[e $ ! == -> _key `i -> 14 `i 1137  ]
 {
-"90
-[; ;main.c: 90:                         minute = 59;
-[e = _minute -> -> 59 `i `uc ]
-"91
-[; ;main.c: 91:                     }
+"98
+[; ;main.c: 98:                     if(minute == 59){
+[e $ ! == -> _minute `i -> 59 `i 1138  ]
+{
+"99
+[; ;main.c: 99:                         minute = 0;
+[e = _minute -> -> 0 `i `uc ]
+"100
+[; ;main.c: 100:                     }
 }
 [e $U 1139  ]
-"92
-[; ;main.c: 92:                     else if(minute > 0){
-[e :U 1138 ]
-[e $ ! > -> _minute `i -> 0 `i 1140  ]
-{
-"93
-[; ;main.c: 93:                         minute--;
-[e -- _minute -> -> 1 `i `Vuc ]
-"94
-[; ;main.c: 94:                     }
-}
-[e :U 1140 ]
-[e :U 1139 ]
-"95
-[; ;main.c: 95:                 }
-}
-[e :U 1137 ]
-[e :U 1136 ]
-"96
-[; ;main.c: 96:             }
-}
-[e $U 1141  ]
-"99
-[; ;main.c: 99:             else if(field == 1){
-[e :U 1131 ]
-[e $ ! == -> _field `i -> 1 `i 1142  ]
-{
-"100
-[; ;main.c: 100:                 if(key == 0x0E){
-[e $ ! == -> _key `i -> 14 `i 1143  ]
-{
 "101
-[; ;main.c: 101:                     if(hour == 23){
-[e $ ! == -> _hour `i -> 23 `i 1144  ]
+[; ;main.c: 101:                     else if(minute < 59){
+[e :U 1138 ]
+[e $ ! < -> _minute `i -> 59 `i 1140  ]
 {
 "102
-[; ;main.c: 102:                         hour = 0;
-[e = _hour -> -> 0 `i `uc ]
+[; ;main.c: 102:                         minute++;
+[e ++ _minute -> -> 1 `i `Vuc ]
 "103
 [; ;main.c: 103:                     }
 }
-[e $U 1145  ]
+[e :U 1140 ]
+[e :U 1139 ]
 "104
-[; ;main.c: 104:                     else{
-[e :U 1144 ]
-{
+[; ;main.c: 104:                 }
+}
+[e $U 1141  ]
 "105
-[; ;main.c: 105:                         hour++;
-[e ++ _hour -> -> 1 `i `Vuc ]
-"106
-[; ;main.c: 106:                     }
-}
-[e :U 1145 ]
-"107
-[; ;main.c: 107:                 }
-}
-[e $U 1146  ]
-"108
-[; ;main.c: 108:                 else if(key == 0x0D){
-[e :U 1143 ]
-[e $ ! == -> _key `i -> 13 `i 1147  ]
+[; ;main.c: 105:                 else if(key == 0x0D){
+[e :U 1137 ]
+[e $ ! == -> _key `i -> 13 `i 1142  ]
 {
+"106
+[; ;main.c: 106:                     if(minute == 0){
+[e $ ! == -> _minute `i -> 0 `i 1143  ]
+{
+"107
+[; ;main.c: 107:                         minute = 59;
+[e = _minute -> -> 59 `i `uc ]
+"108
+[; ;main.c: 108:                     }
+}
+[e $U 1144  ]
 "109
-[; ;main.c: 109:                     if(hour == 0){
-[e $ ! == -> _hour `i -> 0 `i 1148  ]
+[; ;main.c: 109:                     else if(minute > 0){
+[e :U 1143 ]
+[e $ ! > -> _minute `i -> 0 `i 1145  ]
 {
 "110
-[; ;main.c: 110:                         hour = 23;
-[e = _hour -> -> 23 `i `uc ]
+[; ;main.c: 110:                         minute--;
+[e -- _minute -> -> 1 `i `Vuc ]
 "111
 [; ;main.c: 111:                     }
 }
-[e $U 1149  ]
+[e :U 1145 ]
+[e :U 1144 ]
 "112
-[; ;main.c: 112:                     else{
-[e :U 1148 ]
-{
-"113
-[; ;main.c: 113:                         hour--;
-[e -- _hour -> -> 1 `i `Vuc ]
-"114
-[; ;main.c: 114:                     }
-}
-[e :U 1149 ]
-"115
-[; ;main.c: 115:                 }
-}
-[e :U 1147 ]
-[e :U 1146 ]
-"116
-[; ;main.c: 116:             }
+[; ;main.c: 112:                 }
 }
 [e :U 1142 ]
 [e :U 1141 ]
-"118
-[; ;main.c: 118:             ssd[0]= digit[(hour/10)];
-[e = *U + &U _ssd * -> -> -> 0 `i `ui `ux -> -> # *U &U _ssd `ui `ux *U + &U _digit * -> -> / -> _hour `i -> 10 `i `ui `ux -> -> # *U &U _digit `ui `ux ]
-"119
-[; ;main.c: 119:             ssd[1]= digit[hour%10];
-[e = *U + &U _ssd * -> -> -> 1 `i `ui `ux -> -> # *U &U _ssd `ui `ux *U + &U _digit * -> -> % -> _hour `i -> 10 `i `ui `ux -> -> # *U &U _digit `ui `ux ]
-"120
-[; ;main.c: 120:             ssd[2]= digit[(minute/10)];
-[e = *U + &U _ssd * -> -> -> 2 `i `ui `ux -> -> # *U &U _ssd `ui `ux *U + &U _digit * -> -> / -> _minute `i -> 10 `i `ui `ux -> -> # *U &U _digit `ui `ux ]
-"121
-[; ;main.c: 121:             ssd[3]= digit[minute%10];
-[e = *U + &U _ssd * -> -> -> 3 `i `ui `ux -> -> # *U &U _ssd `ui `ux *U + &U _digit * -> -> % -> _minute `i -> 10 `i `ui `ux -> -> # *U &U _digit `ui `ux ]
-"124
-[; ;main.c: 124:             if(count <= 10000){
-[e $ ! <= _count -> -> 10000 `i `ui 1150  ]
+"113
+[; ;main.c: 113:             }
+}
+[e $U 1146  ]
+"116
+[; ;main.c: 116:             else if(field == 1){
+[e :U 1136 ]
+[e $ ! == -> _field `i -> 1 `i 1147  ]
 {
+"117
+[; ;main.c: 117:                 if(key == 0x0E){
+[e $ ! == -> _key `i -> 14 `i 1148  ]
+{
+"118
+[; ;main.c: 118:                     if(hour == 23){
+[e $ ! == -> _hour `i -> 23 `i 1149  ]
+{
+"119
+[; ;main.c: 119:                         hour = 0;
+[e = _hour -> -> 0 `i `uc ]
+"120
+[; ;main.c: 120:                     }
+}
+[e $U 1150  ]
+"121
+[; ;main.c: 121:                     else{
+[e :U 1149 ]
+{
+"122
+[; ;main.c: 122:                         hour++;
+[e ++ _hour -> -> 1 `i `Vuc ]
+"123
+[; ;main.c: 123:                     }
+}
+[e :U 1150 ]
+"124
+[; ;main.c: 124:                 }
+}
+[e $U 1151  ]
 "125
-[; ;main.c: 125:                 if (field == 0){
-[e $ ! == -> _field `i -> 0 `i 1151  ]
+[; ;main.c: 125:                 else if(key == 0x0D){
+[e :U 1148 ]
+[e $ ! == -> _key `i -> 13 `i 1152  ]
 {
 "126
-[; ;main.c: 126:                     ssd[2] = 0x00;
-[e = *U + &U _ssd * -> -> -> 2 `i `ui `ux -> -> # *U &U _ssd `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 126:                     if(hour == 0){
+[e $ ! == -> _hour `i -> 0 `i 1153  ]
+{
 "127
-[; ;main.c: 127:                     ssd[3] = 0x00;
-[e = *U + &U _ssd * -> -> -> 3 `i `ui `ux -> -> # *U &U _ssd `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 127:                         hour = 23;
+[e = _hour -> -> 23 `i `uc ]
 "128
-[; ;main.c: 128:                 }
+[; ;main.c: 128:                     }
 }
-[e $U 1152  ]
+[e $U 1154  ]
 "129
-[; ;main.c: 129:                 else if(field == 1){
-[e :U 1151 ]
-[e $ ! == -> _field `i -> 1 `i 1153  ]
+[; ;main.c: 129:                     else{
+[e :U 1153 ]
 {
 "130
-[; ;main.c: 130:                     ssd[0] = 0x00;
-[e = *U + &U _ssd * -> -> -> 0 `i `ui `ux -> -> # *U &U _ssd `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 130:                         hour--;
+[e -- _hour -> -> 1 `i `Vuc ]
 "131
-[; ;main.c: 131:                     ssd[1] = 0x00;
-[e = *U + &U _ssd * -> -> -> 1 `i `ui `ux -> -> # *U &U _ssd `ui `ux -> -> 0 `i `uc ]
+[; ;main.c: 131:                     }
+}
+[e :U 1154 ]
 "132
 [; ;main.c: 132:                 }
 }
-[e :U 1153 ]
 [e :U 1152 ]
+[e :U 1151 ]
 "133
 [; ;main.c: 133:             }
 }
-[e :U 1150 ]
-"134
-[; ;main.c: 134:         }
-}
-[e $U 1154  ]
+[e :U 1147 ]
+[e :U 1146 ]
+"135
+[; ;main.c: 135:             ssd[0]= digit[(hour/10)];
+[e = *U + &U _ssd * -> -> -> 0 `i `ui `ux -> -> # *U &U _ssd `ui `ux *U + &U _digit * -> -> / -> _hour `i -> 10 `i `ui `ux -> -> # *U &U _digit `ui `ux ]
+"136
+[; ;main.c: 136:             ssd[1]= digit[hour%10];
+[e = *U + &U _ssd * -> -> -> 1 `i `ui `ux -> -> # *U &U _ssd `ui `ux *U + &U _digit * -> -> % -> _hour `i -> 10 `i `ui `ux -> -> # *U &U _digit `ui `ux ]
 "137
-[; ;main.c: 137:         else if(mode == 1){
-[e :U 1129 ]
-[e $ ! == -> _mode `i -> 1 `i 1155  ]
-{
+[; ;main.c: 137:             ssd[2]= digit[(minute/10)];
+[e = *U + &U _ssd * -> -> -> 2 `i `ui `ux -> -> # *U &U _ssd `ui `ux *U + &U _digit * -> -> / -> _minute `i -> 10 `i `ui `ux -> -> # *U &U _digit `ui `ux ]
 "138
-[; ;main.c: 138:             if(sec == 60){
-[e $ ! == -> _sec `i -> 60 `i 1156  ]
-{
-"139
-[; ;main.c: 139:                 minute++;
-[e ++ _minute -> -> 1 `i `Vuc ]
-"140
-[; ;main.c: 140:                 if(minute == 60){
-[e $ ! == -> _minute `i -> 60 `i 1157  ]
-{
+[; ;main.c: 138:             ssd[3]= digit[minute%10];
+[e = *U + &U _ssd * -> -> -> 3 `i `ui `ux -> -> # *U &U _ssd `ui `ux *U + &U _digit * -> -> % -> _minute `i -> 10 `i `ui `ux -> -> # *U &U _digit `ui `ux ]
 "141
-[; ;main.c: 141:                     hour++;
-[e ++ _hour -> -> 1 `i `Vuc ]
+[; ;main.c: 141:             if(count <= 10000){
+[e $ ! <= _count -> -> 10000 `i `ui 1155  ]
+{
 "142
-[; ;main.c: 142:                     if(hour==24){
-[e $ ! == -> _hour `i -> 24 `i 1158  ]
+[; ;main.c: 142:                 if (field == 0){
+[e $ ! == -> _field `i -> 0 `i 1156  ]
 {
 "143
-[; ;main.c: 143:                         hour=0;
-[e = _hour -> -> 0 `i `uc ]
+[; ;main.c: 143:                     ssd[2] = 0x00;
+[e = *U + &U _ssd * -> -> -> 2 `i `ui `ux -> -> # *U &U _ssd `ui `ux -> -> 0 `i `uc ]
 "144
-[; ;main.c: 144:                     }
+[; ;main.c: 144:                     ssd[3] = 0x00;
+[e = *U + &U _ssd * -> -> -> 3 `i `ui `ux -> -> # *U &U _ssd `ui `ux -> -> 0 `i `uc ]
+"145
+[; ;main.c: 145:                 }
+}
+[e $U 1157  ]
+"146
+[; ;main.c: 146:                 else if(field == 1){
+[e :U 1156 ]
+[e $ ! == -> _field `i -> 1 `i 1158  ]
+{
+"147
+[; ;main.c: 147:                     ssd[0] = 0x00;
+[e = *U + &U _ssd * -> -> -> 0 `i `ui `ux -> -> # *U &U _ssd `ui `ux -> -> 0 `i `uc ]
+"148
+[; ;main.c: 148:                     ssd[1] = 0x00;
+[e = *U + &U _ssd * -> -> -> 1 `i `ui `ux -> -> # *U &U _ssd `ui `ux -> -> 0 `i `uc ]
+"149
+[; ;main.c: 149:                 }
 }
 [e :U 1158 ]
-"145
-[; ;main.c: 145:                     minute=0;
-[e = _minute -> -> 0 `i `uc ]
-"146
-[; ;main.c: 146:                 }
-}
 [e :U 1157 ]
-"147
-[; ;main.c: 147:                 sec=0;
-[e = _sec -> -> 0 `i `uc ]
-"148
-[; ;main.c: 148:             }
-}
-[e :U 1156 ]
-"149
-[; ;main.c: 149:             ssd[0] = digit[hour/10];
-[e = *U + &U _ssd * -> -> -> 0 `i `ui `ux -> -> # *U &U _ssd `ui `ux *U + &U _digit * -> -> / -> _hour `i -> 10 `i `ui `ux -> -> # *U &U _digit `ui `ux ]
 "150
-[; ;main.c: 150:             ssd[1] = digit[hour%10];
-[e = *U + &U _ssd * -> -> -> 1 `i `ui `ux -> -> # *U &U _ssd `ui `ux *U + &U _digit * -> -> % -> _hour `i -> 10 `i `ui `ux -> -> # *U &U _digit `ui `ux ]
-"151
-[; ;main.c: 151:             ssd[2] = digit[minute/10];
-[e = *U + &U _ssd * -> -> -> 2 `i `ui `ux -> -> # *U &U _ssd `ui `ux *U + &U _digit * -> -> / -> _minute `i -> 10 `i `ui `ux -> -> # *U &U _digit `ui `ux ]
-"152
-[; ;main.c: 152:             ssd[3] = digit[minute%10];
-[e = *U + &U _ssd * -> -> -> 3 `i `ui `ux -> -> # *U &U _ssd `ui `ux *U + &U _digit * -> -> % -> _minute `i -> 10 `i `ui `ux -> -> # *U &U _digit `ui `ux ]
-"155
-[; ;main.c: 155:             if(count < 10000){
-[e $ ! < _count -> -> 10000 `i `ui 1159  ]
-{
-"157
-[; ;main.c: 157:                 ssd[1] |= 0x10;
-[e =| *U + &U _ssd * -> -> -> 1 `i `ui `ux -> -> # *U &U _ssd `ui `ux -> -> 16 `i `uc ]
-"158
-[; ;main.c: 158:             }
-}
-[e $U 1160  ]
-"159
-[; ;main.c: 159:             else{
-[e :U 1159 ]
-{
-"160
-[; ;main.c: 160:                 ssd[1] &= ~0x10;
-[e =& *U + &U _ssd * -> -> -> 1 `i `ui `ux -> -> # *U &U _ssd `ui `ux -> ~ -> 16 `i `uc ]
-"161
-[; ;main.c: 161:             }
-}
-[e :U 1160 ]
-"162
-[; ;main.c: 162:         }
+[; ;main.c: 150:             }
 }
 [e :U 1155 ]
-[e :U 1154 ]
-"163
-[; ;main.c: 163:         display(ssd);
-[e ( _display (1 -> &U _ssd `*uc ]
-"164
-[; ;main.c: 164:     }
+"151
+[; ;main.c: 151:         }
 }
-[e :U 1125 ]
-"65
-[; ;main.c: 65:     while(1){
-[e $U 1126  ]
-[e :U 1127 ]
+[e $U 1159  ]
+"154
+[; ;main.c: 154:         else if(mode == 1){
+[e :U 1134 ]
+[e $ ! == -> _mode `i -> 1 `i 1160  ]
+{
+"155
+[; ;main.c: 155:             if(sec == 60){
+[e $ ! == -> _sec `i -> 60 `i 1161  ]
+{
+"156
+[; ;main.c: 156:                 minute++;
+[e ++ _minute -> -> 1 `i `Vuc ]
+"157
+[; ;main.c: 157:                 if(minute == 60){
+[e $ ! == -> _minute `i -> 60 `i 1162  ]
+{
+"158
+[; ;main.c: 158:                     hour++;
+[e ++ _hour -> -> 1 `i `Vuc ]
+"159
+[; ;main.c: 159:                     if(hour==24){
+[e $ ! == -> _hour `i -> 24 `i 1163  ]
+{
+"160
+[; ;main.c: 160:                         hour=0;
+[e = _hour -> -> 0 `i `uc ]
+"161
+[; ;main.c: 161:                     }
+}
+[e :U 1163 ]
+"162
+[; ;main.c: 162:                     minute=0;
+[e = _minute -> -> 0 `i `uc ]
+"163
+[; ;main.c: 163:                 }
+}
+[e :U 1162 ]
+"164
+[; ;main.c: 164:                 sec=0;
+[e = _sec -> -> 0 `i `uc ]
 "165
-[; ;main.c: 165:     return;
-[e $UE 1124  ]
+[; ;main.c: 165:             }
+}
+[e :U 1161 ]
 "166
-[; ;main.c: 166: }
-[e :UE 1124 ]
+[; ;main.c: 166:             ssd[0] = digit[hour/10];
+[e = *U + &U _ssd * -> -> -> 0 `i `ui `ux -> -> # *U &U _ssd `ui `ux *U + &U _digit * -> -> / -> _hour `i -> 10 `i `ui `ux -> -> # *U &U _digit `ui `ux ]
+"167
+[; ;main.c: 167:             ssd[1] = digit[hour%10];
+[e = *U + &U _ssd * -> -> -> 1 `i `ui `ux -> -> # *U &U _ssd `ui `ux *U + &U _digit * -> -> % -> _hour `i -> 10 `i `ui `ux -> -> # *U &U _digit `ui `ux ]
+"168
+[; ;main.c: 168:             ssd[2] = digit[minute/10];
+[e = *U + &U _ssd * -> -> -> 2 `i `ui `ux -> -> # *U &U _ssd `ui `ux *U + &U _digit * -> -> / -> _minute `i -> 10 `i `ui `ux -> -> # *U &U _digit `ui `ux ]
+"169
+[; ;main.c: 169:             ssd[3] = digit[minute%10];
+[e = *U + &U _ssd * -> -> -> 3 `i `ui `ux -> -> # *U &U _ssd `ui `ux *U + &U _digit * -> -> % -> _minute `i -> 10 `i `ui `ux -> -> # *U &U _digit `ui `ux ]
+"172
+[; ;main.c: 172:             if(count < 10000){
+[e $ ! < _count -> -> 10000 `i `ui 1164  ]
+{
+"174
+[; ;main.c: 174:                 ssd[1] |= 0x10;
+[e =| *U + &U _ssd * -> -> -> 1 `i `ui `ux -> -> # *U &U _ssd `ui `ux -> -> 16 `i `uc ]
+"175
+[; ;main.c: 175:             }
+}
+[e $U 1165  ]
+"176
+[; ;main.c: 176:             else{
+[e :U 1164 ]
+{
+"177
+[; ;main.c: 177:                 ssd[1] &= ~0x10;
+[e =& *U + &U _ssd * -> -> -> 1 `i `ui `ux -> -> # *U &U _ssd `ui `ux -> ~ -> 16 `i `uc ]
+"178
+[; ;main.c: 178:             }
+}
+[e :U 1165 ]
+"179
+[; ;main.c: 179:         }
+}
+[e :U 1160 ]
+[e :U 1159 ]
+"180
+[; ;main.c: 180:         display(ssd);
+[e ( _display (1 -> &U _ssd `*uc ]
+"181
+[; ;main.c: 181:     }
+}
+[e :U 1130 ]
+"82
+[; ;main.c: 82:     while(1){
+[e $U 1131  ]
+[e :U 1132 ]
+"182
+[; ;main.c: 182:     return;
+[e $UE 1129  ]
+"183
+[; ;main.c: 183: }
+[e :UE 1129 ]
 }

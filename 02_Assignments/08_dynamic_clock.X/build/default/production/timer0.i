@@ -18177,7 +18177,7 @@ unsigned char __t3rd16on(void);
 # 34 "C:\\Program Files\\Microchip\\xc8\\v4.00\\pic\\include/xc.h" 2 3
 # 10 "timer0.c" 2
 # 1 "./dynamic_header.h" 1
-# 31 "./dynamic_header.h"
+# 33 "./dynamic_header.h"
 extern volatile unsigned char sec;
 extern volatile unsigned char minute;
 extern volatile unsigned char hour;

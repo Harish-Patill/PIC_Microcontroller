@@ -1,7 +1,7 @@
 
 
 Microchip MPLAB XC8 Assembler V4.00 build 20260614213421 
-                                                                                               Wed Oct 14 22:28:16 2026
+                                                                                               Thu Oct 15 15:49:10 2026
 
 Microchip MPLAB XC8 C Compiler v4.00 build 20260614213421 Og1 
      1                           	processor	18F4580
@@ -2172,7 +2172,7 @@ Microchip MPLAB XC8 C Compiler v4.00 build 20260614213421 Og1
   2166   007EAE                     _T08BIT         set	32430
   2167   007F96                     _PEIE           set	32662
   2168   007F97                     _GIE            set	32663
-  2169   007C0A                     _RB2            set	31754
+  2169   007C0B                     _RB3            set	31755
   2170   007C09                     _RB1            set	31753
   2171   007C08                     _RB0            set	31752
   2172                           
@@ -2315,8 +2315,8 @@ Microchip MPLAB XC8 C Compiler v4.00 build 20260614213421 Og1
   2309                           ;main.c: 16:     RB1 = 0;
   2310   0006EC  9281               	bcf	3969,1,c	;volatile
   2311                           
-  2312                           ;main.c: 17:     RB2 = 0;
-  2313   0006EE  9481               	bcf	3969,2,c	;volatile
+  2312                           ;main.c: 17:     RB3 = 0;
+  2313   0006EE  9681               	bcf	3969,3,c	;volatile
   2314   0006F0                     
   2315                           ;main.c: 19:     init_timer0();
   2316   0006F0  EC98  F003         	call	_init_timer0	;wreg free
@@ -2695,15 +2695,15 @@ Microchip MPLAB XC8 C Compiler v4.00 build 20260614213421 Og1
   2688   0006C6  EF71  F003         	goto	i2l967
   2689   0006CA                     i2u10_40:
   2690   0006CA                     
-  2691                           ;isr.c: 38:             RB2 = !RB2;
-  2692   0006CA  A481               	btfss	3969,2,c	;volatile
+  2691                           ;isr.c: 38:             RB3 = !RB3;
+  2692   0006CA  A681               	btfss	3969,3,c	;volatile
   2693   0006CC  EF6A  F003         	goto	i2u11_41
   2694   0006D0  EF6D  F003         	goto	i2u11_40
   2695   0006D4                     i2u11_41:
-  2696   0006D4  8481               	bsf	3969,2,c	;volatile
+  2696   0006D4  8681               	bsf	3969,3,c	;volatile
   2697   0006D6  EF6E  F003         	goto	i2u12_45
   2698   0006DA                     i2u11_40:
-  2699   0006DA  9481               	bcf	3969,2,c	;volatile
+  2699   0006DA  9681               	bcf	3969,3,c	;volatile
   2700   0006DC                     i2u12_45:
   2701   0006DC                     
   2702                           ;isr.c: 39:             count2 = 0;
@@ -2917,7 +2917,7 @@ DATA                 0      0       6      0.0%
 
 
 Microchip Technology PIC18 Macro Assembler V4.00 build 20260614213421 
-Symbol Table                                                                                   Wed Oct 14 22:28:16 2026
+Symbol Table                                                                                   Thu Oct 15 15:49:10 2026
 
                      l21 0700                       l26 075A                       l27 075A  
                      l46 0742                       l80 0754                       l65 0718  
@@ -2928,7 +2928,7 @@ Symbol Table                                                                    
                     l925 0750                      l933 06FC                      l927 0752  
                     l919 0744                      l935 06FE                      l929 06E8  
                     l937 0756                      l899 0730                      _GIE 7F97  
-                    _RB0 7C08                      _RB1 7C09                      _RB2 7C0A  
+                    _RB0 7C08                      _RB1 7C09                      _RB3 7C0B  
                     _PR2 0FCB                      _PSA 7EAB                      _isr 0008  
                    ?_isr 0000                     _T0CS 7EAD                     _PEIE 7F96  
                    _TMR0 0FD6                     _TMR1 0FCE                     _TMR2 0FCC  

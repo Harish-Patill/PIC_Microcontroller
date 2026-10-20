@@ -69,9 +69,9 @@
 [v _display display `(v  1 e 1 0 ]
 "25
 [v _read_dkp read_dkp `(uc  1 e 1 0 ]
-"42
+"59
 [v _init_config init_config `(v  1 e 1 0 ]
-"56
+"73
 [v _main main `(v  1 e 1 0 ]
 "12 D:\Emertxe\PIC_Microcontroller\02_Assignments\08_dynamic_clock.X\timer0.c
 [v _init_timer0 init_timer0 `(v  1 e 1 0 ]
@@ -113,43 +113,43 @@
 [v _minute minute `VEuc  1 e 1 0 ]
 "14
 [v _sec sec `VEuc  1 e 1 0 ]
-"56
+"73
 [v _main main `(v  1 e 1 0 ]
 {
-"58
-[v main@F10625 F10625 `[10]uc  1 s 10 F10625 ]
+"75
+[v main@F10626 F10626 `[10]uc  1 s 10 F10626 ]
 [v main@ssd ssd `[4]uc  1 a 4 19 ]
-"59
+"76
 [v main@digit digit `[10]uc  1 a 10 8 ]
-"61
+"78
 [v main@mode mode `uc  1 a 1 18 ]
-"62
+"79
 [v main@field field `uc  1 a 1 23 ]
-"65
+"82
 {
-"66
+"83
 [v main@key key `uc  1 a 1 24 ]
-"164
+"181
 }
-"166
+"183
 } 0
 "25
 [v _read_dkp read_dkp `(uc  1 e 1 0 ]
 {
 [v read_dkp@trigger trigger `uc  1 p 1 wreg ]
-"26
-[v read_dkp@once once `uc  1 s 1 once ]
 "28
+[v read_dkp@repeat_count repeat_count `uc  1 s 1 repeat_count ]
+"30
 {
 [v read_dkp@trigger trigger `uc  1 p 1 0 ]
-"36
+"38
 }
-"39
+"57
 } 1
-"42
+"59
 [v _init_config init_config `(v  1 e 1 0 ]
 {
-"54
+"71
 } 0
 "12 D:\Emertxe\PIC_Microcontroller\02_Assignments\08_dynamic_clock.X\timer0.c
 [v _init_timer0 init_timer0 `(v  1 e 1 0 ]

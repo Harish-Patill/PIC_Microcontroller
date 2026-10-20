@@ -18210,7 +18210,7 @@ void __attribute__((picinterrupt(("")))) isr(){
     if(TMR2IF){
 
         if(++count2 == 1000){
-            RB2 = !RB2;
+            RB3 = !RB3;
             count2 = 0;
         }
         TMR2IF=0;

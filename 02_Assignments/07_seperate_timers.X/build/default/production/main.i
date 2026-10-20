@@ -18189,7 +18189,7 @@ void init_config(){
     TRISB = 0;
     RB0 = 0;
     RB1 = 0;
-    RB2 = 0;
+    RB3 = 0;
 
     init_timer0();
     init_timer1();

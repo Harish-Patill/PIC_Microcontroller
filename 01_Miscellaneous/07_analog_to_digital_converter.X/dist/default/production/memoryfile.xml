@@ -3,9 +3,9 @@
   <executable name="dist/default/production\07_analog_to_digital_converter.X.production.hex">
     <memory name="program">
       <units>bytes</units>
-      <length>32768</length>
-      <used>950</used>
-      <free>31818</free>
+      <length>12289</length>
+      <used>946</used>
+      <free>11343</free>
     </memory>
     <memory name="data">
       <units>bytes</units>

@@ -14,7 +14,7 @@ void init_config(){
     TRISB = 0;                  // make all of PORTB as o/p
     RB0 = 0;                    // setting first 3 led's value as 0
     RB1 = 0;
-    RB2 = 0;
+    RB3 = 0;
         
     init_timer0();              // timer0,1,2 configuration
     init_timer1();

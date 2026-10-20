@@ -18177,7 +18177,7 @@ unsigned char __t3rd16on(void);
 # 34 "C:\\Program Files\\Microchip\\xc8\\v4.00\\pic\\include/xc.h" 2 3
 # 10 "main.c" 2
 # 1 "./dynamic_header.h" 1
-# 31 "./dynamic_header.h"
+# 33 "./dynamic_header.h"
 extern volatile unsigned char sec;
 extern volatile unsigned char minute;
 extern volatile unsigned char hour;
@@ -18202,7 +18202,9 @@ void display(char ssd[]){
 }
 
 unsigned char read_dkp(unsigned char trigger){
+
     static unsigned char once = 1;
+    static unsigned char repeat_count = 0;
 
     if (trigger == 0){
         if((PORTC & 0x0F) != 0x0F && once == 1){
@@ -18214,9 +18216,24 @@ unsigned char read_dkp(unsigned char trigger){
         }
     }
 
+    else if(trigger == 0){
+        if((PORTC & 0x0F) != 0x0F){
+
+
+            repeat_count++;
+            if(repeat_count >= 50){
+                repeat_count = 0;
+                return PORTC & 0x0F;
+            }
+        }
+        else{
+            repeat_count = 0;
+        }
+
+    }
+
     return 0x0F;
 }
-
 
 void init_config(){
     PORTD=0X00;

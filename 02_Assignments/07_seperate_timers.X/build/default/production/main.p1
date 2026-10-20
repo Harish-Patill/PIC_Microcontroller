@@ -12,9 +12,9 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h: 36359: extern volatile __bit __attribute__((__deprecated__)) RB1 __attribute__((address(0x7C09)));
 [v _RB1 `Vb ~T1 @X0 0 e@31753 ]
 [t T1 __deprecated__ ]
-"36362
-[; ;C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h: 36362: extern volatile __bit __attribute__((__deprecated__)) RB2 __attribute__((address(0x7C0A)));
-[v _RB2 `Vb ~T1 @X0 0 e@31754 ]
+"36365
+[; ;C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\include\proc/pic18f4580.h: 36365: extern volatile __bit __attribute__((__deprecated__)) RB3 __attribute__((address(0x7C0B)));
+[v _RB3 `Vb ~T1 @X0 0 e@31755 ]
 "12 ./header.h
 [; ;./header.h: 12: void init_timer0(void);
 [v _init_timer0 `(v ~T0 @X0 0 ef ]
@@ -1286,8 +1286,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 16:     RB1 = 0;
 [e = _RB1 -> -> 0 `i `b ]
 "17
-[; ;main.c: 17:     RB2 = 0;
-[e = _RB2 -> -> 0 `i `b ]
+[; ;main.c: 17:     RB3 = 0;
+[e = _RB3 -> -> 0 `i `b ]
 "19
 [; ;main.c: 19:     init_timer0();
 [e ( _init_timer0 ..  ]

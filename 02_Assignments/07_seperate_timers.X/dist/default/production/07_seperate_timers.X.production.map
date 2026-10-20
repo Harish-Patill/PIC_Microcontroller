@@ -6,10 +6,10 @@ Linker command line:
   --edf=C:/Users/Haris/.mchp_packs/Microchip/PIC18Fxxxx_DFP/1.8.178/xc8\pic\dat\20260902222523_en.msgs \
   -cn -h+dist/default/production\07_seperate_timers.X.production.sym \
   --cmf=dist/default/production\07_seperate_timers.X.production.cmf -z \
-  -Q18F4580 -oC:\Users\Haris\AppData\Local\Temp\xcAs6vw.0\driver_tmp_3.o \
+  -Q18F4580 -oC:\Users\Haris\AppData\Local\Temp\xcAsguk.0\driver_tmp_3.o \
   --defsym=__MPLAB_BUILD=1 --fixupoverflow=error \
   -Mdist/default/production/07_seperate_timers.X.production.map \
-  --md=C:\Users\Haris\AppData\Local\Temp\xcAs6vw.0\driver_tmp_0.dat -E1 \
+  --md=C:\Users\Haris\AppData\Local\Temp\xcAsguk.0\driver_tmp_0.dat -E1 \
   -ver=XC8 Compiler -ACODE=00h-07FFFh -ACONST=00h-07FFFh \
   -ASMALLCONST=0600h-06FFhx122 -AMEDIUMCONST=0600h-07FFFh -ACOMRAM=01h-05Fh \
   -AABS1=00h-05FFh -ABIGRAM=01h-05FFh -ARAM=060h-0FFh,0100h-01FFhx5 \
@@ -25,7 +25,7 @@ Linker command line:
   -pfarbss=FARRAM,fardata=FARRAM,nvFARRAM=FARRAM \
   -pintsave_regs=BIGRAM,bigbss=BIGRAM,bigdata=BIGRAM -pbss=RAM \
   -pidata=CODE,irdata=CODE,ibigdata=CODE,ifardata=CODE -prparam=COMRAM \
-  C:\Users\Haris\AppData\Local\Temp\xcAs6vw.0\driver_tmp_7.o \
+  C:\Users\Haris\AppData\Local\Temp\xcAsguk.0\driver_tmp_7.o \
   dist/default/production\07_seperate_timers.X.production.o 
 
 Object code version is 3.11
@@ -35,7 +35,7 @@ Machine type is 18F4580
 
 
                 Name                               Link     Load   Length Selector   Space Scale
-C:\Users\Haris\AppData\Local\Temp\xcAs6vw.0\driver_tmp_7.o
+C:\Users\Haris\AppData\Local\Temp\xcAsguk.0\driver_tmp_7.o
                 init                                  E        E        4        4       0
                 reset_vec                             0        0        4        0       0
 dist/default/production\07_seperate_timers.X.production.o
@@ -153,7 +153,7 @@ _PR2                     (abs)        0FCB
 _PSA                     (abs)        7EAB
 _RB0                     (abs)        7C08
 _RB1                     (abs)        7C09
-_RB2                     (abs)        7C0A
+_RB3                     (abs)        7C0B
 _T08BIT                  (abs)        7EAE
 _T0CS                    (abs)        7EAD
 _T1CKPS0                 (abs)        7E6C

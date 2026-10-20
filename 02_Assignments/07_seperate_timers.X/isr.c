@@ -33,9 +33,9 @@ void __interrupt() isr(){
     }
     
     if(TMR2IF){
-     // TMR2 = TMR2+3038;
+//      TMR2 = TMR2+3038;
         if(++count2 == 1000){
-            RB2 = !RB2;
+            RB3 = !RB3;
             count2 = 0;
         }
         TMR2IF=0;
