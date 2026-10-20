@@ -17,3 +17,9 @@
 06. Implement SLEEP for the board
 07. Implement leds blinking using timer0, timer1 and timer2. Try to make them blink for 1 second at the same timer0
 08. Implement the clock using a timer. The user can either start the timer from 00:00 or set his/her own time from where the timer can be started.
+09. Implement the Text Right scroll animation for the CLCD.
+10. Implement a password safe system with CLCD and Matrix_keypad intergration.
+        the make file was currpted, thus there are 2 files, one with makefile corrected other without the correction
+        
+        10_8_field_password      : Makefile was changed w help of Claude.
+        10_eight_field_password  : Makefile haven't been changed.
