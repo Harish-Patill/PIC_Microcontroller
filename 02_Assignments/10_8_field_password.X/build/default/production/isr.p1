@@ -1312,35 +1312,35 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;isr.c: 19:         if(count++ == time){
 [e $ ! == ++ F10793 -> -> 1 `i `ui _time 1113  ]
 {
-"21
-[; ;isr.c: 21:             PORTBbits.RB0 = ~PORTBbits.RB0;
+"20
+[; ;isr.c: 20:             PORTBbits.RB0 = ~PORTBbits.RB0;
 [e = . . _PORTBbits 0 0 -> ~ -> . . _PORTBbits 0 0 `i `uc ]
-"22
-[; ;isr.c: 22:             count = 0;
+"21
+[; ;isr.c: 21:             count = 0;
 [e = F10793 -> -> 0 `i `ui ]
-"23
-[; ;isr.c: 23:         }
+"22
+[; ;isr.c: 22:         }
 }
 [e :U 1113 ]
-"25
-[; ;isr.c: 25:         if(count0++ >= 20000){
+"24
+[; ;isr.c: 24:         if(count0++ >= 20000){
 [e $ ! >= ++ _count0 -> -> 1 `i `ui -> -> 20000 `i `ui 1114  ]
 {
-"26
-[; ;isr.c: 26:             count0 = 0;
+"25
+[; ;isr.c: 25:             count0 = 0;
 [e = _count0 -> -> 0 `i `ui ]
-"27
-[; ;isr.c: 27:         }
+"26
+[; ;isr.c: 26:         }
 }
 [e :U 1114 ]
-"28
-[; ;isr.c: 28:         TMR0IF = 0;
+"27
+[; ;isr.c: 27:         TMR0IF = 0;
 [e = _TMR0IF -> -> 0 `i `b ]
-"29
-[; ;isr.c: 29:     }
+"28
+[; ;isr.c: 28:     }
 }
 [e :U 1112 ]
-"30
-[; ;isr.c: 30: }
+"29
+[; ;isr.c: 29: }
 [e :UE 1111 ]
 }

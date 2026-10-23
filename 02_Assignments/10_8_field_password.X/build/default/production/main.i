@@ -18277,7 +18277,7 @@ void init_config(void){
     init_matrix_keypad();
 
     TRISB0=0x00;
-    PORTBbits.RB0=0;
+    PORTBbits.RB0=1;
 
     GIE = 1;
     PEIE = 1;
@@ -18291,16 +18291,19 @@ void main(void) {
     unsigned char password[]="00000000";
 
     unsigned int i=0;
+    unsigned int count=0;
     unsigned int tries=5;
     unsigned int wrong_flag=1;
     unsigned int time_divisor;
 
-    clcd_print((unsigned char *)"Enter Password",(0x80 + (0)));
+    clcd_print("Enter Password: ",(0x80 + (0)));
     while(1){
+
   if(tries == 0){
-   clcd_print((unsigned char *)"System Locked! ", (0x80 + (0)));
-   clcd_print((unsigned char *)"Max attempts failed", (0xC0 + (0)));
    PORTBbits.RB0 = 1;
+            time = 100000;
+   clcd_print("System is Locked", (0x80 + (0)));
+   clcd_print("  Reset to try  ", (0xC0 + (0)));
    while(1);
   }
 
@@ -18308,55 +18311,65 @@ void main(void) {
   wrong_flag = 0;
   time = 100000 / time_divisor;
 
-        for(unsigned int count=0;count<8;count++){
+        count = 0;
+        while(count < 8){
             key = read_switches(1);
-            if(key == 1){
-                str[count] = '0';
-                clcd_putch('*',(0xC0 + (count)));
 
-                if(password[count] != '0'){
-                    time_divisor++;
-     time = 100000 / time_divisor;
-                    wrong_flag = 1;
+            if(key != 0xFF){
+                if(key == 1){
+                    str[count] = '0';
+                    clcd_putch('*',(0xC0 + (count)));
+
+
+                    if(password[count] != '0'){
+                        time_divisor = time_divisor+8;
+      time = 100000 / time_divisor;
+                        wrong_flag = 1;
+                    }
+                    count++;
                 }
-            }
+                else if(key == 2){
+                    str[count] = '1';
+                    clcd_putch('*',(0xC0 + (count)));
 
-            else if(key == 2){
-                str[count] = '1';
-                clcd_putch('*',(0xC0 + (count)));
 
-                if(password[count] != '1'){
-                    time_divisor++;
-     time = 100000 / time_divisor;
-                    wrong_flag = 1;
+                    if(password[count] != '1'){
+                        time_divisor = time_divisor+8;
+      time = 100000 / time_divisor;
+                        wrong_flag = 1;
+                    }
+                    count++;
                 }
-            }
-
-            if(count0 < 10000){
-                clcd_putch('_',(0xC0 + (count+1)));
             }
             else{
-                clcd_putch(' ',(0xC0 + (count+1)));
+                if(count0 < 10000){
+                    clcd_putch('_',(0xC0 + (count)));
+                }
+                else{
+                    clcd_putch(' ',(0xC0 + (count)));
+                }
             }
         }
         str[8]='\0';
 
 
         if(wrong_flag == 0){
-            clcd_print((unsigned char *)"Successful!!!  ", (0x80 + (0)));
+            clcd_print("   Successful   ", (0x80 + (0)));
+            clcd_print(" Access Granted ", (0xC0 + (0)));
             PORTBbits.RB0 = 0;
             while(1);
         }
         else{
             tries--;
 
-            clcd_print((unsigned char *)"Tries left",(0xC0 + (2)));
-   clcd_putch((tries + 0x30), (0xC0 + (4)));
+            clcd_print("                ", (0xC0 + (0)));
+            clcd_print("Tries left",(0xC0 + (2)));
+   clcd_putch((tries + 0x30), (0xC0 + (0)));
 
             _delay((unsigned long)((1500)*(20000000/4000.0)));
 
-            clcd_print((unsigned char *)"Enter Password", (0x80 + (0)));
-            clcd_print((unsigned char *)"                ", (0xC0 + (0)));
+            clcd_print("Enter Password", (0x80 + (0)));
+            clcd_print("                ", (0xC0 + (0)));
         }
     }
     return;

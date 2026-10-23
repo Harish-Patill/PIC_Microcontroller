@@ -17,7 +17,6 @@ void __interrupt() isr(){
     if(TMR0IF){
         TMR0 = TMR0 + 8;            //considering context switching time + Timer changing
         if(count++ == time){
-//            PORTB0 = ~PORTB0;
             PORTBbits.RB0 = ~PORTBbits.RB0;
             count = 0;
         }

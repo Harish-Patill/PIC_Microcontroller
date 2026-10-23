@@ -1334,8 +1334,8 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;main.c: 19:     TRISB0=0x00;
 [e = _TRISB0 -> -> 0 `i `b ]
 "20
-[; ;main.c: 20:     PORTBbits.RB0=0;
-[e = . . _PORTBbits 0 0 -> -> 0 `i `uc ]
+[; ;main.c: 20:     PORTBbits.RB0=1;
+[e = . . _PORTBbits 0 0 -> -> 1 `i `uc ]
 "22
 [; ;main.c: 22:     GIE = 1;
 [e = _GIE -> -> 1 `i `b ]
@@ -1385,232 +1385,265 @@ Version 4.0 HI-TECH Software Intermediate Code
 [v _i `ui ~T0 @X0 1 a ]
 [e = _i -> -> 0 `i `ui ]
 "34
-[; ;main.c: 34:     unsigned int tries=5;
+[; ;main.c: 34:     unsigned int count=0;
+[v _count `ui ~T0 @X0 1 a ]
+[e = _count -> -> 0 `i `ui ]
+"35
+[; ;main.c: 35:     unsigned int tries=5;
 [v _tries `ui ~T0 @X0 1 a ]
 [e = _tries -> -> 5 `i `ui ]
-"35
-[; ;main.c: 35:     unsigned int wrong_flag=1;
+"36
+[; ;main.c: 36:     unsigned int wrong_flag=1;
 [v _wrong_flag `ui ~T0 @X0 1 a ]
 [e = _wrong_flag -> -> 1 `i `ui ]
-"36
-[; ;main.c: 36:     unsigned int time_divisor;
+"37
+[; ;main.c: 37:     unsigned int time_divisor;
 [v _time_divisor `ui ~T0 @X0 1 a ]
-"38
-[; ;main.c: 38:     clcd_print((unsigned char *)"Enter Password",(0x80 + (0)));
-[e ( _clcd_print (2 , -> -> :s 1C `*uc `*Cuc -> + -> 128 `i -> 0 `i `uc ]
 "39
-[; ;main.c: 39:     while(1){
+[; ;main.c: 39:     clcd_print("Enter Password: ",(0x80 + (0)));
+[e ( _clcd_print (2 , :s 1C -> + -> 128 `i -> 0 `i `uc ]
+"40
+[; ;main.c: 40:     while(1){
 [e :U 1114 ]
 {
-"40
-[; ;main.c: 40:   if(tries == 0){
+"42
+[; ;main.c: 42:   if(tries == 0){
 [e $ ! == _tries -> -> 0 `i `ui 1116  ]
 {
-"41
-[; ;main.c: 41:    clcd_print((unsigned char *)"System Locked! ", (0x80 + (0)));
-[e ( _clcd_print (2 , -> -> :s 2C `*uc `*Cuc -> + -> 128 `i -> 0 `i `uc ]
-"42
-[; ;main.c: 42:    clcd_print((unsigned char *)"Max attempts failed", (0xC0 + (0)));
-[e ( _clcd_print (2 , -> -> :s 3C `*uc `*Cuc -> + -> 192 `i -> 0 `i `uc ]
 "43
 [; ;main.c: 43:    PORTBbits.RB0 = 1;
 [e = . . _PORTBbits 0 0 -> -> 1 `i `uc ]
 "44
-[; ;main.c: 44:    while(1);
+[; ;main.c: 44:             time = 100000;
+[e = _time -> -> 100000 `l `ui ]
+"45
+[; ;main.c: 45:    clcd_print("System is Locked", (0x80 + (0)));
+[e ( _clcd_print (2 , :s 2C -> + -> 128 `i -> 0 `i `uc ]
+"46
+[; ;main.c: 46:    clcd_print("  Reset to try  ", (0xC0 + (0)));
+[e ( _clcd_print (2 , :s 3C -> + -> 192 `i -> 0 `i `uc ]
+"47
+[; ;main.c: 47:    while(1);
 [e :U 1118 ]
 [e :U 1117 ]
 [e $U 1118  ]
 [e :U 1119 ]
-"45
-[; ;main.c: 45:   }
+"48
+[; ;main.c: 48:   }
 }
 [e :U 1116 ]
-"47
-[; ;main.c: 47:         time_divisor = 1;
+"50
+[; ;main.c: 50:         time_divisor = 1;
 [e = _time_divisor -> -> 1 `i `ui ]
-"48
-[; ;main.c: 48:   wrong_flag = 0;
-[e = _wrong_flag -> -> 0 `i `ui ]
-"49
-[; ;main.c: 49:   time = 100000 / time_divisor;
-[e = _time -> / -> 100000 `l -> _time_divisor `l `ui ]
 "51
-[; ;main.c: 51:         for(unsigned int count=0;count<8;count++){
-{
-[v _count `ui ~T0 @X0 1 a ]
-[e = _count -> -> 0 `i `ui ]
-[e $ < _count -> -> 8 `i `ui 1120  ]
-[e $U 1121  ]
-[e :U 1120 ]
-{
+[; ;main.c: 51:   wrong_flag = 0;
+[e = _wrong_flag -> -> 0 `i `ui ]
 "52
-[; ;main.c: 52:             key = read_switches(1);
-[e = _key ( _read_switches (1 -> -> 1 `i `uc ]
-"53
-[; ;main.c: 53:             if(key == 1){
-[e $ ! == -> _key `i -> 1 `i 1123  ]
-{
-"54
-[; ;main.c: 54:                 str[count] = '0';
-[e = *U + &U _str * -> _count `ux -> -> # *U &U _str `ui `ux -> -> 48 `ui `uc ]
-"55
-[; ;main.c: 55:                 clcd_putch('*',(0xC0 + (count)));
-[e ( _clcd_putch (2 , -> -> 42 `ui `uc -> + -> -> 192 `i `ui _count `uc ]
-"57
-[; ;main.c: 57:                 if(password[count] != '0'){
-[e $ ! != -> *U + &U _password * -> _count `ux -> -> # *U &U _password `ui `ux `ui -> 48 `ui 1124  ]
-{
-"58
-[; ;main.c: 58:                     time_divisor++;
-[e ++ _time_divisor -> -> 1 `i `ui ]
-"59
-[; ;main.c: 59:      time = 100000 / time_divisor;
+[; ;main.c: 52:   time = 100000 / time_divisor;
 [e = _time -> / -> 100000 `l -> _time_divisor `l `ui ]
+"54
+[; ;main.c: 54:         count = 0;
+[e = _count -> -> 0 `i `ui ]
+"55
+[; ;main.c: 55:         while(count < 8){
+[e $U 1120  ]
+[e :U 1121 ]
+{
+"56
+[; ;main.c: 56:             key = read_switches(1);
+[e = _key ( _read_switches (1 -> -> 1 `i `uc ]
+"58
+[; ;main.c: 58:             if(key != 0xFF){
+[e $ ! != -> _key `i -> 255 `i 1123  ]
+{
+"59
+[; ;main.c: 59:                 if(key == 1){
+[e $ ! == -> _key `i -> 1 `i 1124  ]
+{
 "60
-[; ;main.c: 60:                     wrong_flag = 1;
-[e = _wrong_flag -> -> 1 `i `ui ]
+[; ;main.c: 60:                     str[count] = '0';
+[e = *U + &U _str * -> _count `ux -> -> # *U &U _str `ui `ux -> -> 48 `ui `uc ]
 "61
-[; ;main.c: 61:                 }
-}
-[e :U 1124 ]
-"62
-[; ;main.c: 62:             }
-}
-[e $U 1125  ]
+[; ;main.c: 61:                     clcd_putch('*',(0xC0 + (count)));
+[e ( _clcd_putch (2 , -> -> 42 `ui `uc -> + -> -> 192 `i `ui _count `uc ]
 "64
-[; ;main.c: 64:             else if(key == 2){
-[e :U 1123 ]
-[e $ ! == -> _key `i -> 2 `i 1126  ]
+[; ;main.c: 64:                     if(password[count] != '0'){
+[e $ ! != -> *U + &U _password * -> _count `ux -> -> # *U &U _password `ui `ux `ui -> 48 `ui 1125  ]
 {
 "65
-[; ;main.c: 65:                 str[count] = '1';
-[e = *U + &U _str * -> _count `ux -> -> # *U &U _str `ui `ux -> -> 49 `ui `uc ]
+[; ;main.c: 65:                         time_divisor = time_divisor+8;
+[e = _time_divisor + _time_divisor -> -> 8 `i `ui ]
 "66
-[; ;main.c: 66:                 clcd_putch('*',(0xC0 + (count)));
-[e ( _clcd_putch (2 , -> -> 42 `ui `uc -> + -> -> 192 `i `ui _count `uc ]
-"68
-[; ;main.c: 68:                 if(password[count] != '1'){
-[e $ ! != -> *U + &U _password * -> _count `ux -> -> # *U &U _password `ui `ux `ui -> 49 `ui 1127  ]
-{
-"69
-[; ;main.c: 69:                     time_divisor++;
-[e ++ _time_divisor -> -> 1 `i `ui ]
-"70
-[; ;main.c: 70:      time = 100000 / time_divisor;
+[; ;main.c: 66:       time = 100000 / time_divisor;
 [e = _time -> / -> 100000 `l -> _time_divisor `l `ui ]
-"71
-[; ;main.c: 71:                     wrong_flag = 1;
+"67
+[; ;main.c: 67:                         wrong_flag = 1;
 [e = _wrong_flag -> -> 1 `i `ui ]
+"68
+[; ;main.c: 68:                     }
+}
+[e :U 1125 ]
+"69
+[; ;main.c: 69:                     count++;
+[e ++ _count -> -> 1 `i `ui ]
+"70
+[; ;main.c: 70:                 }
+}
+[e $U 1126  ]
+"71
+[; ;main.c: 71:                 else if(key == 2){
+[e :U 1124 ]
+[e $ ! == -> _key `i -> 2 `i 1127  ]
+{
 "72
-[; ;main.c: 72:                 }
+[; ;main.c: 72:                     str[count] = '1';
+[e = *U + &U _str * -> _count `ux -> -> # *U &U _str `ui `ux -> -> 49 `ui `uc ]
+"73
+[; ;main.c: 73:                     clcd_putch('*',(0xC0 + (count)));
+[e ( _clcd_putch (2 , -> -> 42 `ui `uc -> + -> -> 192 `i `ui _count `uc ]
+"76
+[; ;main.c: 76:                     if(password[count] != '1'){
+[e $ ! != -> *U + &U _password * -> _count `ux -> -> # *U &U _password `ui `ux `ui -> 49 `ui 1128  ]
+{
+"77
+[; ;main.c: 77:                         time_divisor = time_divisor+8;
+[e = _time_divisor + _time_divisor -> -> 8 `i `ui ]
+"78
+[; ;main.c: 78:       time = 100000 / time_divisor;
+[e = _time -> / -> 100000 `l -> _time_divisor `l `ui ]
+"79
+[; ;main.c: 79:                         wrong_flag = 1;
+[e = _wrong_flag -> -> 1 `i `ui ]
+"80
+[; ;main.c: 80:                     }
+}
+[e :U 1128 ]
+"81
+[; ;main.c: 81:                     count++;
+[e ++ _count -> -> 1 `i `ui ]
+"82
+[; ;main.c: 82:                 }
 }
 [e :U 1127 ]
-"73
-[; ;main.c: 73:             }
-}
 [e :U 1126 ]
-[e :U 1125 ]
-"75
-[; ;main.c: 75:             if(count0 < 10000){
-[e $ ! < _count0 -> -> 10000 `i `ui 1128  ]
-{
-"76
-[; ;main.c: 76:                 clcd_putch('_',(0xC0 + (count+1)));
-[e ( _clcd_putch (2 , -> -> 95 `ui `uc -> + -> -> 192 `i `ui + _count -> -> 1 `i `ui `uc ]
-"77
-[; ;main.c: 77:             }
+"83
+[; ;main.c: 83:             }
 }
 [e $U 1129  ]
-"78
-[; ;main.c: 78:             else{
-[e :U 1128 ]
+"84
+[; ;main.c: 84:             else{
+[e :U 1123 ]
 {
-"79
-[; ;main.c: 79:                 clcd_putch(' ',(0xC0 + (count+1)));
-[e ( _clcd_putch (2 , -> -> 32 `ui `uc -> + -> -> 192 `i `ui + _count -> -> 1 `i `ui `uc ]
-"80
-[; ;main.c: 80:             }
-}
-[e :U 1129 ]
-"81
-[; ;main.c: 81:         }
-}
-"51
-[; ;main.c: 51:         for(unsigned int count=0;count<8;count++){
-[e ++ _count -> -> 1 `i `ui ]
-[e $ < _count -> -> 8 `i `ui 1120  ]
-[e :U 1121 ]
-"81
-[; ;main.c: 81:         }
-}
-"82
-[; ;main.c: 82:         str[8]='\0';
-[e = *U + &U _str * -> -> -> 8 `i `ui `ux -> -> # *U &U _str `ui `ux -> -> 0 `ui `uc ]
 "85
-[; ;main.c: 85:         if(wrong_flag == 0){
-[e $ ! == _wrong_flag -> -> 0 `i `ui 1130  ]
+[; ;main.c: 85:                 if(count0 < 10000){
+[e $ ! < _count0 -> -> 10000 `i `ui 1130  ]
 {
 "86
-[; ;main.c: 86:             clcd_print((unsigned char *)"Successful!!!  ", (0x80 + (0)));
-[e ( _clcd_print (2 , -> -> :s 4C `*uc `*Cuc -> + -> 128 `i -> 0 `i `uc ]
+[; ;main.c: 86:                     clcd_putch('_',(0xC0 + (count)));
+[e ( _clcd_putch (2 , -> -> 95 `ui `uc -> + -> -> 192 `i `ui _count `uc ]
 "87
-[; ;main.c: 87:             PORTBbits.RB0 = 0;
-[e = . . _PORTBbits 0 0 -> -> 0 `i `uc ]
-"88
-[; ;main.c: 88:             while(1);
-[e :U 1132 ]
-[e :U 1131 ]
-[e $U 1132  ]
-[e :U 1133 ]
-"89
-[; ;main.c: 89:         }
+[; ;main.c: 87:                 }
 }
-[e $U 1134  ]
-"90
-[; ;main.c: 90:         else{
+[e $U 1131  ]
+"88
+[; ;main.c: 88:                 else{
 [e :U 1130 ]
 {
-"91
-[; ;main.c: 91:             tries--;
-[e -- _tries -> -> 1 `i `ui ]
-"93
-[; ;main.c: 93:             clcd_print((unsigned char *)"Tries left",(0xC0 + (2)));
-[e ( _clcd_print (2 , -> -> :s 5C `*uc `*Cuc -> + -> 192 `i -> 2 `i `uc ]
-"94
-[; ;main.c: 94:    clcd_putch((tries + 0x30), (0xC0 + (4)));
-[e ( _clcd_putch (2 , -> + _tries -> -> 48 `i `ui `uc -> + -> 192 `i -> 4 `i `uc ]
-"96
-[; ;main.c: 96:             _delay((unsigned long)((1500)*(20000000/4000.0)));
-[e ( __delay (1 -> * -> -> 1500 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
-"98
-[; ;main.c: 98:             clcd_print((unsigned char *)"Enter Password", (0x80 + (0)));
-[e ( _clcd_print (2 , -> -> :s 6C `*uc `*Cuc -> + -> 128 `i -> 0 `i `uc ]
-"99
-[; ;main.c: 99:             clcd_print((unsigned char *)"                ", (0xC0 + (0)));
-[e ( _clcd_print (2 , -> -> :s 7C `*uc `*Cuc -> + -> 192 `i -> 0 `i `uc ]
-"100
-[; ;main.c: 100:         }
+"89
+[; ;main.c: 89:                     clcd_putch(' ',(0xC0 + (count)));
+[e ( _clcd_putch (2 , -> -> 32 `ui `uc -> + -> -> 192 `i `ui _count `uc ]
+"90
+[; ;main.c: 90:                 }
 }
+[e :U 1131 ]
+"91
+[; ;main.c: 91:             }
+}
+[e :U 1129 ]
+"92
+[; ;main.c: 92:         }
+}
+[e :U 1120 ]
+"55
+[; ;main.c: 55:         while(count < 8){
+[e $ < _count -> -> 8 `i `ui 1121  ]
+[e :U 1122 ]
+"93
+[; ;main.c: 93:         str[8]='\0';
+[e = *U + &U _str * -> -> -> 8 `i `ui `ux -> -> # *U &U _str `ui `ux -> -> 0 `ui `uc ]
+"96
+[; ;main.c: 96:         if(wrong_flag == 0){
+[e $ ! == _wrong_flag -> -> 0 `i `ui 1132  ]
+{
+"97
+[; ;main.c: 97:             clcd_print("   Successful   ", (0x80 + (0)));
+[e ( _clcd_print (2 , :s 4C -> + -> 128 `i -> 0 `i `uc ]
+"98
+[; ;main.c: 98:             clcd_print(" Access Granted ", (0xC0 + (0)));
+[e ( _clcd_print (2 , :s 5C -> + -> 192 `i -> 0 `i `uc ]
+"99
+[; ;main.c: 99:             PORTBbits.RB0 = 0;
+[e = . . _PORTBbits 0 0 -> -> 0 `i `uc ]
+"100
+[; ;main.c: 100:             while(1);
 [e :U 1134 ]
+[e :U 1133 ]
+[e $U 1134  ]
+[e :U 1135 ]
 "101
-[; ;main.c: 101:     }
+[; ;main.c: 101:         }
+}
+[e $U 1136  ]
+"102
+[; ;main.c: 102:         else{
+[e :U 1132 ]
+{
+"103
+[; ;main.c: 103:             tries--;
+[e -- _tries -> -> 1 `i `ui ]
+"105
+[; ;main.c: 105:             clcd_print("                ", (0xC0 + (0)));
+[e ( _clcd_print (2 , :s 6C -> + -> 192 `i -> 0 `i `uc ]
+"106
+[; ;main.c: 106:             clcd_print("Tries left",(0xC0 + (2)));
+[e ( _clcd_print (2 , :s 7C -> + -> 192 `i -> 2 `i `uc ]
+"107
+[; ;main.c: 107:    clcd_putch((tries + 0x30), (0xC0 + (0)));
+[e ( _clcd_putch (2 , -> + _tries -> -> 48 `i `ui `uc -> + -> 192 `i -> 0 `i `uc ]
+"109
+[; ;main.c: 109:             _delay((unsigned long)((1500)*(20000000/4000.0)));
+[e ( __delay (1 -> * -> -> 1500 `i `d / -> -> 20000000 `l `d .4000.0 `ul ]
+"111
+[; ;main.c: 111:             clcd_print("Enter Password", (0x80 + (0)));
+[e ( _clcd_print (2 , :s 8C -> + -> 128 `i -> 0 `i `uc ]
+"112
+[; ;main.c: 112:             clcd_print("                ", (0xC0 + (0)));
+[e ( _clcd_print (2 , :s 9C -> + -> 192 `i -> 0 `i `uc ]
+"113
+[; ;main.c: 113:         }
+}
+[e :U 1136 ]
+"114
+[; ;main.c: 114:     }
 }
 [e :U 1113 ]
-"39
-[; ;main.c: 39:     while(1){
+"40
+[; ;main.c: 40:     while(1){
 [e $U 1114  ]
 [e :U 1115 ]
-"102
-[; ;main.c: 102:     return;
+"115
+[; ;main.c: 115:     return;
 [e $UE 1112  ]
-"103
-[; ;main.c: 103: }
+"116
+[; ;main.c: 116: }
 [e :UE 1112 ]
 }
-[a 5C 84 114 105 101 115 32 108 101 102 116 0 ]
-[a 1C 69 110 116 101 114 32 80 97 115 115 119 111 114 100 0 ]
-[a 6C 69 110 116 101 114 32 80 97 115 115 119 111 114 100 0 ]
-[a 3C 77 97 120 32 97 116 116 101 109 112 116 115 32 102 97 105 108 101 100 0 ]
-[a 2C 83 121 115 116 101 109 32 76 111 99 107 101 100 33 32 0 ]
-[a 4C 83 117 99 99 101 115 115 102 117 108 33 33 33 32 32 0 ]
-[a 7C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
+[a 7C 84 114 105 101 115 32 108 101 102 116 0 ]
+[a 8C 69 110 116 101 114 32 80 97 115 115 119 111 114 100 0 ]
+[a 2C 83 121 115 116 101 109 32 105 115 32 76 111 99 107 101 100 0 ]
+[a 5C 32 65 99 99 101 115 115 32 71 114 97 110 116 101 100 32 0 ]
+[a 1C 69 110 116 101 114 32 80 97 115 115 119 111 114 100 58 32 0 ]
+[a 3C 32 32 82 101 115 101 116 32 116 111 32 116 114 121 32 32 0 ]
+[a 4C 32 32 32 83 117 99 99 101 115 115 102 117 108 32 32 32 0 ]
+[a 6C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]
+[a 9C 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 32 0 ]

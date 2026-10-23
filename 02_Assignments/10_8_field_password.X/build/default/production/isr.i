@@ -18277,7 +18277,6 @@ void __attribute__((picinterrupt(("")))) isr(){
     if(TMR0IF){
         TMR0 = TMR0 + 8;
         if(count++ == time){
-
             PORTBbits.RB0 = ~PORTBbits.RB0;
             count = 0;
         }
