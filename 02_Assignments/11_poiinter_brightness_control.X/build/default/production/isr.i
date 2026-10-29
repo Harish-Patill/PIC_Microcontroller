@@ -18205,7 +18205,7 @@ extern unsigned char period;
 
 void __attribute__((picinterrupt(("")))) isr(){
     static unsigned int iter = 0;
-    static unsigned int count = 0;
+    static unsigned long long int count = 0;
 
     if(TMR0IF){
         TMR0 = TMR0 + 8;
@@ -18225,6 +18225,8 @@ void __attribute__((picinterrupt(("")))) isr(){
 
 
         if(brightness_level == 1){
+            duty_cycle = period;
+
             count++;
             if(count >= 100000){
                 brightness_level = 0;

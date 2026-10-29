@@ -1296,10 +1296,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 -> -> 0 `i `ui
 ]
 "17
-[; ;isr.c: 17:     static unsigned int count = 0;
-[v F10614 `ui ~T0 @X0 1 s count ]
+[; ;isr.c: 17:     static unsigned long long int count = 0;
+[v F10614 `uo ~T0 @X0 1 s count ]
 [i F10614
--> -> 0 `i `ui
+-> -> -> 0 `i `o `uo
 ]
 "19
 [; ;isr.c: 19:     if(TMR0IF){
@@ -1349,37 +1349,40 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e $ ! == -> _brightness_level `i -> 1 `i 1115  ]
 {
 "37
-[; ;isr.c: 37:             count++;
-[e ++ F10614 -> -> 1 `i `ui ]
-"38
-[; ;isr.c: 38:             if(count >= 100000){
-[e $ ! >= -> F10614 `l -> 100000 `l 1116  ]
-{
+[; ;isr.c: 37:             duty_cycle = period;
+[e = _duty_cycle _period ]
 "39
-[; ;isr.c: 39:                 brightness_level = 0;
-[e = _brightness_level -> -> 0 `i `uc ]
+[; ;isr.c: 39:             count++;
+[e ++ F10614 -> -> -> 1 `i `o `uo ]
 "40
-[; ;isr.c: 40:                 duty_cycle = 10;
-[e = _duty_cycle -> -> 10 `i `uc ]
+[; ;isr.c: 40:             if(count >= 100000){
+[e $ ! >= F10614 -> -> -> 100000 `l `o `uo 1116  ]
+{
 "41
-[; ;isr.c: 41:                 count = 0;
-[e = F10614 -> -> 0 `i `ui ]
+[; ;isr.c: 41:                 brightness_level = 0;
+[e = _brightness_level -> -> 0 `i `uc ]
 "42
-[; ;isr.c: 42:             }
+[; ;isr.c: 42:                 duty_cycle = 10;
+[e = _duty_cycle -> -> 10 `i `uc ]
+"43
+[; ;isr.c: 43:                 count = 0;
+[e = F10614 -> -> -> 0 `i `o `uo ]
+"44
+[; ;isr.c: 44:             }
 }
 [e :U 1116 ]
-"43
-[; ;isr.c: 43:         }
+"45
+[; ;isr.c: 45:         }
 }
 [e :U 1115 ]
-"45
-[; ;isr.c: 45:         TMR0IF = 0;
+"47
+[; ;isr.c: 47:         TMR0IF = 0;
 [e = _TMR0IF -> -> 0 `i `b ]
-"46
-[; ;isr.c: 46:     }
+"48
+[; ;isr.c: 48:     }
 }
 [e :U 1111 ]
-"47
-[; ;isr.c: 47: }
+"49
+[; ;isr.c: 49: }
 [e :UE 1110 ]
 }

@@ -23,3 +23,4 @@
         
         10_8_field_password      : Makefile was changed w help of Claude.
         10_eight_field_password  : Makefile haven't been changed.
+11. Implement a brightness control, the LED should blink at 10% duty cycle, when the digital switch 1 is pressed, the led should glow at 100% duty cycle, and should revert back to 10% after 5 sec.
